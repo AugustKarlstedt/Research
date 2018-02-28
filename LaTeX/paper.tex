@@ -3,6 +3,15 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
+\usepackage{listings}
+\lstset{
+	columns=fullflexible,
+	breaklines=true,
+	postbreak=\mbox{{$\hookrightarrow$}\space},
+}
+
+\usepackage{xcolor}
+
 %opening
 \title{Neural Network Classification of Privacy Policy Data Practices}
 \author{Dr. Noriko Tomuro, August Karlstedt}
@@ -31,13 +40,81 @@ The OPP-115 corpus is a collection of privacy policies that have been manually a
 \item Other: additional sublabels for introductory or general text, contact information, and practices not covered by the other categories.
 \end{itemize}
 
-These categories were determined by domain experts (privacy experts, public policy experts, legal scholars) in Sadeh et al. 2016. We use these categories as our target variables for our network, which we later describe in further detail. Since these categories encompass a wide range of practices, a summary of a given privacy policy could be generated with them, helping users understand its contents.
+These categories were determined by domain experts (privacy experts, public policy experts, legal scholars) \cite{wilson2016creation}. We use these categories as our target variables for our network, which we later describe in further detail. Since these categories encompass a wide range of practices, a summary of a given privacy policy could be generated with them, helping users understand its contents.
 
 \section{Related Work}
 TODO
 
-\section{Data Preparation}
-The OPP-115 corpus includes annotated 115 annotated policies, each with sub-categories. In this work, we only inspect the 10 higher-level categories. 
+\section{Data and Preparation Process}
+The OPP-115 corpus consists 115 annotated privacy policies. For each privacy policy, users selected text spans within the document and annotated them with a single high-level category and zero or more sub-categories. An example of an annotation associated with the \textit{Third Party Sharing/Collection} category is shown in Figure 1 in JSON (JavaScript Object Notation) format.
+
+\begin{figure}[]
+\begin{lstlisting}
+{
+	"Third Party Entity":{
+		"selectedText":"third party other than The New York Times",
+		"startIndexInSegment":223,
+		"endIndexInSegment":264,
+		"value":"Unnamed third party"
+	},
+	"Choice Scope":{
+		"selectedText":"null",
+		"startIndexInSegment":-1,
+		"endIndexInSegment":-1,
+		"value":"not-selected"
+	},
+	"Purpose":{
+		"selectedText":"participate in sweepstakes, contests or special offers.",
+		"startIndexInSegment":118,
+		"endIndexInSegment":173,
+		"value":"Marketing"
+	},
+	"Choice Type":{
+		"selectedText":"f you do not want any personal information shared, you should not participate in the sweepstakes, contest or special offer.",
+		"startIndexInSegment":304,
+		"endIndexInSegment":427,
+		"value":"Dont use service/feature"
+	},
+	"Action Third Party":{
+		"selectedText":"is also being collected by a third party other than The New York Times,",
+		"startIndexInSegment":194,
+		"endIndexInSegment":265,
+		"value":"Collect on first party website/app"
+	}
+}
+\end{lstlisting}
+\caption{JSON annotations from the OPP-115 corpus}
+\end{figure}
+
+In this preliminary work, we generate examples of 10 higher-level categories by extracting the text spans from the sub-categories. For example, in the annotations in Figure 1, we generate multiple examples of the \textit{Third Party Sharing/Collection} category with the text spans from each sub-category, e.g.
+
+\begin{enumerate}
+	\item "third party other than The New York Times"
+	\item "participate in sweepstakes, contests or special offers."
+	\item "is also being collected by a third party other than The New York Times,"
+\end{enumerate}
+
+Additionally, to create a \textit{None} category that corresponds to a text span that does not deal with any data practice, we process each policy by removing all of the selected text spans as defined in the annotations. The only remaining text is then associated with the \textit{None} category and only contains text that was never selected by the user.
+
+Figure 2 details how many examples of the 10 categories this process yields as well as how many \textit{None} examples are extracted.
+
+\begin{figure}[h]
+	\begin{tabular}{rl}
+		\textbf{Count} & \textbf{Category} \\
+		37299 & First Party Collection/Use \\ 
+		25024 & Third Party Sharing/Collection \\
+		6146 & User Choice/Control \\
+		1691 & User Access, Edit and Deletion \\
+		942 & Data Retention \\
+		1008 & Data Security \\
+		1225 & Policy Change \\
+		90 & Do Not Track \\
+		937 & International and Specific Audiences \\
+		3544 & Other \\
+		1764 & None \\
+	\end{tabular}
+	\caption{Number of examples of each category and the \textit{None} category}
+\end{figure}
 
 To prepare the data for the network, we encode the 10 data practice categories into one hot encoded representations.  
 
@@ -47,20 +124,6 @@ In the above proprocessing steps, we also keep track of the selected text spans 
 
 Finally, we train gensim's implementation of a Paragraph2Vec model on the text spans from our corpus, along with the unselected text spans that we have generated for 16 epochs.
 
-This results in the following examples for each category:
-\begin{itemize}
-\item 942 Data Retention
-\item 1008 Data Security
-\item 90 Do Not Track
-\item 37299 First Party Collection/Use
-\item 937 International and Specific Audiences
-\item 3544 Other
-\item 1225 Policy Change
-\item 25024 Third Party Sharing/Collection
-\item 1691 User Access, Edit and Deletion
-\item 6146 User Choice/Control
-\item 1764 None
-\end{itemize}
 
 \section{Network Setup}
 The artificial neural network built here is constructed using the Keras library. Our network consists of the following layers:
