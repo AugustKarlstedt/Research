@@ -116,11 +116,24 @@ Figure 2 details how many examples of the 10 categories this process yields as w
 	\caption{Number of examples of each category and the \textit{None} category}
 \end{figure}
 
+With the resulting text spans extracted from the privacy policies, we perform some normalization and preprocessing. Figure 3 details the steps in order for an example text span.
+
+\begin{figure}[h]
+	\begin{tabular}{rll}
+		\textbf{Step} & \textbf{Action} & \textbf{Result} \\
+		1 & Input text & third party other than The New York Times \\ 
+		2 & Convert to lower case & third party other than the new york times \\ 
+		3 & Lemmatize text & third party other than the new york time \\
+	\end{tabular}
+\caption{Text span normalization and preprocessing steps}
+\end{figure}
+
+
+
+\hline
 To prepare the data for the network, we encode the 10 data practice categories into one hot encoded representations.  
 
-For the text spans, we take some normalization and preprocessing steps. First, we convert the text to lowercase. We then apply the Natural Language Toolkit (NLTK) lemmatizer. With the resulting processed text span, we build a vocabulary for a Paragraph2Vec model.
-
-In the above proprocessing steps, we also keep track of the selected text spans in a given policy in order to generate an eleventh category for "None" -- a category where a given text span could relate to none of the possible data practices.
+ With the resulting processed text span, we build a vocabulary for a Paragraph2Vec model.
 
 Finally, we train gensim's implementation of a Paragraph2Vec model on the text spans from our corpus, along with the unselected text spans that we have generated for 16 epochs.
 
