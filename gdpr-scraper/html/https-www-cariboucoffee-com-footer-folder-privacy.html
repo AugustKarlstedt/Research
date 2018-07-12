@@ -1,0 +1,1629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+
+    <!-- Start favicon code --> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/image/1/apple-touch-icon.png"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/image/1/favicon-32x32.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/image/1/favicon-16x16.png"> 
+    <link rel="manifest" href="/media/document/1/manifest.json"> 
+    <link rel="mask-icon" href="/media/document/1/safari-pinned-tab.svg" color="#6babb7"> 
+    <meta name="theme-color" content="#6babb7"> 
+    <!-- End favicon code -->
+
+    <!-- Start NewRelic code --> 
+<script type="text/javascript">
+window.NREUM || (NREUM = {}), __nr_require = function(t, n, e) {
+    function r(e) {
+        if (!n[e]) {
+            var o = n[e] = {
+                exports: {}
+            };
+            t[e][0].call(o.exports, function(n) {
+                var o = t[e][1][n];
+                return r(o || n)
+            }, o, o.exports)
+        }
+        return n[e].exports
+    }
+    if ("function" == typeof __nr_require) return __nr_require;
+    for (var o = 0; o < e.length; o++) r(e[o]);
+    return r
+}({
+    1: [function(t, n, e) {
+        function r(t) {
+            try {
+                s.console && console.log(t)
+            } catch (n) {}
+        }
+        var o, i = t("ee"),
+            a = t(15),
+            s = {};
+        try {
+            o = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (s.console = !0, o.indexOf("dev") !== -1 && (s.dev = !0), o.indexOf("nr_dev") !== -1 && (s.nrDev = !0))
+        } catch (c) {}
+        s.nrDev && i.on("internal-error", function(t) {
+            r(t.stack)
+        }), s.dev && i.on("fn-err", function(t, n, e) {
+            r(e.stack)
+        }), s.dev && (r("NR AGENT IN DEVELOPMENT MODE"), r("flags: " + a(s, function(t, n) {
+            return t
+        }).join(", ")))
+    }, {}],
+    2: [function(t, n, e) {
+        function r(t, n, e, r, s) {
+            try {
+                p ? p -= 1 : o(s || new UncaughtException(t, n, e), !0)
+            } catch (f) {
+                try {
+                    i("ierr", [f, c.now(), !0])
+                } catch (d) {}
+            }
+            return "function" == typeof u && u.apply(this, a(arguments))
+        }
+
+        function UncaughtException(t, n, e) {
+            this.message = t || "Uncaught error with no additional information", this.sourceURL = n, this.line = e
+        }
+
+        function o(t, n) {
+            var e = n ? null : c.now();
+            i("err", [t, e])
+        }
+        var i = t("handle"),
+            a = t(16),
+            s = t("ee"),
+            c = t("loader"),
+            f = t("gos"),
+            u = window.onerror,
+            d = !1,
+            l = "nr@seenError",
+            p = 0;
+        c.features.err = !0, t(1), window.onerror = r;
+        try {
+            throw new Error
+        } catch (h) {
+            "stack" in h && (t(8), t(7), "addEventListener" in window && t(5), c.xhrWrappable && t(9), d = !0)
+        }
+        s.on("fn-start", function(t, n, e) {
+            d && (p += 1)
+        }), s.on("fn-err", function(t, n, e) {
+            d && !e[l] && (f(e, l, function() {
+                return !0
+            }), this.thrown = !0, o(e))
+        }), s.on("fn-end", function() {
+            d && !this.thrown && p > 0 && (p -= 1)
+        }), s.on("internal-error", function(t) {
+            i("ierr", [t, c.now(), !0])
+        })
+    }, {}],
+    3: [function(t, n, e) {
+        t("loader").features.ins = !0
+    }, {}],
+    4: [function(t, n, e) {
+        function r(t) {}
+        if (window.performance && window.performance.timing && window.performance.getEntriesByType) {
+            var o = t("ee"),
+                i = t("handle"),
+                a = t(8),
+                s = t(7),
+                c = "learResourceTimings",
+                f = "addEventListener",
+                u = "resourcetimingbufferfull",
+                d = "bstResource",
+                l = "resource",
+                p = "-start",
+                h = "-end",
+                m = "fn" + p,
+                w = "fn" + h,
+                v = "bstTimer",
+                y = "pushState",
+                g = t("loader");
+            g.features.stn = !0, t(6);
+            var b = NREUM.o.EV;
+            o.on(m, function(t, n) {
+                var e = t[0];
+                e instanceof b && (this.bstStart = g.now())
+            }), o.on(w, function(t, n) {
+                var e = t[0];
+                e instanceof b && i("bst", [e, n, this.bstStart, g.now()])
+            }), a.on(m, function(t, n, e) {
+                this.bstStart = g.now(), this.bstType = e
+            }), a.on(w, function(t, n) {
+                i(v, [n, this.bstStart, g.now(), this.bstType])
+            }), s.on(m, function() {
+                this.bstStart = g.now()
+            }), s.on(w, function(t, n) {
+                i(v, [n, this.bstStart, g.now(), "requestAnimationFrame"])
+            }), o.on(y + p, function(t) {
+                this.time = g.now(), this.startPath = location.pathname + location.hash
+            }), o.on(y + h, function(t) {
+                i("bstHist", [location.pathname + location.hash, this.startPath, this.time])
+            }), f in window.performance && (window.performance["c" + c] ? window.performance[f](u, function(t) {
+                i(d, [window.performance.getEntriesByType(l)]), window.performance["c" + c]()
+            }, !1) : window.performance[f]("webkit" + u, function(t) {
+                i(d, [window.performance.getEntriesByType(l)]), window.performance["webkitC" + c]()
+            }, !1)), document[f]("scroll", r, {
+                passive: !0
+            }), document[f]("keypress", r, !1), document[f]("click", r, !1)
+        }
+    }, {}],
+    5: [function(t, n, e) {
+        function r(t) {
+            for (var n = t; n && !n.hasOwnProperty(u);) n = Object.getPrototypeOf(n);
+            n && o(n)
+        }
+
+        function o(t) {
+            s.inPlace(t, [u, d], "-", i)
+        }
+
+        function i(t, n) {
+            return t[1]
+        }
+        var a = t("ee").get("events"),
+            s = t(18)(a, !0),
+            c = t("gos"),
+            f = XMLHttpRequest,
+            u = "addEventListener",
+            d = "removeEventListener";
+        n.exports = a, "getPrototypeOf" in Object ? (r(document), r(window), r(f.prototype)) : f.prototype.hasOwnProperty(u) && (o(window), o(f.prototype)), a.on(u + "-start", function(t, n) {
+            var e = t[1],
+                r = c(e, "nr@wrapped", function() {
+                    function t() {
+                        if ("function" == typeof e.handleEvent) return e.handleEvent.apply(e, arguments)
+                    }
+                    var n = {
+                        object: t,
+                        "function": e
+                    }[typeof e];
+                    return n ? s(n, "fn-", null, n.name || "anonymous") : e
+                });
+            this.wrapped = t[1] = r
+        }), a.on(d + "-start", function(t) {
+            t[1] = this.wrapped || t[1]
+        })
+    }, {}],
+    6: [function(t, n, e) {
+        var r = t("ee").get("history"),
+            o = t(18)(r);
+        n.exports = r, o.inPlace(window.history, ["pushState", "replaceState"], "-")
+    }, {}],
+    7: [function(t, n, e) {
+        var r = t("ee").get("raf"),
+            o = t(18)(r),
+            i = "equestAnimationFrame";
+        n.exports = r, o.inPlace(window, ["r" + i, "mozR" + i, "webkitR" + i, "msR" + i], "raf-"), r.on("raf-start", function(t) {
+            t[0] = o(t[0], "fn-")
+        })
+    }, {}],
+    8: [function(t, n, e) {
+        function r(t, n, e) {
+            t[0] = a(t[0], "fn-", null, e)
+        }
+
+        function o(t, n, e) {
+            this.method = e, this.timerDuration = isNaN(t[1]) ? 0 : +t[1], t[0] = a(t[0], "fn-", this, e)
+        }
+        var i = t("ee").get("timer"),
+            a = t(18)(i),
+            s = "setTimeout",
+            c = "setInterval",
+            f = "clearTimeout",
+            u = "-start",
+            d = "-";
+        n.exports = i, a.inPlace(window, [s, "setImmediate"], s + d), a.inPlace(window, [c], c + d), a.inPlace(window, [f, "clearImmediate"], f + d), i.on(c + u, r), i.on(s + u, o)
+    }, {}],
+    9: [function(t, n, e) {
+        function r(t, n) {
+            d.inPlace(n, ["onreadystatechange"], "fn-", s)
+        }
+
+        function o() {
+            var t = this,
+                n = u.context(t);
+            t.readyState > 3 && !n.resolved && (n.resolved = !0, u.emit("xhr-resolved", [], t)), d.inPlace(t, y, "fn-", s)
+        }
+
+        function i(t) {
+            g.push(t), h && (x ? x.then(a) : w ? w(a) : (E = -E, O.data = E))
+        }
+
+        function a() {
+            for (var t = 0; t < g.length; t++) r([], g[t]);
+            g.length && (g = [])
+        }
+
+        function s(t, n) {
+            return n
+        }
+
+        function c(t, n) {
+            for (var e in t) n[e] = t[e];
+            return n
+        }
+        t(5);
+        var f = t("ee"),
+            u = f.get("xhr"),
+            d = t(18)(u),
+            l = NREUM.o,
+            p = l.XHR,
+            h = l.MO,
+            m = l.PR,
+            w = l.SI,
+            v = "readystatechange",
+            y = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"],
+            g = [];
+        n.exports = u;
+        var b = window.XMLHttpRequest = function(t) {
+            var n = new p(t);
+            try {
+                u.emit("new-xhr", [n], n), n.addEventListener(v, o, !1)
+            } catch (e) {
+                try {
+                    u.emit("internal-error", [e])
+                } catch (r) {}
+            }
+            return n
+        };
+        if (c(p, b), b.prototype = p.prototype, d.inPlace(b.prototype, ["open", "send"], "-xhr-", s), u.on("send-xhr-start", function(t, n) {
+                r(t, n), i(n)
+            }), u.on("open-xhr-start", r), h) {
+            var x = m && m.resolve();
+            if (!w && !m) {
+                var E = 1,
+                    O = document.createTextNode(E);
+                new h(a).observe(O, {
+                    characterData: !0
+                })
+            }
+        } else f.on("fn-end", function(t) {
+            t[0] && t[0].type === v || a()
+        })
+    }, {}],
+    10: [function(t, n, e) {
+        function r(t) {
+            var n = this.params,
+                e = this.metrics;
+            if (!this.ended) {
+                this.ended = !0;
+                for (var r = 0; r < d; r++) t.removeEventListener(u[r], this.listener, !1);
+                if (!n.aborted) {
+                    if (e.duration = a.now() - this.startTime, 4 === t.readyState) {
+                        n.status = t.status;
+                        var i = o(t, this.lastSize);
+                        if (i && (e.rxSize = i), this.sameOrigin) {
+                            var c = t.getResponseHeader("X-NewRelic-App-Data");
+                            c && (n.cat = c.split(", ").pop())
+                        }
+                    } else n.status = 0;
+                    e.cbTime = this.cbTime, f.emit("xhr-done", [t], t), s("xhr", [n, e, this.startTime])
+                }
+            }
+        }
+
+        function o(t, n) {
+            var e = t.responseType;
+            if ("json" === e && null !== n) return n;
+            var r = "arraybuffer" === e || "blob" === e || "json" === e ? t.response : t.responseText;
+            return h(r)
+        }
+
+        function i(t, n) {
+            var e = c(n),
+                r = t.params;
+            r.host = e.hostname + ":" + e.port, r.pathname = e.pathname, t.sameOrigin = e.sameOrigin
+        }
+        var a = t("loader");
+        if (a.xhrWrappable) {
+            var s = t("handle"),
+                c = t(11),
+                f = t("ee"),
+                u = ["load", "error", "abort", "timeout"],
+                d = u.length,
+                l = t("id"),
+                p = t(14),
+                h = t(13),
+                m = window.XMLHttpRequest;
+            a.features.xhr = !0, t(9), f.on("new-xhr", function(t) {
+                var n = this;
+                n.totalCbs = 0, n.called = 0, n.cbTime = 0, n.end = r, n.ended = !1, n.xhrGuids = {}, n.lastSize = null, p && (p > 34 || p < 10) || window.opera || t.addEventListener("progress", function(t) {
+                    n.lastSize = t.loaded
+                }, !1)
+            }), f.on("open-xhr-start", function(t) {
+                this.params = {
+                    method: t[0]
+                }, i(this, t[1]), this.metrics = {}
+            }), f.on("open-xhr-end", function(t, n) {
+                "loader_config" in NREUM && "xpid" in NREUM.loader_config && this.sameOrigin && n.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)
+            }), f.on("send-xhr-start", function(t, n) {
+                var e = this.metrics,
+                    r = t[0],
+                    o = this;
+                if (e && r) {
+                    var i = h(r);
+                    i && (e.txSize = i)
+                }
+                this.startTime = a.now(), this.listener = function(t) {
+                    try {
+                        "abort" === t.type && (o.params.aborted = !0), ("load" !== t.type || o.called === o.totalCbs && (o.onloadCalled || "function" != typeof n.onload)) && o.end(n)
+                    } catch (e) {
+                        try {
+                            f.emit("internal-error", [e])
+                        } catch (r) {}
+                    }
+                };
+                for (var s = 0; s < d; s++) n.addEventListener(u[s], this.listener, !1)
+            }), f.on("xhr-cb-time", function(t, n, e) {
+                this.cbTime += t, n ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof e.onload || this.end(e)
+            }), f.on("xhr-load-added", function(t, n) {
+                var e = "" + l(t) + !!n;
+                this.xhrGuids && !this.xhrGuids[e] && (this.xhrGuids[e] = !0, this.totalCbs += 1)
+            }), f.on("xhr-load-removed", function(t, n) {
+                var e = "" + l(t) + !!n;
+                this.xhrGuids && this.xhrGuids[e] && (delete this.xhrGuids[e], this.totalCbs -= 1)
+            }), f.on("addEventListener-end", function(t, n) {
+                n instanceof m && "load" === t[0] && f.emit("xhr-load-added", [t[1], t[2]], n)
+            }), f.on("removeEventListener-end", function(t, n) {
+                n instanceof m && "load" === t[0] && f.emit("xhr-load-removed", [t[1], t[2]], n)
+            }), f.on("fn-start", function(t, n, e) {
+                n instanceof m && ("onload" === e && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = a.now()))
+            }), f.on("fn-end", function(t, n) {
+                this.xhrCbStart && f.emit("xhr-cb-time", [a.now() - this.xhrCbStart, this.onload, n], n)
+            })
+        }
+    }, {}],
+    11: [function(t, n, e) {
+        n.exports = function(t) {
+            var n = document.createElement("a"),
+                e = window.location,
+                r = {};
+            n.href = t, r.port = n.port;
+            var o = n.href.split("://");
+            !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = n.hostname || e.hostname, r.pathname = n.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname);
+            var i = !n.protocol || ":" === n.protocol || n.protocol === e.protocol,
+                a = n.hostname === document.domain && n.port === e.port;
+            return r.sameOrigin = i && (!n.hostname || a), r
+        }
+    }, {}],
+    12: [function(t, n, e) {
+        function r() {}
+
+        function o(t, n, e) {
+            return function() {
+                return i(t, [f.now()].concat(s(arguments)), n ? null : this, e), n ? void 0 : this
+            }
+        }
+        var i = t("handle"),
+            a = t(15),
+            s = t(16),
+            c = t("ee").get("tracer"),
+            f = t("loader"),
+            u = NREUM;
+        "undefined" == typeof window.newrelic && (newrelic = u);
+        var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+            l = "api-",
+            p = l + "ixn-";
+        a(d, function(t, n) {
+            u[n] = o(l + n, !0, "api")
+        }), u.addPageAction = o(l + "addPageAction", !0), u.setCurrentRouteName = o(l + "routeName", !0), n.exports = newrelic, u.interaction = function() {
+            return (new r).get()
+        };
+        var h = r.prototype = {
+            createTracer: function(t, n) {
+                var e = {},
+                    r = this,
+                    o = "function" == typeof n;
+                return i(p + "tracer", [f.now(), t, e], r),
+                    function() {
+                        if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], e), o) try {
+                            return n.apply(this, arguments)
+                        } catch (t) {
+                            throw c.emit("fn-err", [arguments, this, t], e), t
+                        } finally {
+                            c.emit("fn-end", [f.now()], e)
+                        }
+                    }
+            }
+        };
+        a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(t, n) {
+            h[n] = o(p + n)
+        }), newrelic.noticeError = function(t) {
+            "string" == typeof t && (t = new Error(t)), i("err", [t, f.now()])
+        }
+    }, {}],
+    13: [function(t, n, e) {
+        n.exports = function(t) {
+            if ("string" == typeof t && t.length) return t.length;
+            if ("object" == typeof t) {
+                if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength) return t.byteLength;
+                if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t.size;
+                if (!("undefined" != typeof FormData && t instanceof FormData)) try {
+                    return JSON.stringify(t).length
+                } catch (n) {
+                    return
+                }
+            }
+        }
+    }, {}],
+    14: [function(t, n, e) {
+        var r = 0,
+            o = navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);
+        o && (r = +o[1]), n.exports = r
+    }, {}],
+    15: [function(t, n, e) {
+        function r(t, n) {
+            var e = [],
+                r = "",
+                i = 0;
+            for (r in t) o.call(t, r) && (e[i] = n(r, t[r]), i += 1);
+            return e
+        }
+        var o = Object.prototype.hasOwnProperty;
+        n.exports = r
+    }, {}],
+    16: [function(t, n, e) {
+        function r(t, n, e) {
+            n || (n = 0), "undefined" == typeof e && (e = t ? t.length : 0);
+            for (var r = -1, o = e - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = t[n + r];
+            return i
+        }
+        n.exports = r
+    }, {}],
+    17: [function(t, n, e) {
+        n.exports = {
+            exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+        }
+    }, {}],
+    18: [function(t, n, e) {
+        function r(t) {
+            return !(t && t instanceof Function && t.apply && !t[a])
+        }
+        var o = t("ee"),
+            i = t(16),
+            a = "nr@original",
+            s = Object.prototype.hasOwnProperty,
+            c = !1;
+        n.exports = function(t, n) {
+            function e(t, n, e, o) {
+                function nrWrapper() {
+                    var r, a, s, c;
+                    try {
+                        a = this, r = i(arguments), s = "function" == typeof e ? e(r, a) : e || {}
+                    } catch (f) {
+                        l([f, "", [r, a, o], s])
+                    }
+                    u(n + "start", [r, a, o], s);
+                    try {
+                        return c = t.apply(a, r)
+                    } catch (d) {
+                        throw u(n + "err", [r, a, d], s), d
+                    } finally {
+                        u(n + "end", [r, a, c], s)
+                    }
+                }
+                return r(t) ? t : (n || (n = ""), nrWrapper[a] = t, d(t, nrWrapper), nrWrapper)
+            }
+
+            function f(t, n, o, i) {
+                o || (o = "");
+                var a, s, c, f = "-" === o.charAt(0);
+                for (c = 0; c < n.length; c++) s = n[c], a = t[s], r(a) || (t[s] = e(a, f ? s + o : o, i, s))
+            }
+
+            function u(e, r, o) {
+                if (!c || n) {
+                    var i = c;
+                    c = !0;
+                    try {
+                        t.emit(e, r, o, n)
+                    } catch (a) {
+                        l([a, e, r, o])
+                    }
+                    c = i
+                }
+            }
+
+            function d(t, n) {
+                if (Object.defineProperty && Object.keys) try {
+                    var e = Object.keys(t);
+                    return e.forEach(function(e) {
+                        Object.defineProperty(n, e, {
+                            get: function() {
+                                return t[e]
+                            },
+                            set: function(n) {
+                                return t[e] = n, n
+                            }
+                        })
+                    }), n
+                } catch (r) {
+                    l([r])
+                }
+                for (var o in t) s.call(t, o) && (n[o] = t[o]);
+                return n
+            }
+
+            function l(n) {
+                try {
+                    t.emit("internal-error", n)
+                } catch (e) {}
+            }
+            return t || (t = o), e.inPlace = f, e.flag = a, e
+        }
+    }, {}],
+    ee: [function(t, n, e) {
+        function r() {}
+
+        function o(t) {
+            function n(t) {
+                return t && t instanceof r ? t : t ? c(t, s, i) : i()
+            }
+
+            function e(e, r, o, i) {
+                if (!l.aborted || i) {
+                    t && t(e, r, o);
+                    for (var a = n(o), s = h(e), c = s.length, f = 0; f < c; f++) s[f].apply(a, r);
+                    var d = u[y[e]];
+                    return d && d.push([g, e, r, a]), a
+                }
+            }
+
+            function p(t, n) {
+                v[t] = h(t).concat(n)
+            }
+
+            function h(t) {
+                return v[t] || []
+            }
+
+            function m(t) {
+                return d[t] = d[t] || o(e)
+            }
+
+            function w(t, n) {
+                f(t, function(t, e) {
+                    n = n || "feature", y[e] = n, n in u || (u[n] = [])
+                })
+            }
+            var v = {},
+                y = {},
+                g = {
+                    on: p,
+                    emit: e,
+                    get: m,
+                    listeners: h,
+                    context: n,
+                    buffer: w,
+                    abort: a,
+                    aborted: !1
+                };
+            return g
+        }
+
+        function i() {
+            return new r
+        }
+
+        function a() {
+            (u.api || u.feature) && (l.aborted = !0, u = l.backlog = {})
+        }
+        var s = "nr@context",
+            c = t("gos"),
+            f = t(15),
+            u = {},
+            d = {},
+            l = n.exports = o();
+        l.backlog = u
+    }, {}],
+    gos: [function(t, n, e) {
+        function r(t, n, e) {
+            if (o.call(t, n)) return t[n];
+            var r = e();
+            if (Object.defineProperty && Object.keys) try {
+                return Object.defineProperty(t, n, {
+                    value: r,
+                    writable: !0,
+                    enumerable: !1
+                }), r
+            } catch (i) {}
+            return t[n] = r, r
+        }
+        var o = Object.prototype.hasOwnProperty;
+        n.exports = r
+    }, {}],
+    handle: [function(t, n, e) {
+        function r(t, n, e, r) {
+            o.buffer([t], r), o.emit(t, n, e)
+        }
+        var o = t("ee").get("handle");
+        n.exports = r, r.ee = o
+    }, {}],
+    id: [function(t, n, e) {
+        function r(t) {
+            var n = typeof t;
+            return !t || "object" !== n && "function" !== n ? -1 : t === window ? 0 : a(t, i, function() {
+                return o++
+            })
+        }
+        var o = 1,
+            i = "nr@id",
+            a = t("gos");
+        n.exports = r
+    }, {}],
+    loader: [function(t, n, e) {
+        function r() {
+            if (!x++) {
+                var t = b.info = NREUM.info,
+                    n = l.getElementsByTagName("script")[0];
+                if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && n)) return u.abort();
+                f(y, function(n, e) {
+                    t[n] || (t[n] = e)
+                }), c("mark", ["onload", a() + b.offset], null, "api");
+                var e = l.createElement("script");
+                e.src = "https://" + t.agent, n.parentNode.insertBefore(e, n)
+            }
+        }
+
+        function o() {
+            "complete" === l.readyState && i()
+        }
+
+        function i() {
+            c("mark", ["domContent", a() + b.offset], null, "api")
+        }
+
+        function a() {
+            return E.exists && performance.now ? Math.round(performance.now()) : (s = Math.max((new Date).getTime(), s)) - b.offset
+        }
+        var s = (new Date).getTime(),
+            c = t("handle"),
+            f = t(15),
+            u = t("ee"),
+            d = window,
+            l = d.document,
+            p = "addEventListener",
+            h = "attachEvent",
+            m = d.XMLHttpRequest,
+            w = m && m.prototype;
+        NREUM.o = {
+            ST: setTimeout,
+            SI: d.setImmediate,
+            CT: clearTimeout,
+            XHR: m,
+            REQ: d.Request,
+            EV: d.Event,
+            PR: d.Promise,
+            MO: d.MutationObserver
+        };
+        var v = "" + location,
+            y = {
+                beacon: "bam.nr-data.net",
+                errorBeacon: "bam.nr-data.net",
+                agent: "js-agent.newrelic.com/nr-1071.min.js"
+            },
+            g = m && w && w[p] && !/CriOS/.test(navigator.userAgent),
+            b = n.exports = {
+                offset: s,
+                now: a,
+                origin: v,
+                features: {},
+                xhrWrappable: g
+            };
+        t(12), l[p] ? (l[p]("DOMContentLoaded", i, !1), d[p]("load", r, !1)) : (l[h]("onreadystatechange", o), d[h]("onload", r)), c("mark", ["firstbyte", s], null, "api");
+        var x = 0,
+            E = t(17)
+    }, {}]
+}, {}, ["loader", 2, 10, 4, 3]);;
+NREUM.info = {
+    beacon: "bam.nr-data.net",
+    errorBeacon: "bam.nr-data.net",
+    licenseKey: "73e5fc31db",
+    applicationID: "85364702",
+    sa: 1
+}
+</script>
+<!-- End NewRelic code --><!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPBCZ7N');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5054783-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-5054783-1', {'optimize_id': 'GTM-PB6KL7T'});
+    </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      
+      <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+    
+      <meta name="viewport" content="width=device-width">
+      
+      <script>var newLink = "false";</script>
+      
+      <meta name="description" content="Your Privacy"/>
+          <meta name="keywords" content="Your Privacy"/>
+    <meta name="apple-itunes-app" content="app-id=971358255"/>
+
+    <meta name="title" content="Your Privacy"/>
+    <title>Your Privacy</title>
+
+    <script src="https://use.typekit.net/uad1goe.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<!-- Start favicon code --> 
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
+<link rel="manifest" href="/manifest.json"> 
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6babb7"> 
+<meta name="theme-color" content="#6babb7"> 
+<!-- End favicon code -->
+        <link rel="stylesheet" type="text/css" href="/style/101.css" />
+        <link rel="stylesheet" type="text/css" href="/style/200.css" />
+        <link rel="stylesheet" type="text/css" href="/style/300.css" />
+        <link rel="stylesheet" type="text/css" href="/style/30700.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    </head>
+
+<body
+  
+>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPBCZ7N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  
+  <div id="container" class="">
+  
+    <div class="cWrap">
+  
+    <div class="header-menu">
+            <div class="logoWrap">
+                <div id="mobile-menu-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div class="desc">Menu</div>
+                </div>
+                <div class="header-logo"><a href="/home"><img class="header-img-logo" src="/media/image/1/2017headerlogo.png" alt="Caribou Coffee"></a></div>
+                <div class="header-cart">
+                    <ul>
+                        <li>
+                            <ul class="welcome_text">
+                                <li>Welcome</li>
+                                <li><a href="https://shop.cariboucoffee.com/asp/youraccount/index.asp" title="My Account">MY ACCOUNT</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://shop.cariboucoffee.com/asp/shop/yourcart.asp" title="Your Cart"><img src="/media/image/1/cartimage.png" alt="" aria-hidden ="true">&nbsp;CART</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navWrap">
+                <ul>
+                  <li id="navHome" class="current first">
+                    <a href="/ads/367600" title="Caribou Perks">Caribou Perks</a>
+                  </li>
+                  <li id="navShop">
+                    <a href="/menu-nutrition" title="Menu &amp; Nutrition">Menu</a>
+                  </li>
+                  <li id="navAbout">
+                    <a class="js-submenu-toggle" href="/about-our-coffee" role="button" title="About Our Coffee">Our Coffee <span class="chevron bottom float-right mobile-only"></span></a>
+                    <ul class="mobile-submenu">
+                        <li class="first current">
+                          <a href="/about-our-coffee">
+                            OverView</a>
+                        </li>
+                        <li>
+                          <a href="/about-our-coffee/roasts">
+                            Our Coffees</a>
+                        </li>
+                        <li>
+                          <a href="/about-our-coffee/rainforest-alliance">
+                            Rainforest Alliance</a>
+                          </li>
+                        <li>
+                          <a href="/about-our-coffee/quality-advantage">
+                            Quality Advantage</a>
+                          </li>
+                        <li>
+                          <a href="/about-our-coffee/brew-your-best">
+                            Brew Your Best</a>
+                          </li>
+                        <li>
+                          <a href="/about-our-coffee/coffee-faqs">
+                            FAQ</a>
+                          </li>
+                        <!--<li>
+                          <a href="/about-our-coffee/roastmaster-blog">
+                            Roastmasters Blog</a>
+                          </li>-->
+                        <li>
+                          <a href="/about-our-coffee/coffee-recommender">
+                            Coffee Recommender</a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li id="navMenu">
+                    <a href="https://locations.cariboucoffee.com" title="Coffeehouse Locations"><img class="location-icon" src="/media/image/1/locationimage.png" alt="Coffeehouse Locations"> Locations</a>
+                  </li>
+                  <li id="navLocations">
+                    <a href="https://shop.cariboucoffee.com/asp/shop/index.asp" title="Shop">Shop</a>
+                  </li>
+                  <li id="navGiftcard" class="last">
+                    <a href="https://shared.caribouperks.com/giftcard/" title="Gift Cards">Gift Cards</a>
+                  </li>
+                  <li class="mobile-only"><a href="https://shop.cariboucoffee.com/asp/youraccount/index.asp" title="My Account">MY ACCOUNT</a></li>
+                  <li class="mobile-only"><a href="https://shop.cariboucoffee.com/asp/shop/yourcart.asp" title="Your Cart">CART</a></li>
+                </ul>
+            </div>
+        </div>
+<div id="wrap">  
+  <div id="header">
+  <a id="logo" href="/home"><img src="/media/image/1/cariboulogo.png" alt="Caribou Coffee" height="54" width="368" /></a>
+
+<p class="primeTagLine">Life is short.  Stay awake for it.</p>
+  </div><!-- /end div#header --><div id="main">
+  <!-- liscensing: /corporate-folder/wholesale/licensing -->
+
+  <div id="navWrap">
+<ul id="primNav">
+      <li id="navHome" >
+        <a href="/home" title="Home">Home</a>
+      </li>
+      <li id="navShop">
+        <a href="" title="Shop Online">Shop Online</a>
+      </li>
+      <li id="navAbout" >
+        <a href="/about-our-coffee" title="About Our Coffee">About Our Coffee</a>
+      </li>
+      <li id="navMenu" >
+        <a href="/menu-nutrition" title="Menu &amp; Nutrition">Menu &amp; Nutrition</a>
+      </li>
+      <li id="navLocations" >
+        <a href="/locations" title="Our Locations">Our Locations</a>
+      </li>
+      <li id="navGiftcard" class="last">
+        <a href="/caribou-gift-cards" title="Caribou Cards">Caribou Cards</a>
+      </li>
+    </ul>
+
+ </div>
+
+<ul id="persNav">
+      <li>
+        <a href="">Sign In</a>
+      </li>
+      <li >
+        <a href="/customer-service">Customer Service</a>
+      </li>
+      <li>
+        <a href="">Your Account</a>
+      </li>
+      <li id="shoppingCart">
+        <a href="">Shopping Cart</a>
+      </li>
+    </ul>
+
+  <h1 style="display:none;">Your Privacy</h1>
+<style>
+#main ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+#main h2 {
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  font-size: 1.3rem;
+}
+
+#main blockquote {
+  padding: .2rem 1rem;
+}
+
+#main p {
+  margin-bottom: 1rem;
+}
+
+</style>
+
+<h1>
+    Privacy Policy
+</h1>
+<p>
+    Effective Date: April 16,2018 (updated 04/16/18)
+</p>
+<p>
+    Thank you for visiting this online platform, which is owned and operated by
+    or on behalf of Caribou Coffee, Inc. (“Caribou”).
+</p>
+<p>
+    Please take a few minutes to review this Privacy Policy. It applies to the
+    information—including personal information—we collect from or about you
+    through any online platform owned by CARIBOU on which it is posted,
+    including our website at www.cariboucoffee.com and any mobile applications
+    we make available. It also applies to information we collect about you
+    through our loyalty program, Caribou Perks. In this Policy, we refer
+    collectively to these online platforms as our “Sites.”
+</p>
+<div>
+    <h2>
+        TABLE OF CONTENTS
+    </h2>
+</div>
+<ul>
+    <li>
+        Your Consent
+    </li>
+    <li>
+        Privacy Notices
+    </li>
+    <li>
+        Types of Information We Collect
+    </li>
+    <li>
+        Collection of Information through 3rd Party Cookies
+    </li>
+    <li>How We Use Personal Information Collected Through This Site</li>
+    <li>
+        Your Choices
+    </li>
+    <li>
+        How to Access, Update or Correct Your Personal Information
+    </li>
+    <li>
+        Steps We Take to Safeguard your Personal Information
+    </li>
+    <li>
+        How We Share Your Information With Others
+    </li>
+    <li>
+        Children Under the Age of Thirteen
+    </li>
+    <li>
+        Links to Other Sites
+    </li>
+    <li>
+        This Policy May Change
+    </li>
+    <li>
+        Questions About This Policy
+    </li>
+</ul>
+
+<div>
+    <h2>
+        YOUR CONSENT
+    </h2>
+</div>
+<p>
+    Please take a few minutes to review this Policy before using our Sites. By
+    using our Sites you are consenting to the collection, use, and disclosure
+    of information as set forth in this Policy. If you do not agree to be bound
+    by this Policy, you may not access or use our Sites.
+</p>
+
+<div>
+    <h2>
+        THIS POLICY IS PART OF OUR TERMS OF USE
+    </h2>
+</div>
+<p>
+    This Policy is part of the Terms of Use that govern your use of our Sites.
+    A link to our Terms of Use is provided at the bottom of each page of our
+    Sites.
+</p>
+
+<div>
+    <h2>
+        PRIVACY NOTICES
+    </h2>
+</div>
+<p>
+    This Policy may be supplemented or amended from time to time by "privacy
+    notices" posted on our Sites. These privacy notices provide a level of
+    detail that we cannot provide in this more general description of our
+    privacy practices. For example, certain pages of our Sites may contain
+    privacy notices providing details about the information we collect on those
+    pages, why we need that information, and choices you may have about the
+    ways we use that information.
+</p>
+
+<div>
+    <h2>
+        TYPES OF INFORMATION WE COLLECT
+    </h2>
+</div>
+<p>
+    The information we collect through our Sites falls into two categories: (1)
+    data that you manually supply (by using a keyboard or touch screen) and (2)
+    information we collect automatically. Some of the information we collect
+    through our Sites may be Personal Information, which is information that
+    identifies you personally, alone or in combination with other information
+    available to us. Examples of Personal Information include your name,
+    address, and email address.
+</p>
+<p>
+    Please remember that this Policy applies only to information we obtain
+    through our Sites or through our loyalty program. However, we may
+    supplement the information we obtain through our Sites with information we
+    obtain through other channels, such as from third parties, including our
+    franchisees and data brokers. For example, we may supplement your profile
+    with demographic and preference information that is supplied to us for each
+    zip code in our database. By supplementing your profile, we are better able
+    to provide product recommendations and special offers that will be of
+    genuine interest to you. We may also use this additional information to
+    further personalize our Sites and improve your experience while you are on
+    our Sites.
+</p>
+<p>
+    Information You Manually Supply. Caribou collects all the information you
+    and others knowingly, voluntarily, and manually provide when you use our
+    Sites. Some of this data may be Personal Information. For example, we
+    collect the Personal Information you provide when you place an order, sign
+    up for our clubs and/or email updates, or contact us with questions.
+</p>
+<p>
+    At some of our Sites, you can submit information about other people. For
+    example, if you order a gift or gift card or certificate online and want it
+    sent directly to the recipient, you must submit the recipient's name and
+    address. We use this information to send your gift to the recipient. We
+    also store this information so that you do not have to reenter it the next
+    time you send a gift to the same recipient. We do not use this information
+    to add the recipient to our mailing lists. On some of our Sites, you can
+    email a message to a friend by entering your friend's name and email
+    address. We use the information you provide to personalize and send the
+    message to your friend. We do not use this information for our mailing
+    lists.
+</p>
+<p>
+    Some of our Sites have "Career" areas where you can search for open
+    positions and apply for a job with us. When you submit an employment
+    application, we ask you to provide certain Personal Information, including,
+    but not limited to, your name, address, telephone number, email address,
+    and employment history. If you send us an email to inquire about a
+    position, the information we receive is the information you include in your
+    cover letter, resume and email message. Please note that by submitting your
+    information regarding employment opportunities to us, you authorize us to
+    transmit and store your information in our recruitment database, to
+    circulate that information as necessary for the purpose of evaluating your
+    qualifications for job vacancies at Caribou, and to contact you about a
+    possible employment opportunity. If you are hired by Caribou, the
+    information you provide during the recruiting process will become part of
+    our employee records. The Career areas of our Sites may be powered by a
+    third party. To learn more about the services it provides, please visit the
+    third parties’ website.
+</p>
+<p>
+    Information from Third-Party Social Media Platforms: You may be able to
+    register with, log-on to, or enhance your profile on our Sites through a
+    third-party social media platform, such as Facebook. By doing this, you are
+    asking the third-party platform to send us registration information from
+    your profile on that platform. We treat that information as we do any other
+    information you give to us when you register, log-on, or enhance your
+    profile. After you have connected, the third party may also send us
+    additional information from your profile that allows us to offer certain
+    functionalities on the pages you view.
+</p>
+<p>
+    Information Sent to Us by Your Web Browser: We collect information that is
+    sent to us automatically by your web browser. This information typically
+    includes your IP address, the identity of your Internet service provider,
+    the name and version of your operating system, the name and version of your
+    browser, the date and time of your visit, and the pages on our Sites that
+    you visit. Please check your browser if you want to learn what information
+    your browser sends or how to change your settings.
+</p>
+<p>
+    Your IP address is the identifier assigned to your particular device when
+    you access the Internet. IP addresses do not include your name or email
+    address, but in some cases, they can be used to identify you. For example,
+    we or our service providers may link your IP address to account information
+    that identifies you personally. If we suspect inappropriate or criminal
+    activity or a threat to our Sites or their users, we may also share our
+    server logs-which contain users' IP addresses-with the appropriate
+    investigative authorities, who could use that information to trace and
+    identify individuals.
+</p>
+<p>
+    Cookies and Similar Technologies. We use "cookies" and other web
+    technologies to collect information and support certain features of our
+    Sites. For example, we may use these technologies to:
+</p>
+<ul><li>collect information about the ways visitors use our Sites-which pages
+    they visit, which links they use, and how long they stay on each page;</li>
+<li>to support the features and functionality of our Sites-for example, to
+    save you the trouble of reentering information already in our database or
+    to prompt the settings you established on previous visits;</li>
+<li>to personalize your experience when you use our Sites; and</li>
+<li>to serve targeted advertisements about our products and services.</li></ul>
+
+<p>
+    Generally, the information we collect using these web technologies does not
+    identify you personally. We may, however, link the information that we
+    collect through cookies with Personal Information that you provide to us.
+</p>
+<p>
+    Generally, if you do not wish to receive cookies, you may set your browser
+    to reject cookies or to alert you when a cookie is placed on your computer.
+    Please note, however, that your browser cannot screen out cookies that are
+    sent by email.
+</p>
+<p>
+    Although you are not required to accept cookies when you visit this Site,
+    you may be unable to use all of the functionality of this Site if your
+    browser rejects our cookies.
+</p>
+<p>
+    Information from your mobile device: If you download one of our mobile
+    applications or access one of our Sites through your mobile device, we may
+    automatically collect certain information from or about your device. The
+    types of information we may collect include the type of device you use,
+    your device's unique ID, the IP address of your device, your device's
+    operating system, the type of mobile browsers you use, and information
+    about the way you use our mobile application.
+</p>
+<p>
+    We may also collect information about your device's geographic location, so
+    that we can direct you to our nearby stores. We do not retain precise,
+    real-time location information. Your mobile or tablet device may allow you
+    to adjust your settings so that location information is not available to
+    any mobile website or application. If you have questions about the security
+    and privacy settings of your mobile or tablet device, please refer to
+    instructions from your mobile service provider or the manufacturer of your
+    device.
+</p>
+
+<div>
+    <h2>
+        COLLECTION OF INFORMATION THROUGH THIRD-PARTY COOKIES
+    </h2>
+</div>
+<p>
+    In addition to the cookies we deliver to your computer or mobile device
+    through our Sites, certain third parties may deliver cookies to you for a
+    variety of reasons. For example, we use Google Analytics, a web analytics
+    tool that helps us understand how visitors engage with our Sites. Other
+    third parties may deliver cookies to your computer for the purpose of
+    tracking your online behaviors across nonaffiliated websites and delivering
+    targeted advertisements either on our Sites or on other websites.
+</p>
+<p>
+    You have choices about the collection of information by third parties on
+    our Sites. For example, if you don’t want information about your visit to
+    our Sites sent to Google Analytics, you may download an Opt-out Browser
+Add-on by    <a href="https://tools.google.com/dlpage/gaoptout">clicking here</a>.
+    Please note that the Add-on does not prevent information from being sent to
+    Caribou.
+</p>
+<p>
+    In addition, if you would like to opt out of having participating entities
+    track your online behavior for advertising purposes when you are browsing
+    our Sites, <a href="http://youradchoices.com/control">click here </a>for a
+    “Website Opt Out.” You will be directed to an industry-developed website
+    that allows you to choose whether each listed entity may collect and use
+    data for interest-based advertising purposes. It may be that some of the
+    third parties that collect interest-based information on our Sites do not
+    participate in the Website Opt Out, in which case the best way to avoid
+    third party tracking of your online behaviors may be through your browser
+    settings and deletion of cookies.
+</p>
+<p>
+    The Website Opt Out described above works only on websites. To opt out of
+    having participating entities track your behaviors for advertising purposes
+    when you are using a mobile application, download and use the Digital
+    Advertising Alliance’s “App Choices” app. As with the Website Opt Out, the
+    “Mobile App Opt Out” prevents tracking only by participating entities.
+</p>
+<p>
+    Please note that the Website Opt Out and Mobile App Opt Out are device
+    specific. If you wish to opt-out from having interest-based information
+    collected by participating entities across all devices, you need take the
+    steps outlined above from each device.
+</p>
+
+<div>
+    <h2>
+        HOW WE USE PERSONAL INFORMATION COLLECTED THROUGH THIS SITE
+    </h2>
+</div>
+<p>
+    Generally, we use the information we collect through our Sites:
+</p>
+<ul><li>to provide the information, products and services you request;</li>
+<li>for security, credit or fraud prevention purposes;</li>
+<li>to provide you with effective customer service;</li>
+<li>to provide you with a personalized experience when you use our Sites;</li>
+<li>to contact you with information and notices related to your use of our
+    Sites;</li>
+<li>to contact you with special offers and other information we believe will
+    be of interest to you (in accordance with any privacy preferences you have
+    expressed to us);</li>
+<li>to invite you to participate in surveys and provide feedback to us (in
+    accordance with any privacy preferences you have expressed to us);</li>
+<li>to better understand your needs and interests;</li>
+<li>to improve the content, functionality and usability of our Sites;</li>
+    <li>
+        to improve our products and services;
+    </li>
+<li>to improve our marketing and promotional efforts; and</li>
+<li>for any other purpose identified in an applicable privacy notice,
+    click-through agreement or other agreement between you and us.</li>
+</ul>
+<p>
+    Please see below for information about the choices you have about the ways
+    we use your Personal Information.
+</p>
+
+<div>
+    <h2>
+        YOUR CHOICES
+    </h2>
+</div>
+<p>
+    In General: You have choices about the ways we collect, use and disclose
+    your Personal Information as well as information we automatically collect
+    from your computer. Discussed above are choices you have about delivery of
+    cookies to your computer through our Sites. In addition, we may ask you to
+    indicate your choices at the time we collect your Personal Information. For
+    example, we generally provide to you an opportunity to "opt out" of
+    receiving certain communications from us and/or our business partners.
+</p>
+<p>
+    Unsubscribing From Promotional Email/Text Communications: We include an
+    "unsubscribe" link in each electronic newsletter or promotional email we
+    send you, and you can always text STOP to stop receiving SMS text messages
+    from us.
+</p>
+<p>
+    Previously Expressed Preferences: You may be able to change previously
+    expressed preferences regarding how we use your Personal Information. If
+    you have registered on our Sites, you can change certain privacy
+    preferences through your account. Otherwise, please contact us using the
+    information provided below.
+</p>
+<p>
+    Do Not Track Mechanisms: California law requires this Policy to address how
+    we respond to any "Do-Not-Track ('DNT') signal" delivered by your browser.
+    Because of the changing state of technology and indecision within the
+    industry regarding the meaning of DNT signals, we currently do not make any
+    guarantee that we will honor DNT signals.
+</p>
+
+<div>
+    <h2>
+        HOW TO ACCESS, UPDATE OR CORRECT YOUR PERSONAL INFORMATION
+    </h2>
+</div>
+<p>
+    If you have registered on our Sites, you may be able to access, update or
+    correct your Personal Information through your account settings. Otherwise,
+    you may need our help. If you wish to access, update or correct your
+    Personal Information, please contact us using the information provided
+    below. We will respond to you within a reasonable time and, in any case,
+    within the time limits established by applicable law. We may ask you for
+    additional information to verify your identity. In most cases, we will
+    provide access and correct or delete any inaccurate information you
+    discover. In some cases, however, we may limit or deny your request if the
+    law permits or requires us to do so or if we are unable to verify your
+    identify.
+</p>
+
+<div>
+    <h2>
+        STEPS WE TAKE TO SAFEGUARD YOUR PERSONAL INFORMATION
+    </h2>
+</div>
+<p>
+    We maintain reasonable administrative, physical and technological measures
+    to protect the confidentiality and security of Personal Information you
+    submit on or through this Site.
+</p>
+<p>
+    Unfortunately, no website, server or database is 100% secure. Therefore, we
+    cannot guarantee its absolute security. For this reason, you should use
+    care and discretion when you post content on this Site.
+</p>
+
+<div>
+    <h2>
+        HOW WE SHARE YOUR INFORMATION WITH OTHERS
+    </h2>
+</div>
+<p>
+    Third-Party Vendors. We share information collected through our Sites with
+    third-party vendors who act for or on our behalf. For example, we may use
+    third-party vendors for warehousing and delivery; marketing and
+    advertising; data processing; software development; website hosting and
+    management; information technology and office services; and legal,
+    accounting, audit and other professional services. These third-party
+    vendors may need information about you to perform their functions.
+</p>
+<p>
+    Within the Caribou Family of Businesses. Caribou may share information
+    collected through our Sites with other members of the Caribou Family of
+    Businesses, including Einstein Noah Restaurant Group, Bruegger’s Bagels,
+    Noah’s New York Bagels, and Manhattan Bagel. Before doing so, however, the
+    owner of the Site may offer you the opportunity to "opt out" or "opt in,"
+    as required by applicable law. Every member of the Caribou Family of
+    Businesses is required to handle information collected through our Sites in
+    accordance with this Policy and the privacy preferences you have expressed
+    to us.
+</p>
+<p>
+    Franchisees. Some of our stores are owned and operated by our franchisees.
+    We may share information collected through this site with our franchisees,
+    and they may be permitted to use it for any purpose consistent with this
+    Policy.
+</p>
+<p>
+    User-Generated Content: In this Policy, "User-Generated Content" or "UGC"
+    refers to all of content that you post on or through our Sites using the
+    social networking tools we make available to you and that does not
+    constitute Feedback. The UGC you submit on or through our Sites is
+    available to others who visit our Sites. Any Personal Information contained
+    in UGC can be read, collected, or used by others, and could be used to send
+    you unsolicited messages. In addition, we may use UGC you submit on or
+    through our Sites for advertising campaigns and other promotions. We may or
+    may not use your name in connection with such use, and we may or may not
+    seek your consent before using the content for such purposes. Therefore,
+    you should have no expectation of privacy with respect to UGC you submit on
+    or through our Sites. You should not submit any content you do not wish to
+    make available to the general public, and you must take special care to
+    make sure your submissions comply with our Terms of Use. In particular,
+    your submissions must not violate the privacy or other rights of others.
+</p>
+<p>
+    Business Partners. From time to time, we may share your information with
+    selected third parties (other than our vendors) for their own marketing
+    purposes. Before doing so, however, we may offer you the opportunity to
+    "opt out" or "opt in" as required by applicable law.
+</p>
+<p>
+    Business Transfers. Your information may be transferred to successor
+    organization if, for example, we transfer the ownership or operation of our
+    Sites to another organization, if we merge with or are acquired by another
+    organization, or if we liquidate our assets. Your information may also be
+    transferred to companies that become our affiliates in the future through a
+    merger or acquisition or liquidation of assets. If such a transfer occurs,
+    the new company’s use of your information will still be subject to this
+    Policy and the privacy preferences you have expressed to us.
+</p>
+<p>
+    Compliance with Laws and Protection of Our Rights and the Rights of Others.
+    We may disclose your information when we, in good faith, believe disclosure
+    is appropriate to comply with the law, a court order or a subpoena. We may
+    also disclose your information to prevent or investigate a possible crime,
+    such as fraud or identity theft; to protect the security of this Site; to
+    enforce or apply our online Terms of Use or other agreements; or to protect
+    our own rights or property or the rights, property or safety of our users
+    or others.
+</p>
+<p>
+    As Described in a Privacy Notice. We reserve the right to disclose your
+    information as described in any privacy notice posted on a page of this
+    Site where you provide that information. By providing your information on
+    that page you will be consenting to the disclosure of your Personal
+    Information as described in that privacy notice.
+</p>
+<p>
+    As Described in a Click-Through Agreement. We reserve the right to disclose
+    your information as described in any click-through agreement to which you
+    have agreed.
+</p>
+
+<div>
+    <h2>
+        CHILDREN UNDER THE AGE OF THIRTEEN
+    </h2>
+</div>
+<p>
+    We are proud of our Sites and we strive to ensure that they do not offend
+    people of any age. However, our Sites are not intended for children or
+    minors under the age of thirteen years without the permission of a parent
+    or guardian. If you believe that a child has submitted Personal Information
+    on or through one of our Sites without the consent and supervision of a
+    parent or guardian, please contact us using the information provided below
+    so that we can take appropriate action.
+</p>
+
+<div>
+    <h2>
+        LINKS TO OTHER SITES
+    </h2>
+</div>
+<p>
+    Our Sites may provide links to other websites operated by third parties. We
+    expect our service providers and business partners to be transparent about
+    their data protection practices. Be aware, however, that we have no control
+    over third-party websites. This Policy does not apply to Personal
+    Information collected on any third-party website. When you access
+    third-party websites through a link on our Sites, please take a few minutes
+    to review the privacy policy posted on that site.
+</p>
+
+<div>
+    <h2>
+        THIS POLICY MAY CHANGE
+    </h2>
+</div>
+<p>
+    We reserve the right to update or modify this Policy, at any time and
+    without prior notice, by posting the revised version of the Policy on our
+    Sites. The changes will only apply to the Personal Information we collect
+    after we have posted the revised Policy on our Sites. Your use of any one
+    of our Sites following any such change constitutes your agreement that all
+    Personal Information collected from or about you through our Sites after
+    the revised Policy is posted will be subject to the terms of the revised
+    Policy.
+</p>
+<p>
+    To alert you to changes in this Policy, we will provide a notice at the top
+    of this page for at least 30 days after the new effective date. Unless the
+    change is a minor change (such as a change in our contact information or in
+    our list of Sites) or a non-substantive change (such as the reformatting of
+    our Policy), we will also post notices on our home pages and/or on the
+    relevant pages of our Sites for 30 days after the new effective date to
+    alert you to the change.
+</p>
+<p>
+    You may access the current version of this Policy at any time by clicking
+    on the link marked "Privacy Policy" at the bottom of each page of our
+    Sites.
+</p>
+
+<div>
+    <h2>
+        QUESTIONS ABOUT THIS POLICY
+    </h2>
+</div>
+<p>
+    If you have any questions regarding this Policy or our privacy practices,
+    please contact us:
+</p>
+<p><blockquote>
+    Caribou Coffee Company, Inc.
+    <br/>
+    3900 Lakebreeze Ave N
+    <br/>
+    Minneapolis, MN 55429
+    <br/>
+    1.888.CARIBOU</blockquote>
+</p></div><!-- /end div#main --></div> <!-- /end div#wrap -->
+
+<div id="footer">
+  <div id="footerWrap">
+
+    <ul id="bizFooter">
+<li class="first">
+              <a href="/corporate-folder/our-company">Our Company</a>
+                </li>
+          <li>
+              <a href="/corporate-folder/wholesale">Wholesale</a>
+                </li>
+          <li><a href="">Sign Up for Email Offers</a></li>
+        <li><a href="/contact-us">Contact Us</a></li>
+        <li><a href="https://shop.cariboucoffee.com/asp/contactus/mediarelations.asp">Media Relations</a>
+        <li class="last mobile"><a href="http://m.cariboucoffee.com/">View Mobile Site</a>
+
+      </ul>
+    <ul id="legal">
+      <li class="copy first">
+        
+        &copy;2018 Caribou Coffee Company. All rights reserved.
+      </li>
+ <li>
+          <a href="/footer-folder/privacy">Your Privacy</a>
+        </li>
+      <li class="last">
+          <a href="/footer-folder/terms-of-use">Terms of Use</a>
+        </li>
+      </ul>
+<ul id="socialMedia">
+    <li><a href="https://www.facebook.com/cariboucoffee" target="_blank"><img src="/media/image/1/facebook.png" alt="facebook icon" height="23" width="22" /></a></li>
+	  <li><a href="https://www.twitter.com/cariboucoffee" target="_blank"><img src="/media/image/1/twitter.png" alt="twitter icon" height="23" width="22" /></a></li>
+	  <li><a href="https://www.pinterest.com/cariboucoffee" target="_blank"><img src="/media/image/1/pinterest.png" alt="pinterest icon" height="23" width="22" /></a></li>
+	  <li><a href="https://www.instagram.com/cariboucoffee" target="_blank"><img src="/media/image/1/instagram.png" alt="instagram icon" height="23" width="22" /></a></li>
+    <li><a href="https://www.youtube.com/user/cariboucoffeecompany" target="_blank"><img src="/media/image/1/youtube.png" alt="youtube icon" height="23" width="22" /></a></li>
+	  <li><a href="https://www.snapchat.com/add/cariboucoffee" target="_blank"><img src="/media/image/1/snapchat.png" alt="snapchat icon" height="23" width="22" /></a></li>
+    <li><a href="https://itunes.apple.com/us/app/caribou-coffee/id971358255?mt=8" target="_blank"><img src="/media/image/1/apple.png" alt="apple icon" height="23" width="22" /></a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.caribou.caribouapp" target="_blank"><img src="/media/image/1/android.png" alt="android icon" height="23" width="22" /></a></li>
+    </ul>
+</div><!-- /end div#footerWrap -->
+</div><!-- /end div#footer --><div class="footer">
+          <div class="fWrap">
+            <div class="linkWraps">
+              <div class="footerLinks">
+                <div class="fNavlinks">
+                  <img src="/media/image/1/new2017logo.png" alt="Caribou Coffee">
+                </div>
+                <div class="fNavlinks">
+                  <ul>
+                    <li>EXPLORE</li>
+                    <li><a href="/ads/367600">Caribou Perks</a></li>
+                    <li><a href="/menu-nutrition">Menu &amp; Nutrition</a></li>
+                    <li><a href="/about-our-coffee">About Our Coffee</a></li>
+                    <li><a href="https://locations.cariboucoffee.com/" title="Coffeehouse Locations">Locations</a></li>
+                    <li><a href="https://shop.cariboucoffee.com/asp/shop/index.asp">Shop Online</a></li>
+                    <li><a href="https://shared.caribouperks.com/giftcard/">Gift Cards</a></li>
+                    <li><a href="https://shop.cariboucoffee.com/asp/youraccount/index.asp">Your Account</a></li>
+                  </ul>
+                </div>
+                <div class="fNavlinks">
+                  <ul>
+                    <li>ABOUT US</li>
+                    <li><a href="/corporate-folder/our-company">Our Company</a></li>
+                    <li><a href="https://careers.coffeeandbagels.com/">Careers</a></li>
+                    <li><a href="https://shop.cariboucoffee.com/asp/contactus/mediarelations.asp">Media Relations</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="fNavlinks">
+                  <ul>
+                    <li>FOR BUSINESS</li>
+                    <li><a href="/corporate-folder/wholesale">Wholesale</a></li>
+                    <li><a href="/corporate-folder/wholesale/food-service-restaurant">Food Service</a></li>
+                    <li><a href="/corporate-folder/wholesale/grocery-retail">Grocery &amp; Retail</a></li>
+                    <li><a href="/corporate-folder/wholesale/office">Office Coffee</a></li>
+                    <li><a href="/corporate-folder/licensing">Licensing</a></li>
+                  </ul>
+                </div>
+                <div class="fNavlinks">
+                  <ul>
+                    <li>GET HELP</li>
+                    <li><a href="/corporate-folder/our-company/company-faqs">FAQs</a></li>
+                    <li>Call 1.888.227.4268</li>
+                    <li>Mon-Fri, 8:00 – 4:00 CT</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="socialMedia">
+              <div class="stayConnected">
+                STAY CONNECTED
+              </div>
+              <div class="socialMediaSites">
+                <ul>
+					<li><a href="https://www.facebook.com/cariboucoffee" target="_blank"><img src="/media/image/1/facebookimage.png" alt="Facebook" title="Facebook"></a></li>
+					<li><a href="https://www.twitter.com/cariboucoffee" target="_blank"><img src="/media/image/1/twitterimage.png" alt="Twitter" title="Twitter"></a></li>
+					<li><a href="https://www.instagram.com/cariboucoffee" target="_blank"><img src="/media/image/1/instagramlogo.png" alt="Instagram" title="Instagram"></a></li>
+					<li><a href="https://www.youtube.com/user/cariboucoffeecompany" target="_blank"><img src="/media/image/1/youtubeimage.png" alt="YouTube" title="YouTube"></a></li>
+					<li><a href="https://www.snapchat.com/add/cariboucoffee" target="_blank"><img src="/media/image/1/snapchatimage.png" alt="Snapchat" title="Snapchat"></a></li>
+					<li><a href="https://itunes.apple.com/us/app/caribou-coffee/id971358255?mt=8" target="_blank"><img src="/media/image/1/iosicon.png" alt="App Store" title="App Store"></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.caribou.caribouapp" target="_blank"><img src="/media/image/1/androidicon.png" alt="Google Play" title="Google Play"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footerBottom">
+            <div class="footerBottomText">
+              <div class="YourPrivacyTermsofUs">
+                <span class="copyRight">&copy; 2018 Caribou Coffee Company. </span>
+                <span class="rightsReserved">All Rights Reserved.</span>
+                <span class="privacy"><a href="/footer-folder/privacy">Your Privacy</a></span>
+                <span class="terms"><a href="/footer-folder/terms-of-use">Terms of Use</a></span>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+</div> <!-- /end div.cWrap -->
+  
+  </div> <!-- /end div#container -->
+
+<script src="/script/31001.jsp"></script>
+</body>
+
+</html>

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Taylor Swift - Official Site</title>
+<link rel="canonical" href="https://taylorswift.com/taylor-privacy-policy/" />
+<meta name="author" content="Wonderful Union" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="The Official Website of Taylor Swift" />
+<meta name="twitter:card" value="summary" />
+<meta name="twitter:title" value="Official Site" />
+<meta name="twitter:description" value="The Official Website of Taylor Swift" />
+<meta property="og:url" content="http://taylorswift.com/taylor-privacy-policy/" />
+<meta property="og:site_name" content="Taylor Swift" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Official Site" />
+<meta property="og:description" content="The Official Website of Taylor Swift" />
+<meta property="fb:admins" content="620488868,682091272,799055396,573242407,589532541,584578491" />
+<link rel="shortcut icon" href="/clients/taylor-swift/img/favicon.ico" />
+<!--[if !IE 6]><!-->
+<link href="/themes/master/css/master.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/clients/taylor-swift/css/client.css" media="screen" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+<!--[if IE 6]><link href="/themes/master/css/client_IE6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<script type="text/javascript">
+  var google_tag_params = {ecomm_prodid: '', ecomm_pagetype: 'other'};
+
+  function getScript(source, callback) {
+    var script = document.createElement('script');
+        script.async = 1;
+    var prior = document.getElementsByTagName('script')[0];
+        prior.parentNode.insertBefore(script, prior);
+
+    script.onload = script.onreadystatechange = function( _, isAbort ) {
+      if(isAbort || !script.readyState || /loaded|complete/.test(script.readyState) ) {
+        script.onload = script.onreadystatechange = null;
+        script = undefined;
+
+        if(!isAbort) { if(callback) callback(); }
+      }
+    };
+
+    script.src = source;
+  }
+
+  getScript('https://www.googleadservices.com/pagead/conversion_async.js', function() {
+    window.google_trackConversion({
+      google_conversion_id: '854631222',
+      google_custom_params: window.google_tag_params,
+      google_remarketing_only: true
+    })
+  });
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="/engine/js/jquery/jquery-1.7.1.min.js" type="text/javascript"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+<script>window.jQuery.ui || document.write('<script src="/engine/js/jquery/jquery-ui-1.8.16.min.js" type="text/javascript"><\/script>')</script>
+<script src="/engine/js/underscore.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/engine/js/jquery/plugins/fancybox/jquery.fancybox-1.3.4.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/jquery.json.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/jquery.cookie.js" type="text/javascript"></script>
+<script src="/engine/js/swfobject/swfobject-2.2.js" type="text/javascript"></script>
+<script src="/themes/master/js/master.js" type="text/javascript"></script>
+
+<meta name="google-site-verification" content="fSuEBeHbK8ZtMxsyqpgPgYdNqQRfkGJcnKWf_WtSHNM" />
+<meta name="bitly-verification" content="58265403362d" />
+<meta name="p:domain_verify" content="5a6d86dde3fa276cfea10398594471a7" />
+<meta name="twitter:widgets:csp" content="on">
+
+<script src="https://use.typekit.net/azu3ebn.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<script src="/engine/js/jquery/plugins/modernizr/modernizr-flexbox-lowbandwidth-touchevents-video.min.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/gc/gc.infinite-scroll.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/fitvid/jquery.fitvids.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/barba/barba.min.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/scrollwatcher/scroll-watcher.min.js" type="text/javascript"></script>
+<script src="/engine/js/jquery/plugins/flexslider/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBasEkgP9NabNxvmFcve19zM_sU-cwRPH8"></script>
+<script src="/engine/js/jquery/plugins/macy-masonry/macy.min.js" type="text/javascript"></script>
+<script src="/clients/taylor-swift/js/client.min.js" type="text/javascript"></script>
+<script>
+  (function(w, d, c, t, p, a){
+  w[c] = w[c] || function(){ (w[c].q = w[c].q || [])[p](arguments) };
+  var n = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  n.async = true; n.src = '//lib.vmweb.net/identity.min.js';
+  s.parentNode.insertBefore(n, s);
+  var i = '1beff6c5-ca62-45f3-43f3-bff64f6b5447';
+  w[c]('init', i, 'taylorswift.com'); w[c]('trackPageview');
+  })(window, document, 'IDENTITY', 'script', 'push');
+  </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-19250834-5"></script><script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());
+    gtag('config', 'UA-19250834-5');</script>
+<script>
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+// Client
+ga('create', 'UA-2027832-1', 'auto');
+ga('send', 'pageview');
+
+// Wonderful Union
+ga('create', 'UA-2233934-41', 'auto', {'name':'wu'});
+ga('wu.require', 'linkid', {
+  'cookieDomain': 'none'
+});
+ga('wu.send', 'pageview');
+
+</script>
+<link rel="alternate" type="application/rss+xml" title="News" href="/api/rss/news" />
+<link rel="alternate" type="application/rss+xml" title="Events" href="/api/rss/events" />
+</head>
+<body>
+<!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+
+<script type="text/javascript">
+      var axel = Math.random() + "";
+      var a = axel * 10000000000000;
+      document.write('<iframe src="https://6719212.fls.doubleclick.net/activityi;src=6719212;type=retarget;cat=retarg0;u1=[eventName];u4=[eventIdPortal];u5=[venueName];u6=[venueZip];u7=[venue];u8=[Taylor Swift];u9=[1094215];u18=[taylorswift.com];u19=[music];u20=[Pop];u21=[tickerer];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+      </script>
+<noscript>
+      <iframe src="https://6719212.fls.doubleclick.net/activityi;src=6719212;type=retarget;cat=retarg0;u1=[eventName];u4=[eventIdPortal];u5=[venueName];u6=[venueZip];u7=[venue];u8=[Taylor Swift];u9=[1094215];u18=[taylorswift.com];u19=[music];u20=[Pop];u21=[tickerer];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+      </noscript>
+
+<header id="header" class="site-header">
+<a href="#" id="nav-button" class="nav-button">
+<span></span>
+<span></span>
+<span></span>
+</a>
+<section class="section section-nav">
+<nav class="navigation">
+<div class="curtain curtain-left"></div>
+<div class="curtain curtain-right"></div>
+<div class="nav-wrap">
+<ul class="nav-items">
+<li class="nav-item nav-news"><a href="/news">News</a></li>
+<li class="nav-item nav-events"><a href="/events">Events</a></li>
+<li class="nav-item nav-releases"><a href="/releases">Music</a></li>
+<li class="nav-item nav-store"><a href="http://store.taylorswift.com" target="_blank">Store</a></li>
+</ul>
+<ul class="socials">
+<li class="social-item">
+<a href="/mailinglist" class="wu-social-mail" title="Newsletter"></a>
+</li>
+<li class="social-item">
+<a href="https://facebook.com/TaylorSwift" class="wu-social-facebook" title="Facebook"></a>
+</li>
+<li class="social-item">
+<a href="https://instagram.com/taylorswift" class="wu-social-instagram" title="Instagram"></a>
+</li>
+<li class="social-item">
+<a href="http://taylorswift.tumblr.com/" class="wu-social-tumblr" title="Tumblr"></a>
+</li>
+<li class="social-item">
+<a href="https://twitter.com/taylorswift13" class="wu-social-twitter" title="Twitter"></a>
+</li>
+<li class="social-item">
+<a href="https://youtube.com/user/taylorswift" class="wu-social-youtube" title="YouTube"></a>
+</li>
+</ul>
+</div>
+</nav>
+</section>
+<a href="/" class="site-logo">
+<svg version="1.1" id="ts-logo" role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 434.2 55.8" xml:space="preserve">
+<title>Taylor Swift</title>
+<path class="ts-logo-path" d="M22.2,30.5c0,11.5,0.2,18.2,0.3,20.3c0.2,1.6,0.6,2.2,2,2.4c2.2,0.3,3.1,0.5,5,0.6l-0.2,1
+      c-2,0-6.4-0.3-10.8-0.3c-4,0-7.3,0.3-10.2,0.3l-0.3-0.9c1.3-0.1,2.6-0.3,4.6-0.5c1.8-0.2,2.6-0.8,2.7-2.3c0.2-3,0.3-8.7,0.3-20.9
+      V17.3c0-6,0-12.1-0.1-14.5c-10.3,0-11,0.8-12.4,3.8c-1.2,2.5-1.8,5.3-2.5,7.8L0,13.8c0.6-2.3,1.3-9.4,1.4-13.1
+      c1.8,0.7,5.9,0.8,14.7,0.8h5.6c10.6,0,13.5,0,15.6-0.8c-0.2,1.3-0.8,9.4-0.6,12.7l-1,0.7c-0.3-4.2-1.1-7.2-1.6-8.5
+      c-0.7-2.1-1.8-3-11.9-2.8c0.1,2.2-0.1,8.3-0.1,13.8L22.2,30.5z" />
+<path class="ts-logo-path" d="M77.7,54.8c-1.3-0.1-4.9-0.2-8.3-0.2c-3,0-6.1,0.1-8.9,0.2l0.1-1c4-0.5,4.8-0.8,4.5-2.3
+      c-0.7-3-2.9-11.4-4.6-18.5c-0.9-0.1-4-0.1-7-0.1s-6,0-6.9,0.1c-2.7,9.7-3.7,13.1-4.2,15.8c-0.8,3.7,0.2,4.6,5.7,5l-0.3,1
+      c-1.5,0-3.4-0.3-6.5-0.3c-1.9,0-5.6,0.3-7.9,0.3v-1c4-0.3,5-0.8,6.6-5.5C42.7,40.1,50.5,13.5,53,4.8c0.4-1,0.6-2.1,0.7-3.2
+      c1.3-0.1,4-0.6,5.1-1.1c2.4,12,11.5,45.3,13.7,50.7c0.6,1.6,1.3,2.2,2.7,2.4l2.6,0.3L77.7,54.8z M47,31.4c0.9,0.1,4,0.1,6.8,0.1
+      c2.8,0,5.6,0,6.1-0.1C58.3,24,55.8,14,53.9,6.7C52,13.7,49.6,21.7,47,31.4z" />
+<path class="ts-logo-path" d="M101.6,54.8c-2.9,0-7.3-0.3-10.5-0.3c-4,0-7,0.3-9.3,0.3l-0.3-1c1.5-0.1,2.9-0.3,4.1-0.5
+      c1.7-0.3,2.4-0.9,2.5-2.8c0.3-3.2,0.5-12.8,0.5-17.9c0.1-1.4-0.2-2.8-0.7-4c-1.3-3.4-7.2-16.3-10.7-22.4c-1.9-3.4-2.6-3.7-6.5-3.9
+      l-0.1-1c1.5,0,5.3,0.3,8.2,0.3c3.5,0,7-0.3,9-0.3l0.1,1l-3,0.3c-1.3,0.2-1.5,0.6-1.1,1.8c1.4,3.8,7.2,16.1,10.4,23.2
+      c5.5-11.8,7.8-17.4,9.8-22.5c0.6-1.9,0.2-2.3-0.8-2.4c-1.3-0.2-2.4-0.3-3.6-0.5l0.2-1c1.3,0,4.2,0.3,6.4,0.3c2,0,4-0.3,6.4-0.3
+      l0.2,1c-3.7,0.2-4.9,0.8-6.6,3.8c-3.1,5.8-7.8,15.7-10.2,21.4c-0.7,1.3-1,2.8-0.9,4.3c0,5.4,0,15.8,0.3,19.6c0.1,1,0.4,1.6,1.8,1.8
+      c0.9,0.2,2.6,0.3,4.1,0.6L101.6,54.8z" />
+<path class="ts-logo-path" d="M144.9,41.6c-0.5,2.7-1.1,8.4-1.5,13.2c-1.3-0.1-4.3-0.3-8.3-0.3c-4-0.1-9-0.1-14.3-0.1
+      c-3.2,0-8.9,0.3-10.3,0.3v-0.9l3.8-0.4c1.5-0.2,1.9-0.7,2-2.1c0.3-3,0.5-10.3,0.5-19.1V18.4c0-8.9-0.1-12.2-0.2-14.1
+      c-0.1-1.3-0.6-1.7-2.1-1.8l-3.2-0.2v-1c1.6,0,6.3,0.3,8.9,0.3s5.7-0.2,8.8-0.3l0.3,1l-3.7,0.3c-1.4,0.2-1.9,0.7-1.9,2.1
+      c-0.2,3.6-0.4,9.6-0.4,18.7V32c0,9.1,0,17.9,0.3,20.1c0.1,0.9,1,1.3,5.5,1.3c7.9,0,10.2-0.6,11.7-3.3c1.4-2.4,2.4-5.5,3.3-8.6
+      L144.9,41.6z" />
+<path class="ts-logo-path" d="M168.8,0.3c14,0,19.6,13.8,19.6,26.4c0,20.1-8.2,29.1-20.1,29.1c-12.4,0-20.1-9.9-20.1-27.1
+      C148.2,12.9,155.2,0.3,168.8,0.3L168.8,0.3z M168.2,1.4c-3.6,0-6.7,2-9,6.2c-2.1,4-3.6,11.5-3.6,20.2c0,8.6,1.6,16.4,3.7,20.3
+      c2.4,4.6,5.6,6.2,9.4,6.2c3.6,0,6.5-1.3,8.9-6.2c2-4,3.3-11.7,3.3-20.4c0-7.8-1.3-15.4-3.5-20.1C175.4,3.5,172.5,1.4,168.2,1.4
+      L168.2,1.4z" />
+<path class="ts-logo-path" d="M199.1,20.5c0-9.4-0.1-14.1-0.2-16.3c-0.1-1.1-0.6-1.4-1.8-1.5l-4-0.5l0.4-0.9c1.5,0,5.1,0.3,8.1,0.3
+      c3.1,0,6-0.3,9.6-0.3c6.8,0,10,1.2,12,3.4c2.1,2.1,3,5.4,3,8.7c0,8.8-5.9,12.5-13,13.7v0.3c8.3,1.1,12.2,5.2,13,12
+      c0.4,2.9,0.7,6.3,0.8,8.8c0.3,3.6,1.2,5.8,4,5.8c0.7,0,1.4-0.1,2-0.4l-0.3,1.1c-1.3,0.5-2.7,0.7-4.1,0.7c-6.2,0-8.5-3.1-8.9-9.9
+      c-0.1-2.4-0.3-5.4-0.4-7.8c-0.6-7.3-2.9-9.5-11.9-9.5h-1.9v7.7c0,8.8,0.1,12.2,0.3,15.4c0.2,2,1,2.3,5.6,2.7l-0.3,1
+      c-2.2,0-5.8-0.3-8.6-0.3c-3.1,0-6.6,0.3-9.2,0.3l0.1-1c3.8-0.2,5.1-0.7,5.3-2.4c0.3-1.7,0.4-5.9,0.4-18L199.1,20.5z M205.4,26.8h1.9
+      c8.9,0,11.8-4.9,11.8-12.9c0-2.8-0.5-5.7-1.3-7.5c-1.1-2.3-3.5-3.9-7.8-3.9c-1.1,0-2.1,0.1-3.2,0.3c-0.7,0.2-0.9,0.5-1,1.4
+      c-0.2,1-0.4,4.2-0.4,13.6L205.4,26.8z" />
+<path class="ts-logo-path" d="M248.4,39.7c-0.7,9,3.4,14.7,11,14.7c5.1,0,9.2-3.1,9.2-10.9c0-4-1.4-7.1-4.6-9.4c-2-1.4-6.7-4.6-9.8-7
+      c-4.8-3.5-6.4-7.7-6.4-12.6c0-7.9,5-14.2,13.8-14.2c3.9,0,7.2,1.3,8.8,3.1l1.3-3.5l0.8,0.3c-0.7,4.6-1.1,9.3-1.2,13.9l-1,0.1
+      c0.3-8.9-4.2-12.8-8.9-12.8c-5,0-8.4,3.8-8.4,10.4c0,3.5,1.3,6.8,5.1,9.5c4.6,3.5,8,5.7,10.5,7.5c4,2.6,5.9,6.4,5.9,11.3
+      c0,9.4-6.3,15.6-15.9,15.6c-4.5,0-9-1.7-11.5-3.1c0.5-5.2,0.4-10.3,0.5-12.5L248.4,39.7z" />
+<path class="ts-logo-path" d="M326.7,1.3c1.5,0,4.5,0.3,7.3,0.3c3.3,0,4.8-0.3,6.9-0.3v1c-4.4,0.5-5,0.8-6.4,5.3c-4,13.4-8.7,31.3-13.1,47.9
+      c-1.2-0.1-2.3-0.1-3.5,0.1c-2-9.2-6.9-27.3-11.2-44.9c-5.6,23.8-8.2,33.7-10.6,44.8c-1.1-0.3-2.4,0-3.4,0.1
+      c-2.9-13.3-9.3-38.2-12.2-48c-1.4-4.6-2.1-5.1-6.2-5.3v-1c1.5,0.1,4.6,0.3,8.3,0.3c3.2,0,6.3-0.3,8.5-0.3l0.4,1L288,2.6
+      c-1.3,0.2-1.5,0.8-1.3,2.1c3.3,13.7,7.9,31.4,10.1,40.9c4.8-19.1,9.5-40.1,10-44.1c1.4,0.1,2.8,0.1,4.1,0
+      c0.8,4.1,5.6,22.9,11.2,44.7c5.1-18,9.2-34.2,10.3-40.6c0.3-2,0.1-2.7-1.6-2.9l-4.2-0.4L326.7,1.3z" />
+<path class="ts-logo-path" d="M345.8,17.5c0-7.2,0-9.4-0.1-11.9c-0.1-2.8-1.3-3-5.7-3.4l0.1-1c1.8,0.1,5.6,0.3,8.7,0.3c3,0,7.3-0.3,9.1-0.3
+      l0.1,1c-4.1,0.1-5.3,0.8-5.5,2.7c-0.1,1.7-0.3,5.3-0.3,12.1v20c0,7.3,0.2,11,0.3,13.6c0.1,2.4,1.4,2.9,5.5,3.1v1
+      c-2.2-0.1-6.5-0.3-9.4-0.3c-2.8,0-7,0.1-8.7,0.3l0.1-1c4-0.1,5.3-0.8,5.5-2.9c0.2-1.9,0.3-4.9,0.3-13.8L345.8,17.5z" />
+<path class="ts-logo-path" d="M360.5,1.3c2.1,0,6.4,0.3,11,0.3h9.1c8.1,0,10.7-0.3,12.3-0.6c-0.4,4-0.5,8-0.3,12l-0.9,0.3
+      c-0.2-2.1-0.6-4.1-1.2-6.1c-0.9-3-2.3-4.3-9.5-4.3h-6.3c-0.7,0-1.2,0.3-1.3,1.2c-0.1,0.8-0.3,5.9-0.3,14.8v8.3
+      c0.8,0.1,3.8,0.1,5.7,0.1c6.5,0,7.8-1.3,8.6-7l0.8,0.2c-0.5,4.3-0.4,13.1,0,16h-0.9c-0.8-6-1.3-7.8-8.7-7.8c-2,0-4.9,0-5.6,0.1v8.4
+      c0,8.8,0.3,12.2,0.3,13.8c0,1.4,0.3,2.1,1.8,2.2c1,0.1,3.3,0.5,4.9,0.6l-0.2,1c-2.3,0-7.2-0.3-9.8-0.3c-3.2,0-7.8,0.3-9.6,0.3
+      l-0.1-1l3.9-0.4c1.2-0.1,1.8-0.7,1.9-2.1c0.2-1.9,0.4-7.8,0.4-15.5V19c0-9.2-0.2-13.5-0.3-14.8c0-0.9-0.8-1.7-1.7-1.7l-4.2-0.3V1.3z
+      " />
+<path class="ts-logo-path" d="M419,30.5c0,11.5,0.2,18.2,0.3,20.3c0.2,1.6,0.6,2.2,2,2.4c2.2,0.3,3.1,0.5,5,0.6l-0.2,1c-2,0-6.4-0.3-10.8-0.3
+      c-4,0-7.3,0.3-10.2,0.3l-0.3-0.9c1.3-0.1,2.6-0.3,4.6-0.5c1.8-0.2,2.6-0.8,2.7-2.3c0.2-3,0.3-8.7,0.3-20.9V17.3c0-6,0-12.1-0.1-14.5
+      c-10.3,0-11,0.8-12.4,3.8c-1.2,2.5-1.8,5.3-2.5,7.8l-0.8-0.6c0.6-2.3,1.3-9.4,1.4-13.1c1.8,0.7,5.9,0.8,14.8,0.8h5.6
+      c10.6,0,13.5,0,15.6-0.8c-0.2,1.3-0.8,9.4-0.6,12.7l-1,0.7c-0.3-4.2-1.1-7.2-1.6-8.5c-0.7-2.1-1.8-3-11.9-2.8
+      C419.2,5,419,11,419,16.6L419,30.5z" />
+</svg>
+</a>
+</header>
+<div id="page">
+<div id="barba-wrapper">
+<div class="barba-container">
+<header class="image-header">
+<h1 class="section-title">Taylor-Privacy-Policy</h1>
+</header>
+<div id="container">
+<div class="cms-page">
+<h3>Privacy Policy</h3>
+<p><i>Last updated and effective as of May 24, 2018.
+</i><br><br>
+This website (http://taylorswift.com) is operated by WONDERFUL UNION LLC d/b/a Wonderful Union, on behalf of Taylor Nation, LLC (“<b>Taylor Nation</b>,” “<b>we</b>,” “<b>us</b>” or “<b>our</b>”), with the on-line store (<a href="http://store.taylorswift.com" target="_blank">http://store.taylorswift.com</a>) and the shopping cart for orders to be shipped to customers in the U.S. operated by Miva, Inc. d/b/a Miva and an international shopping cart for orders to be shipped to international customers operated by iGlobal Stores, LLC d/b/a Zonos, on our behalf. Under applicable law, Taylor Nation is considered the “data controller” of the personal data we collect under this Privacy Policy (the “<b>Policy</b>”). Contact information for Taylor Nation is located at the end of this Policy.
+<br><br>
+This Policy explains how we collect, use, disclose, and protect information that we learn about you as a result of your interaction with us through the websites on which this Policy is posted (including the websites that you may access using your mobile electronic device), through the services provided through such websites, and through offline events where you may provide us with information, whether before, during, or after the offline event (collectively the “Services”). <b>PLEASE READ THIS POLICY CAREFULLY TO UNDERSTAND HOW WE HANDLE YOUR INFORMATION. IF YOU DO NOT AGREE TO THIS POLICY, PLEASE DO NOT USE THE SERVICES</b>. For your information, WONDERFUL UNION’s privacy policy is located at: <a href="https://wonderfulunion.com/#/wonderful_privacy" target="_blank">https://wonderfulunion.com/#/wonderful_privacy</a>.
+<br><br><b>
+WHEN DOES THIS POLICY APPLY?
+</b><br><br>
+This Policy is only applicable to the Services and not to any other website or service that you may be able to access from any of the Services or use in connection with the Services. When you click on an advertisement or a logo displayed on any of the Services that links you to a different website (including, without limitation, Facebook, Instagram, iTunes, tumblr, Twitter and YouTube), or when you use any third-party app, tool, widget, plug-in or extension on the Services or as part of any of the Services, information about you may be collected through automated means. We do not control, and are not responsible for, any third party’s collection and use of your information. You should refer to the privacy policies of such third parties to learn about their information collection, use and disclosure practices.
+<br><br><b>
+WHAT INFORMATION DO WE COLLECT?
+</b><br><br>
+We obtain information about you through the means discussed below when you access or use the Services. Please note that we need certain types of information so that we can provide the Services to you. If you do not provide us with such information, or ask us to delete it, you may no longer be able to access or use our Services. By using the Services, you may provide to us two types of information: (1) personally-identifiable information that you voluntarily choose to disclose to us, such as your name, address, telephone number, e-mail address, and credit card, debit card or other payment information; and (2) non-personally-identifiable information, which we collect through the use of cookies and tracking technologies.
+</p>
+<p><b>1.	Information You Provide to Us
+</b><br><br>
+You may be asked to submit information to us when you access or use the Services, such as when you: <br>
+</p><ul>
+<li>create an account;
+</li><li>subscribe to our mailing list;</li>
+<li>make a purchase;</li>
+<li>contact us;</li>
+<li>receive customer or technical support;</li>
+<li>request a promotional code;</li>
+<li>participate in chat rooms, forums or surveys; </li>
+<li>register for or at an event; or </li>
+<li>enter contests, sweepstakes, or other promotions. </li>
+</ul><b><i>
+Information about you.</i></b>&nbsp;While parts of the Services may not require you to provide any information that can directly identify you by name (such as if you choose to browse the website without logging in), the specific types of information we collect will depend upon the Services you use, how you use them, and the information you choose to provide. The types of data we collect directly from you may include, without limitation, the following:
+<br><ul>
+<li>email address;</li>
+<li>your country and zip code;</li>
+<li>date of birth;</li>
+<li>gender;</li>
+<li>telephone number;</li>
+<li>name, if you choose to provide it;</li>
+<li>social media accounts and handles;</li>
+<li>log-in credentials, if you create an account;</li>
+<li>billing information, such as shipping address, credit or debit card number, verification number, and/or expiration date;</li>
+<li>information about purchases or other transactions with us;</li>
+<li>information about your customer service interactions with us;</li>
+<li>information about your personal preferences, including, but not limited to, sizing, clothing type, and email frequency preferences; and</li>
+<li>any other information you choose to directly provide to us in connection with your use of the Services.</li>
+</ul><b><i>
+Information about others.</i></b> If you request that your purchase be provided to someone other than yourself (such as a gift recipient), we use the information you provide about the other person to fulfill the shipment.<br><br><b>
+2. Information We Automatically Collect
+</b><br><br>
+When you access the Services, we collect and analyze information such as your IP address, browser types, browser language, operating system, the state or country from which you accessed the Services, software and hardware attributes (including device IDs) referring and exit pages and URLs, platform type, the number of clicks, files you download, domain names, landing pages, pages viewed and the order of those pages, the amount of time spent on particular pages, the terms you use in searches on our sites, the date and time you used the Services and/or upload or post content, error logs, and other similar information. As discussed further below, we and our service providers (which are third-party companies that work on our behalf), may use a variety of technologies, including cookies and similar tools, to assist in collecting this information.
+<br><br><b>
+HOW DO WE USE YOUR INFORMATION?</b><br><br>
+We, or our service providers, use your information for various purposes depending on the types of information we have collected from and about you, in order to:<br><ul>
+<li>fulfill your service request or product order; </li>
+<li>respond to your questions;</li>
+<li>contact you about your account or your order; </li>
+<li>alert you of new products or services and new product and service features;</li>
+<li>inform you of being selected as a winner (when applicable);</li>
+<li>inform you about new promotions, special events, and other offers that we think may be of interest to you;</li>
+<li>customize the advertising and content you see on the Services;</li>
+<li>help us better understand your interests and needs, and improve the Services, including through research and reports, and test and create new products, features, and services;</li>
+<li>secure the Services;</li>
+<li>comply with any procedures, laws, and regulations which apply to us where it is necessary for our legitimate interests or the legitimate interests of others; and</li>
+<li>establish, exercise, or defend our legal rights where it is necessary for our legitimate interests or the legitimate interests of others.</li>
+</ul>
+We may combine these types of information together. We may also aggregate and/or anonymize any information collected through the Services so that such information can no longer be linked to you or your device. We may use such information for any purpose, including without limitation for research and marketing purposes, and may also share such data with any third parties, including advertisers, promotional partners, and sponsors.<br><br><b>
+WHAT ARE OUR LEGAL BASES FOR USING YOUR INFORMATION?</b><br><br>
+The laws in some jurisdictions require us to tell you about the legal ground we rely upon in order to use or disclose your information.&nbsp; Where those laws apply, our legal grounds are as follows: <br>
+<ul>
+<li><b>To perform our obligations under a contract with you.</b> For example, to comply with the terms of service of our websites, which you accept by browsing the Services, or when you register for an account at our store.</li><br>
+<li><b>Consent.</b> Where required by law and in some other cases, we collect and use your information on the basis of your implied or express consent. </li><br>
+<li><b>To further our or our partners’ legitimate interests.</b> For example, to provide security for the Services, operate our business and the Services, comply with legal requirements, and prevent fraud.</li></ul><br><b>
+DO YOU USE COOKIES AND SIMILAR TECHNOLOGIES?</b><br><br>
+To collect the information in the “Information We Automatically Collect” section above, we and our service providers use Internet server logs, cookies, tracking pixels, and other similar tracking technologies. We use these technologies in order to offer you a more tailored experience in the future, by understanding and remembering your particular browsing preferences. Cookies are small text files that are placed on your computer or mobile device when you visit a site, that enable us to: (i) recognize your computer; (ii) store your preferences and settings; (iii) understand the web pages of the Services you have visited; (iv) enhance your user experience by delivering and measuring the effectiveness of content and advertising tailored to your interests; (v) perform searches and analytics; and (vi) assist with security and administrative functions. Some cookies are placed in your browser cache while those associated with Flash technologies are stored with your Adobe Flash Player files.
+<br><br>
+As we adopt additional technologies, we may also gather information through other methods. Please note that you can change your settings to notify you when a cookie is being set or updated, or to block cookies altogether. Please consult the “Help” section of your browser for more information (e.g.,&nbsp;Internet Explorer;&nbsp;Google Chrome;&nbsp;Mozilla Firefox; or&nbsp;Apple Safari). You can also manage the use of Flash technologies, including flash cookies and local storage objects with the Flash management tools available at&nbsp;Adobe's website. You can also visit your mobile device manufacturer's website (or the website for its operating system) for instructions on any additional privacy controls in your mobile operating system, such as privacy settings for device identifiers and geolocation. Please note that by blocking, disabling, or managing any or all cookies, you may not have access to certain features or offerings of the Services.<br><br><b>
+DO YOU USE ONLINE ANALYTICS AND ADVERTISING TECHNOLOGIES?</b><br><br><b>
+1. Analytics</b><br><br>
+We may use third-party web analytics services (such as those of Google Analytics) on our Services to collect and analyze usage information through cookies and similar tools; engage in auditing, research, or reporting; assist with fraud prevention; and provide certain features to you. To prevent Google Analytics from using your information for analytics, you may install the Google Analytics Opt-out Browser Add-on by&nbsp;<a href="https://tools.google.com/dlpage/gaoptout" target="_blank">clicking here</a>.
+<br><br>
+If you receive email from us, we may use certain analytics tools (such as clear GIFs) to capture data such as when you open our message or click on any links or banners our email contains. This data allows us to gauge the effectiveness of our communications and marketing campaigns.<br><br><b>
+2. Online Advertising </b><br><br>
+The Services may integrate third-party advertising technologies that allow for the delivery of relevant content and advertising on the Services, as well as on other websites you visit and other applications you use. The ads may be based on various factors such as the content of the page you are visiting, information you enter such as your age and gender, your searches, demographic data, user-generated content, and other information we collect from you. These ads may be based on your current activity or your activity over time and across other websites and online services and may be tailored to your interests.
+<br><br>
+Third parties may also place cookies or other tracking technologies on your computer, mobile phone, or other device to collect information about you as discussed above. These third parties (e.g., ad networks and ad servers such as Google Analytics, DoubleClick and others) may also serve tailored ads to you as you use the Internet and Internet-connected applications, and access their own cookies or other tracking technologies on your computer, mobile phone, or other device you use to access the Services to assist in this activity.
+<br><br>
+We neither have access to, nor does this Privacy Policy govern, the use of cookies or other tracking technologies that may be placed on the device you use to access the Services by such non-affiliated third parties. If you are interested in more information about tailored browser advertising and how you can generally control cookies from being put on your computer to deliver tailored advertising, you may visit the&nbsp;<a href="http://optout.networkadvertising.org/#!/" target="_blank">Network Advertising Initiative’s Consumer Opt-Out link</a>, the&nbsp;<a href="http://optout.aboutads.info/#!/" target="_blank">Digital Advertising Alliance’s Consumer Opt-Out link</a>, or if you live in the European Union, <a href="http://www.youronlinechoices.eu/" target="_blank">Your Online Choices</a>,&nbsp;to opt-out of receiving tailored advertising from companies that participate in those programs. To opt out of Google Ads for display advertising or customize Google display network ads, visit the&nbsp;<a href="https://adssettings.google.com/authenticated" target="_blank">Google Ads Settings page</a>. We do not control these opt-out links or whether any particular company chooses to participate in these opt-out programs. We are not responsible for any choices you make using these mechanisms or the continued availability or accuracy of these mechanisms.
+<br><br>
+Please note that if you exercise the choices above, you will still see advertising when you use the Services, but it will not be tailored to you based on your online behavior over time.<br><br><b>
+3. Notice Concerning Do Not Track</b><br><br>
+You may be able to adjust your browser’s settings to turn on a “do not track” feature. Although our policy may change in the future, because there is no uniform standard for “do not track” signal recognition currently, we do not support “do not track” and will not honor your web browser’s “do not track” signal.<br><br>
+We do not intentionally or knowingly allow other parties to collect personal information about your online activities over time and across different websites, when you visit the websites or use any of the Services.
+<br><br><b>
+WHEN DO WE SHARE YOUR INFORMATION WITH OTHER PARTIES?
+</b><br><br>
+We may use your information to provide analyses of the users of the Services, in the aggregate, to prospective partners, advertisers and other third parties. We may also share your non-personally-identifiable information with our business partners for the purpose of their delivering content, including ads, on the Services and on third-party websites.
+<br><br>
+We may disclose your information to our employees, agents, contractors and sub-contractors, and to our related and affiliated entities, including, but not limited to, 13 Management, LLC, Firefly Entertainment, Inc., Swift Merchandising, Inc., TAS Rights Management, LLC, Taylor Swift Productions, Inc., and their respective employees, agents, contractors and sub-contractors, for the limited purpose of enabling them to communicate with you directly about events and promotions that may be of interest to you.
+<br><br>
+We will share your information with other parties under the following circumstances:<br>
+<ul>
+<li><b>Protection of Rights.</b> We will share your information if we have a good faith belief that: (i) access, use, preservation or disclosure of such information is reasonably necessary to satisfy any applicable law, regulation, legal process, such as a court order or subpoena, or a request by law enforcement or governmental authorities; (ii) such action is appropriate to enforce the <a href="https://taylorswift.com/taylor-terms-conditions/">Terms of Use</a> for the Services, including any investigation of potential violations thereof; (iii) such action is necessary to detect, prevent, or otherwise address fraud, security or technical issues associated with the Services; and/or (iv) such action is appropriate to protect our rights, property or safety or the rights, property or safety of our employees, users of the Services, or others.</li><br>
+<li><b>Asset Transfers.</b> If we become involved in a merger, acquisition, or other transaction involving the sale of some or all of our assets, in contemplation of such a transaction, or in the event of an insolvency or bankruptcy, the information collected from you through your use of the Services may be included in the transferred assets. Should such an event occur, we will use reasonable measures to notify you, either through e-mail and/or a prominent notice on the Services.
+</li><br>
+<li><b>Service Providers.</b> We may share your information with the service providers that we engage in connection with the Services, including those who help administer our e-mail communications, operate the on-line store and U.S. shopping cart at (http://store.taylorswift.com); operate the international shopping cart; data storage, conduct website administration, and maintain and administer the network for the Services. These companies may access your information to the extent required in order to perform services on our behalf.
+</li><br>
+<li><b>Sweepstakes and Contests.</b> If you choose to participate in any on-line promotions such as a sweepstakes or a contest on the Services, your information collected in connection with such promotion may be shared with the third-party sponsor of the promotion, or as otherwise provided in the Official Rules. You should carefully review the Official Rules of each promotion in which you choose to participate through the Services, as the Official Rules may contain additional important information about a third party’s collection and use of your information. To the extent that the Official Rules of any promotion conflict with this Policy, the Official Rules will govern collection and use of your information in conjunction with that particular promotion.</li></ul>
+We will not share your information with third parties for the purposes of their direct marketing unless you affirmatively agree to such disclosure.
+<br><br><b>
+WHAT RIGHTS AND CHOICES DO YOU HAVE ABOUT THE COLLECTION AND USE OF YOUR INFORMATION?</b>
+<br><br>
+For any of the Services that require you to create an account, you may review, update or delete your information, and/or modify your account preferences for the Services, by accessing the “My Account” area of the Services or by contacting us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c5c5e455a4d4f556c584d5540435e5f5b454a58024f434102">[email&#160;protected]</a> To update or delete information that you had provided in connection with any of the other Services, you may contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c2c2e352a3d3f251c283d2530332e2f2b353a28723f333172">[email&#160;protected]</a> Please note that when you delete your account or request that we delete your information, we may retain your information for a reasonable period of time for the purpose of internal account management and fraud prevention.
+<br><br>
+If you no longer wish to receive our announcements by e-mail, you may unsubscribe from receiving them at any time by clicking the “Unsubscribe” link at the bottom of our e-mails and following subsequent instructions, or by writing to us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6c6c4dfc0d7d5cff6c2d7cfdad9c4c5c1dfd0c298d5d9db98">[email&#160;protected]</a> If you e-mail us to change your contact preferences, we will implement your requested changes within a reasonable period of time. Please note that your requested changes will not be effective until we implement such changes. Please also note that you cannot unsubscribe from certain correspondence from us, such as messages relating to your account transactions.
+<br><br>
+If you choose to join one of our mobile marketing lists, please be aware that there are usually costs associated with receiving SMS or MMS messages, which are determined by your carrier. You should contact your carrier to determine the charges that may apply before you sign up to receive our updates via SMS or MMS. If you wish to stop receiving such messages from us, at any time, simply write “STOP” in a reply to any message from us.
+<br><br>
+If you would like further information in relation to your legal rights under applicable law or would like to exercise any of them, please contact us using the information in the “Contact Information” section below at any time. Your local laws (e.g., in the European Union) may permit you to request that we:<br><ul>
+<li>provide access to and/or a copy of certain information we hold about you;</li>
+<li>prevent the processing of your information for direct-marketing purposes (including any direct marketing processing based on profiling);</li>
+<li>update information which is out of date or incorrect;</li>
+<li>delete certain information which we are holding about you;</li>
+<li>restrict the way that we process and disclose your information or certain types of your information;</li>
+<li>transfer your information to a third-party provider of services; </li>and
+<li>revoke your consent for the processing of your information.</li></ul>
+We will consider all requests and provide our response within the time period stated by applicable law. Please note, however, that certain information may be exempt from such requests in some circumstances, which may include if we need to keep processing your information for our legitimate interests or to comply with a legal obligation. We may request you provide us with information necessary to confirm your identity before responding to your request.<br><br><b>
+HOW LONG DO WE RETAIN YOUR INFORMATION?</b><br><br>
+We keep your information for the period necessary to fulfill the purposes set forth in this Policy unless a longer retention period is required or permitted by applicable law.<br><br><b>
+WHAT IS OUR POLICY ON CHILDREN’S PRIVACY AND PRIVACY RIGHTS OF CALIFORNIA MINORS?</b><br><br>
+The Services are not for children under 13 years of age in the United States or under 16 in the European Union. If we become aware that we have collected “personal information” (as defined by the United States Children’s Online Privacy Protection Act (“COPPA”)) from a child in the United States under the age of 13 without legally-valid parental or school consent or that we have collected data through the Services from a European Union resident under the age of 16 without parental consent, we will take reasonable steps to delete it as soon as possible.
+<br><br>
+If you are a resident of the State of California, under 18 years of age and a registered user on the Services, and you have posted content or information on the Services, you may request and obtain removal of the content or information posted by you, by contacting us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f585879c8394968cb581948c999a8786829c9381db969a98db">[email&#160;protected]</a> Please note that our removal of such content or information does not ensure complete or comprehensive removal of this content or information from the Services. -
+<br><br><b>
+CALIFORNIA PRIVACY RIGHTS
+</b><br><br>
+California law gives residents of California the right under certain circumstances to request information from us regarding the manner in which we share certain categories of “personal information” (as defined by applicable California law) with third parties for their direct marketing purposes. We do not share your personal information with third parties for their own direct marketing purposes.
+<br><br><b>
+WHAT SECURITY MEASURES DO WE TAKE?
+</b><br><br>
+The information that you provide to us is stored on servers that are located in secured facilities with restricted access, and protected by protocols and procedures designed to safeguard such information. In addition, we restrict access to your information to those of our employees, independent contractors and agents who need to know this information in order to develop, operate and maintain the Services. However, no data transmission over the Internet or through mobile telecommunications can be guaranteed to be completely secure, and, for this reason, we cannot ensure or warrant the security of any information that you transmit to us or that is transmitted to us as a result of your use of the Services. You can help protect your information by using strong passwords, changing your password often, using a secure web browser, and signing off and closing your web browser when you are finished with the use of the Services.
+<br><br><b>
+WHAT SHOULD I KNOW IF I AM ACCESSING THIS SITE OUTSIDE OF THE UNITED STATES?
+</b><br><br>
+The information discussed in this Policy is processed in the United States by Taylor Nation, LLC, whose principal mailing address is 718 Thompson Lane, Suite 108256, Nashville, TN 37204. Your information will be processed in the United States for the purposes described herein. As described above, we also may subcontract the processing of your data to, or otherwise share your data with, our service providers and business partners in countries other than your country of residence, including the United States, in accordance with applicable law. Such third parties may be engaged in, among other things, the provision of Services to you, the processing of transactions and/or the provision of support services. By providing us with your information, you acknowledge any such transfer, storage or use.
+<br><br>
+If we provide any information about you to third-party information processors, we will take appropriate measures to ensure such companies protect your information adequately in accordance with this Privacy Policy.
+<br><br>
+If applicable, you may make a complaint to the data protection supervisory authority in the country where you reside. Alternatively, you may seek a remedy through local courts if you believe your rights have been breached.
+<br><br><b>
+WHAT IS THE EFFECTIVE DATE OF THIS POLICY AND WHAT IF THE POLICY CHANGES?
+</b><br><br>
+This Policy is effective as of the “last updated and effective” date set out at the top of this page. We reserve the right to modify this Policy at any time, and all revisions will become effective upon the earlier of (a) posting of the revisions on the Services, or (b) distribution of the revisions by electronic mail. For this reason, please visit this page on a regular basis and check the “Last Updated and Effective” date at the top of this Policy to ensure that you are familiar with the most recent version of this Policy. Your continued use of any of the Services after the effective date of any revisions means that you accept and agree to all such revisions.
+<br><br><b>
+HOW CAN YOU CONTACT US WITH QUESTIONS ABOUT THIS POLICY OR OUR PRIVACY PRACTICES?
+</b><br><br>
+If you have any questions about either this Policy or our privacy practices, please contact us by e-mail at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f4f4d56495e5c467f4b5e4653504d4c4856594b115c5052">[email&#160;protected]</a>, or by mail at: Taylor Nation, LLC, 718 Thompson Lane, Suite 108256, Nashville, TN 37204.
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script><script>
+  var serverTime = '2018-07-11';
+</script>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer" class="site-footer">
+<div class="section social">
+<h1>Connect with Taylor</h1>
+<ul class="socials">
+<li class="social-item">
+<a href="/mailinglist" class="wu-social-mail" title="Newsletter"></a>
+</li>
+<li class="social-item">
+<a href="https://facebook.com/TaylorSwift" class="wu-social-facebook" title="Facebook"></a>
+</li>
+<li class="social-item">
+<a href="https://instagram.com/taylorswift" class="wu-social-instagram" title="Instagram"></a>
+</li>
+<li class="social-item">
+<a href="http://taylorswift.tumblr.com/" class="wu-social-tumblr" title="Tumblr"></a>
+</li>
+<li class="social-item">
+<a href="https://twitter.com/taylorswift13" class="wu-social-twitter" title="Twitter"></a>
+</li>
+<li class="social-item">
+<a href="https://youtube.com/user/taylorswift" class="wu-social-youtube" title="YouTube"></a>
+</li>
+</ul>
+</div>
+<div class="section legal">
+<ul class="nav terms">
+<li class="copyright">&copy; 2018 Taylor Nation, LLC. All rights reserved.</li>
+<li class="privacy"><a target="_blank" href="/taylor-privacy-policy/">Privacy Policy</a></li>
+<li class="conditions"><a target="_blank" href="/terms-of-use/">Terms of Use</a></li>
+<li class="adchoice"><a target="_blank" href="https://wonderfulunion.com/#!/adchoices">AdChoices</a></li>
+</ul>
+<div id="copyright">
+<span class="coppa">Visit <a target="_blank" href="http://www.OnGuardOnline.gov">www.OnGuardOnline.gov</a> for social networking safety tips for parents and youth.</span>
+<span class="poweredby">Powered by <a target="_blank" href="https://wonderfulunion.com">Wonderful&nbsp;Union</a></span>
+</div>
+</div>
+</footer>
+<div class="page-loader ts-icon-plus"></div>
+<div id="fb-root"></div>
+<script src="//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=148881529100"></script>
+<script src="//platform.twitter.com/widgets.js"></script>
+<script src="//apis.google.com/js/plusone.js"></script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '217011611820041');
+fbq('track', "PageView");
+fbq('track', "ViewContent", {
+  subGenre: 'Pop',
+  funnelStep: 'artistsite',
+  artistName: 'Taylor Swift',
+  genre: 'music',
+  host: 'https://taylorswift.com'
+ });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=217011611820041&ev=PageView&noscript=1"
+/></noscript>
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nxa0d');
+twq('track','PageView');
+</script>
+<script id="share-template" type="text/html">
+  <ul>
+    <li class="share"><em>Share:</em></li>
+    <li class="facebook">
+      <a class="no-barba wu-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= encodeURI(share_url) %>" target="_blank"></a>
+    </li>
+    <li class="tumblr">
+      <a class="no-barba wu-social-tumblr" href="http://www.tumblr.com/share/link?url=<%= encodeURI(share_bare) %>" target="_blank"></a>
+    </li>
+    <li class="twitter">
+      <a class="no-barba wu-social-twitter" href="http://twitter.com/home?status=<%= encodeURI(share_url) %>" target="_blank"></a>
+    </li>
+    <li class="google">
+      <a class="no-barba wu-social-googleplus" href="https://plus.google.com/share?url=<%= encodeURI(share_url) %>" target="_blank"></a>
+    </li>
+    <li class="mail">
+      <a class="no-barba wu-social-mail" href="mailto:?subject=Check%20this%20out%20on%20taylorswift.com&body=<%= encodeURI(share_url) %>" target="_blank"></a>
+    </li>
+  </ul>
+</script>
+
+<script type="text/javascript">
+              var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+              (function (d, s, id, tid, vid) {
+                var js, ljs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+                js.src = biJsHost + "cdn.listrakbi.com/scripts/script.js?m=" + tid + "&v=" + vid;
+                ljs.parentNode.insertBefore(js, ljs);
+              })(document, 'script', 'ltkSDK', 'NFydsuDUPgTY', '1');
+      </script>
+<script type="text/javascript">
+          (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);
+          else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+          if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+              /********** Begin Custom Code **********/
+              _ltk.Activity.AddPageBrowse();
+              _ltk.Activity.Submit();
+              /********** End Custom Code **********/
+          });
+      </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"765edf4a24","applicationID":"48248258","transactionName":"ZV1QN0BXD0pZW0RaX1wXcRZBQg5UF2hRVFUdXFA=","queueTime":0,"applicationTime":45,"atts":"SRpHQQhNQ0lKV1RGU0YaCEFmVxhVV0oQYEdbXkZBTxpDWBoCSxFjd2pkJmBpL3h1fRIJEkZZSw9dRBJOUV5EHVNdVRBPEEQESE1dQ0ceWl1TB1dEEhdtS1VBHXNfVw1GFFsba1tCUkBLZB1SHANPCBgQG1tERkhBWW4ZPRZLW0JSQEsWXRFVH0MVGkpVQkVXS0ZNX1MVUVdcEgkSdX1mQR4UE1xJTVVARBxQVwJWUxNKFlBfQEQQAhAXU08NVkpLR1pWRhZRDF8UTRtKXUFGVUFMHAtXVwVcSkseUlNRXUIXEAxDTV1ARG8fWkxfDx5XEUlUUVNSRFtXXD8dTglNVVQbS11eFFMTQloIWllMWVxebhdKDl4NEAQIFgkfGm4XGFhDC1EXABpNTg==","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

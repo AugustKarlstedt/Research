@@ -1,0 +1,1633 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+ <head>
+  <script>
+    // usmf-django
+window.top!=window&&(window.analytics=window.top.analytics,window.inIframe=!0);var segmentKey="16mdwrvy5p",segmentSnippetVersion="4.1.0",getSegmentUrl=function(t){var t=t||window.segmentKey;return("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js"},infotrackUrl="//g.foolcdn.com/mms/resources/js/infotrack_min.js",trackerMaker=function(t){var n=[];n.invoked=!1,n.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"],t&&(n.methods=n.methods.concat(t));var e=function(t){var e=function(){var e=Array.prototype.slice.call(arguments,0),o=[t].concat(e);n.push(o)};return e.stub=!0,e},o=function(){for(var t=0;t<n.methods.length;t++){var o=n.methods[t];n[o]=e(o)}},r=function(t){if(n.invoked)return void(window.console&&console.error&&console.error("Tracking snippet included twice."));var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(e,o),n.invoked=!0};return o(),n.load=r,n},analytics=window.analytics=window.analytics||trackerMaker(),Infotrack=window.Infotrack=window.Infotrack||trackerMaker(["initialize"]);Infotrack.load(infotrackUrl);
+  </script>
+  <meta name="infotrackSnippetVersion" content="3.0.0" data-tracker-key="infotrackSnippetVersion">
+
+        
+    <!-- ads_init_js -->
+    <script async type="text/javascript" src="//g.foolcdn.com/static/dubs/www/js/vendor/prebid.d998eb95156d.js"></script>
+
+     
+     
+        <!-- BEGIN Krux ControlTag for "Motley Fool" -->
+         <script class="kxct" data-id="ral3af1zw" data-timing="async" data-version="3.0" type="text/javascript">
+          window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+          (function(){
+            var k=document.createElement('script');k.type='text/javascript';k.async=true;
+            k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/ral3af1zw.js';
+            var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+          }());
+        </script>
+        <script class="kxint" type="text/javascript">
+          window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+          (function(){
+            function retrieve(n){
+              var m, k='kxfool_'+n,ls=(function(){
+                  try{
+                    return window.localStorage;
+                  }catch(e){
+                    return null;
+                  }
+                })();
+              if (ls) {
+                  return ls[k] || "";
+              } else if (navigator.cookieEnabled) {
+                  m = document.cookie.match(k+'=([^;]*)');
+                  return (m && unescape(m[1])) || "";
+              } else {
+                  return '';
+              }
+            }
+            Krux.user = retrieve('user');
+            Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+          })();
+        </script>
+            <!-- END Krux ControlTag -->
+     
+    
+
+    <script type="text/javascript">
+        var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+        googletag.cmd.push(function() {
+            if (typeof(Krux) !== "undefined") {
+                googletag.pubads().setTargeting("ksg", Krux.segments);
+                googletag.pubads().setTargeting("kuid", Krux.user);
+            }
+            
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().disableInitialLoad();
+        });
+        googletag.cmd.push(function() { googletag.setAdIframeTitle("Advertisement"); });
+        var adUnits = adUnits || [];
+        var slots = slots || {};
+        var adCount = 0;
+    </script>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+
+    <script>
+        
+        
+            //prebid is active
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+            pbjs.que.push(function() {
+                var price_bucket = {
+                    'buckets': [
+                        
+                        {
+                            'min': 0,
+                            'max': 20,
+                            'increment': 0.01,
+                            'cap': true
+                        },
+                        
+                        {
+                            'min': 20,
+                            'max': 30,
+                            'increment': 0.05,
+                            'cap': true
+                        },
+                        
+                        {
+                            'min': 30,
+                            'max': 40,
+                            'increment': 0.10,
+                            'cap': true
+                        },
+                        
+                        {
+                            'min': 40,
+                            'max': 50,
+                            'increment': 0.50,
+                            'cap': true
+                        },
+                        
+                        {
+                            'min': 50,
+                            'max': 99,
+                            'increment': 1.00,
+                            'cap': true
+                        },
+                        
+                    ]
+                };
+                pbjs.setConfig({
+                    debug: false,
+                    bidderTimeout: 1000,
+                    priceGranularity: price_bucket,
+                    enableSendAllBids: true
+                });
+            });
+        
+    </script>
+
+
+        
+
+        
+
+        
+
+
+<script type='text/javascript'>
+    
+    googletag.cmd.push(function() {
+        if (typeof(Krux) !== "undefined") {
+            googletag.pubads().setTargeting("ksg", Krux.segments);
+            googletag.pubads().setTargeting("kuid", Krux.user);
+        }
+
+        
+
+        
+
+        
+        googletag.pubads().setTargeting('collection', '/investing');
+        
+
+        
+
+        
+
+        googletag.pubads().setTargeting('test_bucket', '29');
+        googletag.pubads().setTargeting('tickers', [""]);
+        googletag.pubads().setTargeting('suppress_modal', 'False');
+
+        
+        googletag.pubads().setTargeting('sessionCount', '1')
+        googletag.pubads().setTargeting('tenOrMoreSessions', 'False')
+        googletag.pubads().setTargeting('services', [])
+        googletag.pubads().setTargeting('uid', '');
+        
+        googletag.pubads().setTargeting('page_type', 'Non-TSTR-PAGE');
+    });
+    
+</script>
+
+
+        
+    
+
+
+
+
+     <script>
+        googletag.cmd.push(function() {
+            googletag.enableServices();
+            googletag.pubads().addEventListener('slotOnload', function(e) {
+                var slot = e.slot;
+                var path = slot.getAdUnitPath();
+                var n = path.search(/sticky|header_mobtab/);
+                if ( n > 0 ) {
+                    var leaderboard = $('.sticky-header-ads-container');
+                    if( leaderboard.length > 0 && leaderboard.css('position') === 'fixed' ) {
+                        var ADwrapper = $('#sticky-wrapper');
+                        ADwrapper.height(leaderboard.outerHeight());
+                        setTimeout(function () {
+                            leaderboard.css('position','static');
+                        }, 3000);
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- gpt_ads -->
+    
+    
+         <script>
+            var adsRefresh = function(adSlots) {
+                var targetingIds = [];
+                for (var i in adSlots) {
+                    var adSlot = adSlots[i];
+                    targetingIds.push(adSlot.code);
+                }
+
+                var newAdSlots = [];
+
+                Object.keys(slots).forEach(function(key) {
+                    if (targetingIds.indexOf(key) > -1) {
+                        newAdSlots.push(slots[key]);
+                    }
+                });
+                // Refresh all ads on ajaxed article
+                // which will cause of updating correlator value
+                googletag.cmd.push(function() {
+                    googletag.pubads().refresh(newAdSlots);
+                });
+            };
+
+            var postEndlessScrollArticleAdded = function() {
+                var scrollingAdUnits = window.scrollingAdUnits || [];
+                adsRefresh(scrollingAdUnits);
+                window.scrollingAdUnits = [];
+            };
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(window.adUnits);
+                pbjs.requestBids({
+                    bidsBackHandler: sendDFPRequest
+                });
+            });
+            function sendDFPRequest() {
+                if (pbjs.adserverRequestSent) return;
+                pbjs.adserverRequestSent = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        googletag.pubads().refresh();
+                    });
+                });
+            }
+            setTimeout(function() {
+                sendDFPRequest();
+            }, 1000);
+        </script>
+    
+
+
+        <!-- Favicon -->
+        
+        <link rel="shortcut icon" href="//g.foolcdn.com/static/dubs/elvis/images/favicon.13af4883f3a3.ico">
+        <link rel="apple-touch-icon" href="//g.foolcdn.com/static/dubs/elvis/images/apple-touch-icon.91bb1b01ecea.png">
+        
+        
+    
+    
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+
+            
+    <meta name="description" content="The Motley Fool provides leading insight and analysis about stocks, helping investors stay informed." />
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Privacy &amp; Cookie Statement">
+<meta itemprop="description" content="The Motley Fool provides leading insight and analysis about stocks, helping investors stay informed.">
+<meta itemprop="image" content="https://g.foolcdn.com/assets/images/fool/tmf-logo.png">
+
+<!-- Twitter Card data -->
+<meta name="twitter:site" content="@themotleyfool">
+<meta name="twitter:title" content="Privacy &amp; Cookie Statement">
+<meta name="twitter:description" content="The Motley Fool provides leading insight and analysis about stocks, helping investors stay informed.">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Privacy &amp; Cookie Statement" />
+<meta property="og:url" content="https://www.fool.com/legal/privacy-statement/" />
+<meta property="og:description" content="The Motley Fool provides leading insight and analysis about stocks, helping investors stay informed." />
+
+
+
+            <meta property="og:site_name" content="The Motley Fool" />
+            <meta property="fb:app_id" content="50808187550" />
+
+        
+    <meta name="msvalidate.01" content="8D40D58712924715BAA79D135A6C8DDA" />
+    <script>
+        var dataLayer = dataLayer || [];
+    </script>
+    <script type="text/javascript">
+    var dataLayer = dataLayer || [];
+    var hashedEmail = unescape(encodeURIComponent("d41d8cd98f00b204e9800998ecf8427e")).trim().toLowerCase();
+    dataLayer.push({'EmailReady.email': ''});
+    dataLayer.push({'EmailReady.hashed_email': hashedEmail});
+    dataLayer.push({'event': 'EmailReady'});
+    !function(l,a){a.liosetup=a.liosetup||{},a.liosetup.callback=a.liosetup.callback||[],a.liosetup.addEntityLoadedCallback=function(l,o){if("function"==typeof a.liosetup.callback){var i=[];i.push(a.liosetup.callback),a.liosetup.callback=i}a.lio&&a.lio.loaded?l(a.lio.data):o?a.liosetup.callback.unshift(l):a.liosetup.callback.push(l)}}(document,window);
+    window.liosetup.addEntityLoadedCallback(function(data){ dataLayer.push({'event': 'LyticsSegmentsReady', 'segments': data.segments}); });
+</script>
+
+    <link rel="canonical" href="https://www.fool.com/legal/privacy-statement/">
+
+
+        <title>
+            
+    Privacy &amp; Cookie Statement
+
+        </title>
+
+        
+    
+    <link rel="stylesheet" href="//g.foolcdn.com/static/dubs/CACHE/css/71b970067589.css" type="text/css" /><link rel="stylesheet" href="//g.foolcdn.com/static/dubs/CACHE/css/5271a35963b0.css" type="text/css" media="print" />
+
+    <link rel="stylesheet" href="//g.foolcdn.com/static/dubs/CACHE/css/ae9addd724a4.css" type="text/css" />
+
+
+        
+    
+
+            <!-- Adding in the latest Font Awesome -->
+            <script src="https://use.fontawesome.com/6ee36f699c.js"></script>
+
+
+            <script type="text/javascript" src="//g.foolcdn.com/static/dubs/CACHE/js/17720d92d638.js"></script>
+            <!-- Fool Project settings   -->
+            <script type="text/javascript">
+                var value = 'dubs';
+                var is_classic = false;
+                var premium_id = 'None';
+                window.settings = window.settings || {};
+                // API root path from settings
+                window.settings.apiRootPath = '';
+                // segmentIO key
+                window.settings.segmentIOkey = '';
+                
+                window.settings.uid = 0;
+                window.settings.username = '0';
+                
+                window.settings.isNewOneUser = 'False' === 'True';
+            </script>
+        
+
+        
+
+        
+        
+    </head>
+
+
+    <body class="fool yolo legal" >
+    <!-- maintenance_banner -->
+
+
+
+    <script>
+        var infotronStubMaker = function(methods)  {
+            var stubQueue = [];
+            stubQueue.invoked = false;
+            stubQueue.methods = methods;
+
+            var addToMethodQueue = function(method)  {
+                var func = function() {
+                    var args = Array.prototype.slice.call(arguments, 0);
+                    var newArgs = [method].concat(args);
+                    stubQueue.push(newArgs);
+                };
+                func.stub = true;
+                return func;
+            };
+            var generateMethods = function()  {
+                for (var i=0; i < stubQueue.methods.length; i++)  {
+                    var key = stubQueue.methods[i];
+                    stubQueue[key] = addToMethodQueue(key);
+                }
+            };
+            var loadTracker = function(scriptUrl)  {
+                if (stubQueue.invoked)  {
+                    if (window.console && console.error)  {
+                        console.error('Queue snippet included twice.');
+                    }
+                    return;
+                }
+                var trackerScript = document.createElement('script');
+                trackerScript.type = 'text/javascript';
+                trackerScript.async = true;
+                trackerScript.src = scriptUrl;
+                var firstScript = document.getElementsByTagName('script')[0];
+                firstScript.parentNode.insertBefore(trackerScript, firstScript);
+                stubQueue.invoked = true;
+            };
+            generateMethods();
+            stubQueue.load = loadTracker;
+            return stubQueue;
+        };
+
+        var PitchEngine = infotronStubMaker([
+                'initialize',
+                'get',
+                'pitcherDone',
+                'placeInPage',
+                'pitcherError',
+                'RegisterQueue',
+                'UnRegisterQueue'
+            ]);
+        var PitcherAds = infotronStubMaker(
+                ['get', 'OnDomReady', 'PlaceAdInPage', 'makeDFPAd', 'RegisterQueue', 'UnRegisterQueue']
+        );
+
+        var isLive = window.location.host.split('.').length === 3; // length = 4 for mockup, staging, test, dev/localhost
+        PitchEngine.load((isLive ? '//m.foolcdn.com' : '//staging.m.foolcdn.com') + '/static/infotron/js/infotron-async.min.js');
+    </script>
+
+
+
+    <!-- Main Container wrapping the whole page -->
+    <div class="main-container">
+
+
+        <!-- The Universal Fool Top Hat black bar -->
+        
+    
+        <div class="fool-tophat-container">
+            
+
+
+
+
+
+<div class="fool-tophat-container">
+ <div class="fool-tophat" data-tabbable-selector="ul.dropMenu,#logOut a">
+    <div id="tophatWrap">
+
+        <!-- Aligned Left -->
+        <div class="fool-tophat-left" role="menubar">
+            <a class="skip-main" href="#main-content" target="_self">Skip to main content</a>
+
+            <!--  Country Dropdown -->
+            <ul id="countries-dropdown" class="dropMenu site-nav-hide">
+
+                 
+
+
+
+	<li class="topLevel countryIcon" >
+	    <a href="/" class="dropdown-toggle country-select-item" type="button" id="dropdownMenuCountries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-globe"><span class="globe-text">The Motley Fool</span></span><span class="caret"></span></a>
+	    <ul class="country-select dropdown-menu" aria-labelledby="dropdownMenuCountries">
+	        <li role="menuitem" aria-setsize="8" aria-posinset="1">
+	            <a class="us" href="/">Fool.com</a>
+	        </li>
+	        <li role="menuitem" aria-setsize="8" aria-posinset="2">
+	            <a class="uk" href="https://www.fool.co.uk/">Fool.co.uk</a>
+	        </li>
+	        <li role="menuitem" aria-setsize="8" aria-posinset="3">
+	            <a class="au" href="https://www.fool.com.au/">Fool.com.au</a>
+	        </li>
+	        <li role="menuitem" aria-setsize="8" aria-posinset="4">
+	            <a class="ca" href="https://www.fool.ca/">Fool.ca</a>
+	        </li>
+	        <li role="menuitem" aria-setsize="8" aria-posinset="5">
+	            <a class="sg" href="https://www.fool.sg">Fool.sg</a>
+	        </li>
+	        <li role="menuitem" aria-setsize="8" aria-posinset="6">
+	            <a class="de" href="https://www.fool.de">Fool.de</a>
+	        </li>
+	    </ul>
+	</li>
+
+
+
+            </ul>
+
+            
+            <div id="tophat-motto">
+                Helping the world invest better since 1993.
+            </div>
+            
+        </div>
+
+
+        <!-- Aligned Right -->
+        <div id="userTools" class="fool-tophat-right">
+
+            <!-- My Fool -->
+            
+                <span id="myFool" style="width:100px"><li>Hi, Fool!</li></span>
+            
+
+            <!-- Premium Services -->
+            
+            <ul id="premium" style="width:140px">
+                <li class="topLevel">
+                    <a href="https://www.fool.com/#services-section" aria-haspopup="true">
+                    Premium Advice</a>
+                </li>
+            </ul>
+            
+
+            <!-- Help -->
+            <ul id="Help" class="dropMenu" >
+                <li class="topLevel">
+                    <a href="javascript:void(0)" class="select" aria-haspopup="true">
+                    Help</a>
+
+                    <ul aria-label="Help" class="site-nav-hide" >
+
+                        
+
+
+
+    
+
+            <li><i class="fa fa-envelope"></i> <a href="https://www.fool.com/contact/customer-service/" class="last">Contact Us</a></li>
+
+            
+
+
+    
+
+
+
+
+
+                    </ul>
+                </li>
+            </ul>        
+
+            
+
+
+
+	
+    <span name="logIn" id="logIn" class="top-hat-element">
+        <a class="" href="https://www.fool.com/secure/login.aspx?source=ilgsittph0000001">Login</a>
+    </span>
+    
+
+
+
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+        
+
+
+        <!-- Mobile Nav ~ not needed for Fool, still used in Premium services ~GR 09/15 -->
+        
+        
+
+
+        <!-- Page Grid Container sets max-width and centers for older Premium services ~GR 09/15-->
+        
+        <div class="page-grid-container">
+
+            <!-- Nav section -->
+            
+                    
+                        
+
+<link rel="stylesheet" href="//g.foolcdn.com/static/dubs/premium_skinner/css/navigation.3087281242c3.css" type="text/css">
+
+<header class="navigation" role="banner">
+    <div class="navigation-wrapper">
+        <a href="https://www.fool.com" class="logo">
+            <img src="https://g.foolcdn.com/art/fool15/bg/fool-logo.png" alt="The Motley Fool">
+        </a>
+
+        <!--Desktop Nav Menu-->
+<nav>
+    <ul class="nav-menu main-menu">
+        <li class="nav-item main-menu-item">
+            <a id="topnav-picks" href="https://www.fool.com/#services-section"  class="nav-link-stock-picks">Latest Stock Picks</a>
+        </li>
+        <!--Stocks and Services-->
+        <li class="nav-item main-menu-item dropdown">
+            <a id="topnav-stocks" href="javascript:void(0)">Stocks</a>
+            <div class="sub-nav sub-menu">
+                <div class="mega-menu-wrapper">
+                    
+
+<div class="mega-menu-wrapper-content sub-nav">
+    <div class="columns" id="stocks-subnav">
+        <div class="column promo-box-column">
+	    
+	    
+
+            <div class="sub-menu-header">Premium Services</div>
+            <div class="stocks-info-table sub-nav-group">
+                <div class="stocks-info-item head">
+                    <div class="td name"></div>
+                    <div class="td">Return</div>
+                    <div class="td">S&P</div>
+                </div>
+                <div class="stocks-info-item">
+                    <div class="td name">
+                        <a id="stocks-sa" href="">Stock Advisor</a>
+                        <small>Flagship service</small>
+                    </div>
+                    <div class="td return">352%</div>
+                    <div class="td">80%</div>
+                </div>
+                <div class="stocks-info-item">
+                    <div class="td name">
+                        <a id="stocks-rb" href="">Rule Breakers</a>
+                        <small>High-growth stocks</small>
+                    </div>
+                    <div class="td return">142%</div>
+                    <div class="td">67%</div>
+                </div>
+                <p align="center"><small><em>Returns as of 7/11/2018</em></small></p>
+		<div class="stocks-info-item">
+		    <div class="td name">
+			<center>
+			    <a id="stocks-all-services" href="https://www.fool.com/services/">View all Motley Fool Services</a>
+			</center>
+		    </div>
+		</div>
+            </div>
+	    
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Stock Market News</div>
+                <li class="sub-menu-link">
+                    <a id="stocks-news" href="https://www.fool.com/investing-news/">Latest Investing News</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-movers" href="https://www.fool.com/market-movers/">Gainers & Losers in the Market Today</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-top-div" href="https://www.fool.com/investing/2017/09/03/3-top-dividend-aristocrats-to-buy-now.aspx">3 Top Dividend Stocks to Buy Now</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-begin-div" href="https://www.fool.com/retirement/2017/09/10/our-guide-to-dividend-investing-for-beginners.aspx">Dividend Paying Stocks for Beginners</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-top-growth" href="https://www.fool.com/investing/2018/01/02/my-3-top-growth-stocks-for-2018.aspx">Top Growth Stocks for 2018</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-high-growth" href="https://www.fool.com/investing/high-growth/index.aspx">Discover High Growth Stocks</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-10best-free-report" href="https://www.fool.com/mms/mark/op-sa-bbn-eg/?source=isasittn0010001">
+                        10 Best Stocks Right Now
+                        <i class="fa fa-dollar text-red"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Popular Stocks</div>
+                <li class="sub-menu-link">
+                    <a id="stocks-aapl" href="https://www.fool.com/quote/nasdaq/apple/aapl">Apple Stock (AAPL)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-fb" href="https://www.fool.com/quote/nasdaq/facebook/fb">Facebook Stock (FB)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-tsla" href="https://www.fool.com/quote/nasdaq/tesla-motors/tsla">Tesla Stock (TSLA)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-nflx" href="https://www.fool.com/quote/nasdaq/netflix/nflx">Netflix Stock (NFLX)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-goog" href="https://www.fool.com/quote/nasdaq/alphabet-c-shares/goog">Google Stock (GOOG)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-amzn" href="https://www.fool.com/quote/nasdaq/amazon/amzn">Amazon Stock (AMZN)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-ge" href="https://www.fool.com/quote/nyse/general-electric/ge">GE Stock (GE)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-dis" href="https://www.fool.com/quote/nyse/walt-disney/dis">Disney Stock (DIS)</a>
+                </li>
+                <li id="stocks-twtr" class="sub-menu-link">
+                    <a href="https://www.fool.com/quote/nyse/twitter/twtr">Twitter Stock (TWTR)</a>
+                </li>
+                <li id="stocks-snap" class="sub-menu-link">
+                    <a href="https://www.fool.com/quote/nyse/snap-inc/snap">Snapchat Stock (SNAP)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <!-- <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div> -->
+                </div>
+            </div>
+        </li>
+
+        <!--How To Invest-->
+        <li class="nav-item main-menu-item dropdown">
+            <a id="topnav-hti" href="javascript:void(0)">How to Invest</a>
+            <div class="sub-nav sub-menu">
+                <div class="mega-menu-wrapper">
+                    <div class="mega-menu-wrapper-content dub-nav">
+    <div class="columns" id="hti-subnav">
+        <!-- Ad loaded dynamically via postLoastHeaderLinks.js -->
+        <div class="column ">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Learn How to Invest</div>
+                <li class="sub-menu-link">
+                    <a id="hti-stocks" href="https://www.fool.com/how-to-invest/">How to Invest in Stocks</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-start-100" href="https://www.fool.com/how-to-invest/best-way-to-invest-100-a-month.aspx">Start Investing with $100 a Month</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-knowledge-center" href="https://www.fool.com/knowledge-center/index.aspx">Investing Knowledge Center</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-options" href="https://www.fool.com/investing/options/options-a-foolish-introduction.aspx">Learn Options Trading</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-etf" href="https://www.fool.com/investing/etf/2018/01/15/etf-vs-mutual-funds-the-pros-and-cons.aspx">Guide to Index, Mutual & ETF Funds</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-dividends" href="https://www.fool.com/investing/2017/08/21/how-to-invest-in-dividend-stocks-the-best-way.aspx">How to Build a Dividend Portfolio</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-retirement" href="https://www.fool.com/retirement/">Investing for Retirement</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Track Your Performance</div>
+                <li class="sub-menu-link">
+                    <a id="hti-scorecard" href="https://scorecard.fool.com">Portfolio Tracker</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-caps" href="https://caps.fool.com/">Rate & Research Stocks - CAPS</a>
+                </li>
+                <div class="sub-menu-header">Investing Accounts</div>
+                <li class="sub-menu-link">
+                    <a id="hti-brokerage-accounts" href="https://www.fool.com/how-to-invest/broker/index.aspx">Compare Brokerage Accounts</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-ira-accounts" href="https://www.fool.com/retirement/ira/compare.aspx">Compare IRA Accounts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <!-- <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div> -->
+                </div>
+            </div>
+        </li>
+
+        <!--Retirement-->
+        <li class="nav-item main-menu-item dropdown">
+            <a id="topnav-retire" href="javascript:void(0)">Retirement</a>
+            <div class="sub-nav sub-menu">
+                <div class="mega-menu-wrapper">
+                    <div class="mega-menu-wrapper-content sub-nav">
+    <div class="columns" id="retirement-subnav">
+        <!-- Ad loaded dynamically via postLoastHeaderLinks.js -->
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Retirement Planning</div>
+                <li class="sub-menu-link">
+                    <a id="retire-401ks" href="https://www.fool.com/retirement/401k/401kintro-is-your-retirement-plan-foolish.aspx">401Ks</a> | <a href="https://www.fool.com/retirement/ira/index.aspx">IRAs</a> | <a href="https://www.fool.com/retirement/assetallocation/introduction-to-asset-allocation.aspx">Asset Allocation</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-step-guide" href="https://www.fool.com/retirement/index.aspx">Step by step guide to retirement</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-guide-plans" href="https://www.fool.com/retirement/2018/02/21/2018-guide-to-retirement-planning.aspx">2018 Guide to Retirement Planning</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-socsec-exist" href="https://www.fool.com/retirement/general/2016/03/19/will-social-security-last-until-i-retire.aspx">Will Social Security be there for me?</a>
+                </li>
+                <li class="sub-menu-link">
+                   Retirement Guide: <a id="retire-guide-20s" href="https://www.fool.com/retirement/2016/12/19/the-perfect-retirement-strategy-for-20-somethings.aspx">20s</a> | <a id="retire-guide-30s" href="https://www.fool.com/retirement/2016/07/16/the-perfect-retirement-strategy-for-people-in-thei.aspx">30s</a> | <a id="retire-guide-40s" href="https://www.fool.com/retirement/2016/12/19/the-perfect-retirement-strategy-for-40-somethings.aspx">40s</a> | <a id="retire-guide-50s" href="https://www.fool.com/retirement/2016/12/20/the-perfect-retirement-strategy-for-50-somethings.aspx">50s</a>
+                 </li>
+                <li class="sub-menu-link">
+                    <a id="retire-college-retirement" href="https://www.fool.com/retirement/2017/08/06/should-you-save-for-college-or-retirement.aspx">Save for College or Retirement?</a>
+                </li>
+                <li class="sub-menu-link"><a id="retire-socsec-free-report" href="http://www.fool.com/mms/mark/ecap-foolcom-social-security/?aid=8727&source=irrsittn0010002">$16,122 Social Security Bonus <i class="fa fa-dollar text-red"></i></a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Already Retired</div>
+                <li class="sub-menu-link">
+                    <a id="retire-now-what" href="https://www.fool.com/retirement/general/2015/05/09/so-youre-about-to-retire-now-what.aspx">Time to Retire, Now What?</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-60s" href="https://www.fool.com/retirement/2016/06/04/the-perfect-retirement-strategy-for-seniors-in-the.aspx">Living in Retirement in Your 60s</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-reverse-mortgage" href="https://www.fool.com/retirement/2016/10/09/read-this-before-you-get-a-reverse-mortgage.aspx">Should I Reverse Mortgage My Home?</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-longtermcare" href="https://www.fool.com/retirement/2018/02/02/your-2018-guide-to-long-term-care-insurance.aspx">Should I Get a Long Term Care Policy?</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="retire-socsec-guide" href="https://www.fool.com/retirement/2017/12/03/your-2018-guide-to-social-security-benefits.aspx">Your 2018 Guide to Social Security</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <!-- <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div> -->
+                </div>
+            </div>
+        </li>
+
+        <!--Personal Finance -->
+        <li class="nav-item main-menu-item dropdown">
+            <a id="topnav-pf" href="javascript:void(0)">Personal Finance</a>
+            <div class="sub-nav sub-menu">
+                <div class="mega-menu-wrapper">
+                    <div class="mega-menu-wrapper-content dub-nav">
+    <div class="columns">
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a class="sub-menu-header" id="cc-heading" href="https://www.fool.com/credit-cards/">Credit Cards</a>
+                <li class="sub-menu-link">
+                    <a id="cc-best-overall" href="https://www.fool.com/credit-cards/best-credit-cards/">Best Credit Cards of 2018</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-bonuses" href="https://www.fool.com/credit-cards/best-credit-card-sign-up-bonuses/">Best Credit Card Sign-Up Bonuses</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-transfer" href="https://www.fool.com/credit-cards/best-balance-transfer-credit-cards/">Best Balance-Transfer Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-travel" href="https://www.fool.com/credit-cards/best-travel-credit-cards/">Best Travel Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-cash" href="https://www.fool.com/credit-cards/best-cash-back-credit-cards/">Best Cash-Back Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-nofee" href="https://www.fool.com/credit-cards/best-no-annual-fee-credit-cards/">Best No-Annual-Fee Credit Cards</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a id="mortgage-heading" href="https://www.fool.com/mortgages/index.aspx" class="sub-menu-header">Mortgages</a>
+                <li class="sub-menu-link">
+                    <a id="mortgage-compare" href="https://www.fool.com/mortgages/compare-mortgage-rates/">Compare Mortgage Rates</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-approved" href="https://www.fool.com/mortgages/get-pre-approved.aspx/">Get Pre-Approved</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-afford" href="https://www.fool.com/mortgages/how-much-house-can-i-afford.aspx">How Much House Can I Afford?</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-free-report" href="http://www.fool.com/ecap/the_motley_fool/mortgage-playbook-11-essentials/?source=izieditxt0000003&aid=8946">11 Mortgage Essentials Demystified</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a class="sub-menu-header" id="tax-heading" href="https://www.fool.com/taxes/index.aspx">Taxes</a>
+                <li class="sub-menu-link">
+                    <a id="tax-reduce" href="https://www.fool.com/taxes/2018/01/18/your-complete-guide-to-the-2018-tax-changes.aspx">2018 Guide to Tax Changes</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-deductions" href="https://www.fool.com/taxes/2017/12/18/5-tax-deductions-that-could-save-you-big-bucks-i-2.aspx">Top Tax Deductions"</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-audit-proof" href="https://www.fool.com/taxes/2018/02/15/10-red-flags-that-could-trigger-a-tax-audit-in-201.aspx">Tax Audit Red Flags</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-keep" href="https://www.fool.com/retirement/2017/02/08/what-tax-documents-do-i-need.aspx">What Tax Info Should I Keep?</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a id="saving-heading" href="https://www.fool.com/saving/index.aspx" class="sub-menu-header">Saving & Budgeting</a>
+                <li class="sub-menu-link"><a id="saving-best" href="https://www.fool.com/saving/best-savings-accounts.aspx">Best Savings Accounts of 2018</a></li>
+                <li class="sub-menu-link"><a id="saving-rates" href="https://www.fool.com/saving/best-savings-account-interest-rates/">Best Savings Account Rates</a></li>
+                <li class="sub-menu-link"><a id="saving-cds" href="https://www.fool.com/saving/best-cd-rates/">Best CD Rates</a></li>
+                <li class="sub-menu-link"><a id="saving-debt" href="https://www.fool.com/credit-cards/2017/04/06/credit-card-debt-essentials-how-to-get-out-of-debt.aspx">Getting Out of Debt</a></li>
+                <li class="sub-menu-link"> <a id="saving-college" href="https://www.fool.com/saving/whats-the-best-college-savings-account.aspx">College Savings</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <!-- <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div> -->
+                </div>
+            </div>
+        </li>
+
+        <!--Community-->
+        <li class="nav-item main-menu-item dropdown">
+            <a id="topnav-community" href="javascript:void(0)">Community</a>
+            <div class="sub-nav sub-menu">
+                <div class="mega-menu-wrapper">
+                    <div class="mega-menu-wrapper-content sub-nav">
+    <div class="columns" id="community-subnav">
+        <div class="column">
+            <div class="sub-menu-header">
+                Our Mission:<br/ >Helping the World Invest — Better
+            </div>
+            <p>Founded in 1993 by brothers Tom and David Gardner, The Motley Fool helps millions of people attain financial freedom through our website, podcasts, books, newspaper column, radio show, and premium investing services.</p>
+        </div>
+        <!-- links loaded dynamically via postLoastHeaderLinks.js -->
+    </div>
+</div>
+
+                    <!-- <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div> -->
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+        <button class="navigation-menu-button" id="mobile-menu-toggle" role="button">
+    <i class="fa fa-bars"></i>
+</button>
+<nav class="mobile-nav-container">
+    <ul class="mobile-nav">
+        
+            <li class="main-menu-item">
+                <a id="m-topnav-picks" href="https://www.fool.com/#services-section">Latest Stock Picks</a>
+            </li>
+        
+
+        <!--Stocks and Services-->
+        <li class="main-menu-item dropdown">
+            <div class="main-menu-item-link-wrapper" onclick="return true">
+                <span class="main-menu-item-link">
+                    <span class="dropdown">Stocks</span>
+                </span>
+            </div>
+            <ul class="sub-menu">
+                <div class="mega-menu-wrapper">
+                    <header class="sub-menu-name">
+                        Stocks
+                        <button class="btn-level-up">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                    </header>
+                    
+
+<div class="mega-menu-wrapper-content sub-nav">
+    <div class="columns" id="stocks-subnav">
+        <div class="column promo-box-column">
+	    
+	    
+
+            <div class="sub-menu-header">Premium Services</div>
+            <div class="stocks-info-table sub-nav-group">
+                <div class="stocks-info-item head">
+                    <div class="td name"></div>
+                    <div class="td">Return</div>
+                    <div class="td">S&P</div>
+                </div>
+                <div class="stocks-info-item">
+                    <div class="td name">
+                        <a id="stocks-sa" href="">Stock Advisor</a>
+                        <small>Flagship service</small>
+                    </div>
+                    <div class="td return">352%</div>
+                    <div class="td">80%</div>
+                </div>
+                <div class="stocks-info-item">
+                    <div class="td name">
+                        <a id="stocks-rb" href="">Rule Breakers</a>
+                        <small>High-growth stocks</small>
+                    </div>
+                    <div class="td return">142%</div>
+                    <div class="td">67%</div>
+                </div>
+                <p align="center"><small><em>Returns as of 7/11/2018</em></small></p>
+		<div class="stocks-info-item">
+		    <div class="td name">
+			<center>
+			    <a id="stocks-all-services" href="https://www.fool.com/services/">View all Motley Fool Services</a>
+			</center>
+		    </div>
+		</div>
+            </div>
+	    
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Stock Market News</div>
+                <li class="sub-menu-link">
+                    <a id="stocks-news" href="https://www.fool.com/investing-news/">Latest Investing News</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-movers" href="https://www.fool.com/market-movers/">Gainers & Losers in the Market Today</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-top-div" href="https://www.fool.com/investing/2017/09/03/3-top-dividend-aristocrats-to-buy-now.aspx">3 Top Dividend Stocks to Buy Now</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-begin-div" href="https://www.fool.com/retirement/2017/09/10/our-guide-to-dividend-investing-for-beginners.aspx">Dividend Paying Stocks for Beginners</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-top-growth" href="https://www.fool.com/investing/2018/01/02/my-3-top-growth-stocks-for-2018.aspx">Top Growth Stocks for 2018</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-high-growth" href="https://www.fool.com/investing/high-growth/index.aspx">Discover High Growth Stocks</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-10best-free-report" href="https://www.fool.com/mms/mark/op-sa-bbn-eg/?source=isasittn0010001">
+                        10 Best Stocks Right Now
+                        <i class="fa fa-dollar text-red"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Popular Stocks</div>
+                <li class="sub-menu-link">
+                    <a id="stocks-aapl" href="https://www.fool.com/quote/nasdaq/apple/aapl">Apple Stock (AAPL)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-fb" href="https://www.fool.com/quote/nasdaq/facebook/fb">Facebook Stock (FB)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-tsla" href="https://www.fool.com/quote/nasdaq/tesla-motors/tsla">Tesla Stock (TSLA)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-nflx" href="https://www.fool.com/quote/nasdaq/netflix/nflx">Netflix Stock (NFLX)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-goog" href="https://www.fool.com/quote/nasdaq/alphabet-c-shares/goog">Google Stock (GOOG)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-amzn" href="https://www.fool.com/quote/nasdaq/amazon/amzn">Amazon Stock (AMZN)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-ge" href="https://www.fool.com/quote/nyse/general-electric/ge">GE Stock (GE)</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="stocks-dis" href="https://www.fool.com/quote/nyse/walt-disney/dis">Disney Stock (DIS)</a>
+                </li>
+                <li id="stocks-twtr" class="sub-menu-link">
+                    <a href="https://www.fool.com/quote/nyse/twitter/twtr">Twitter Stock (TWTR)</a>
+                </li>
+                <li id="stocks-snap" class="sub-menu-link">
+                    <a href="https://www.fool.com/quote/nyse/snap-inc/snap">Snapchat Stock (SNAP)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </ul>
+        </li>
+
+        <!--How To Invest-->
+        <li class="main-menu-item dropdown">
+            <div class="main-menu-item-link-wrapper" onclick="return true">
+                <span class="main-menu-item-link">
+                    <span class="dropdown">How to Invest</span>
+                </span>
+            </div>
+            <ul class="sub-menu">
+                <div class="mega-menu-wrapper">
+                    <header class="sub-menu-name">
+                        How to Invest
+                        <button class="btn-level-up">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                    </header>
+                    <div class="mega-menu-wrapper-content dub-nav">
+    <div class="columns" id="hti-subnav">
+        <!-- Ad loaded dynamically via postLoastHeaderLinks.js -->
+        <div class="column ">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Learn How to Invest</div>
+                <li class="sub-menu-link">
+                    <a id="hti-stocks" href="https://www.fool.com/how-to-invest/">How to Invest in Stocks</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-start-100" href="https://www.fool.com/how-to-invest/best-way-to-invest-100-a-month.aspx">Start Investing with $100 a Month</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-knowledge-center" href="https://www.fool.com/knowledge-center/index.aspx">Investing Knowledge Center</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-options" href="https://www.fool.com/investing/options/options-a-foolish-introduction.aspx">Learn Options Trading</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-etf" href="https://www.fool.com/investing/etf/2018/01/15/etf-vs-mutual-funds-the-pros-and-cons.aspx">Guide to Index, Mutual & ETF Funds</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-dividends" href="https://www.fool.com/investing/2017/08/21/how-to-invest-in-dividend-stocks-the-best-way.aspx">How to Build a Dividend Portfolio</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-retirement" href="https://www.fool.com/retirement/">Investing for Retirement</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <div class="sub-menu-header">Track Your Performance</div>
+                <li class="sub-menu-link">
+                    <a id="hti-scorecard" href="https://scorecard.fool.com">Portfolio Tracker</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-caps" href="https://caps.fool.com/">Rate & Research Stocks - CAPS</a>
+                </li>
+                <div class="sub-menu-header">Investing Accounts</div>
+                <li class="sub-menu-link">
+                    <a id="hti-brokerage-accounts" href="https://www.fool.com/how-to-invest/broker/index.aspx">Compare Brokerage Accounts</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="hti-ira-accounts" href="https://www.fool.com/retirement/ira/compare.aspx">Compare IRA Accounts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </ul>
+        </li>
+
+        <!--Retirement-->
+        <li class="main-menu-item dropdown">
+            <div class="main-menu-item-link-wrapper" onclick="return true">
+                <span class="main-menu-item-link">
+                    <span class="dropdown">Retirement</span>
+                </span>
+            </div>
+            <ul class="sub-menu">
+                <div class="mega-menu-wrapper">
+                    <header class="sub-menu-name">
+                        Retirement
+                        <button class="btn-level-up">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                    </header>
+                    <div class="mega-menu-wrapper-content">
+    <div class="columns">
+        <div class="column">
+            <div class="sub-menu-header">Retirement Planning</div>
+            <li class="sub-menu-link">
+                <a id="retire-401ks" href="https://www.fool.com/retirement/401k/401kintro-is-your-retirement-plan-foolish.aspx">401Ks</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-iras" href="https://www.fool.com/retirement/ira/index.aspx?source=ifltnvsnv0000001">IRAs</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-allocation" href="https://www.fool.com/retirement/assetallocation/introduction-to-asset-allocation.aspx?source=ifltnvsnv0000001">Asset Allocation</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-steps-guide" href="https://www.fool.com/retirement/general/how-to-retire-in-style.aspx">Step by step guide to retirement</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-guide-plans" href="https://www.fool.com/retirement/2017/01/22/your-2017-guide-to-retirement-planning.aspx">Your 2017 Guide to Retirement Plans</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-socsec-exist" href="https://www.fool.com/retirement/general/2016/03/19/will-social-security-last-until-i-retire.aspx">Will Social Security be there for me?</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-guide-20s" href="https://www.fool.com/retirement/2016/12/19/the-perfect-retirement-strategy-for-20-somethings.aspx">Retirement Guide: 20s</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-guide-30s" href="https://www.fool.com/retirement/2016/07/16/the-perfect-retirement-strategy-for-people-in-thei.aspx">Retirement Guide: 30s</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-guide-40s" href="https://www.fool.com/retirement/2016/12/19/the-perfect-retirement-strategy-for-40-somethings.aspx">Retirement Guide: 40s</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-guide-50s" href="https://www.fool.com/retirement/2016/12/20/the-perfect-retirement-strategy-for-50-somethings.aspx">Retirement Guide: 50s</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-college-retire" href="https://www.fool.com/retirement/2017/08/06/should-you-save-for-college-or-retirement.aspx">Save for College or Retirement?</a>
+            </li>
+            <li class="sub-menu-link"><a id="retire-socsec-free-report" href="http://www.fool.com/mms/mark/ecap-foolcom-social-security/?aid=8727&source=irrsittn0010002">$16,122 Social Security Bonus <i class="fa fa-dollar text-red"></i></a></li>
+        </div>
+        <div class="column">
+            <div class="sub-menu-header">Already Retired</div>
+            <li class="sub-menu-link">
+                <a id="retire-now-what" href="https://www.fool.com/retirement/general/2015/05/09/so-youre-about-to-retire-now-what.aspx">Time to Retire, Now What?</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-60s" href="https://www.fool.com/retirement/2016/06/04/the-perfect-retirement-strategy-for-seniors-in-the.aspx">Living in Retirement in Your 60s</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-reverse-mortgage" href="https://www.fool.com/retirement/2016/10/09/read-this-before-you-get-a-reverse-mortgage.aspx">Should I reverse Mortgage My Home?</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-longtermcare" href="https://www.fool.com/retirement/2018/02/02/your-2018-guide-to-long-term-care-insurance.aspx">Should I Get a Long Term Care Policy?</a>
+            </li>
+            <li class="sub-menu-link">
+                <a id="retire-socsec-guide" href="https://www.fool.com/retirement/2017/12/03/your-2018-guide-to-social-security-benefits.aspx">Your 2018 Guide to Social Security</a>
+            </li>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </ul>
+        </li>
+
+        <!--Personal Finance -->
+        <li class="main-menu-item dropdown">
+            <div class="main-menu-item-link-wrapper" onclick="return true">
+                <span class="main-menu-item-link">
+                    <span class="dropdown">Personal Finance</span>
+                </span>
+            </div>
+            <ul class="sub-menu">
+                <div class="mega-menu-wrapper">
+                    <header class="sub-menu-name">
+                        Personal Finance
+                        <button class="btn-level-up">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                    </header>
+                    <div class="mega-menu-wrapper-content dub-nav">
+    <div class="columns">
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a class="sub-menu-header" id="cc-heading" href="https://www.fool.com/credit-cards/">Credit Cards</a>
+                <li class="sub-menu-link">
+                    <a id="cc-best-overall" href="https://www.fool.com/credit-cards/best-credit-cards/">Best Credit Cards of 2018</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-bonuses" href="https://www.fool.com/credit-cards/best-credit-card-sign-up-bonuses/">Best Credit Card Sign-Up Bonuses</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-transfer" href="https://www.fool.com/credit-cards/best-balance-transfer-credit-cards/">Best Balance-Transfer Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-travel" href="https://www.fool.com/credit-cards/best-travel-credit-cards/">Best Travel Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-cash" href="https://www.fool.com/credit-cards/best-cash-back-credit-cards/">Best Cash-Back Credit Cards</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="cc-nofee" href="https://www.fool.com/credit-cards/best-no-annual-fee-credit-cards/">Best No-Annual-Fee Credit Cards</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a id="mortgage-heading" href="https://www.fool.com/mortgages/index.aspx" class="sub-menu-header">Mortgages</a>
+                <li class="sub-menu-link">
+                    <a id="mortgage-compare" href="https://www.fool.com/mortgages/compare-mortgage-rates/">Compare Mortgage Rates</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-approved" href="https://www.fool.com/mortgages/get-pre-approved.aspx/">Get Pre-Approved</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-afford" href="https://www.fool.com/mortgages/how-much-house-can-i-afford.aspx">How Much House Can I Afford?</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="mortgage-free-report" href="http://www.fool.com/ecap/the_motley_fool/mortgage-playbook-11-essentials/?source=izieditxt0000003&aid=8946">11 Mortgage Essentials Demystified</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a class="sub-menu-header" id="tax-heading" href="https://www.fool.com/taxes/index.aspx">Taxes</a>
+                <li class="sub-menu-link">
+                    <a id="tax-reduce" href="https://www.fool.com/taxes/2018/01/18/your-complete-guide-to-the-2018-tax-changes.aspx">2018 Guide to Tax Changes</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-deductions" href="https://www.fool.com/taxes/2017/12/18/5-tax-deductions-that-could-save-you-big-bucks-i-2.aspx">Top Tax Deductions"</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-audit-proof" href="https://www.fool.com/taxes/2018/02/15/10-red-flags-that-could-trigger-a-tax-audit-in-201.aspx">Tax Audit Red Flags</a>
+                </li>
+                <li class="sub-menu-link">
+                    <a id="tax-keep" href="https://www.fool.com/retirement/2017/02/08/what-tax-documents-do-i-need.aspx">What Tax Info Should I Keep?</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <ul class="sub-nav-group">
+                <a id="saving-heading" href="https://www.fool.com/saving/index.aspx" class="sub-menu-header">Saving & Budgeting</a>
+                <li class="sub-menu-link"><a id="saving-best" href="https://www.fool.com/saving/best-savings-accounts.aspx">Best Savings Accounts of 2018</a></li>
+                <li class="sub-menu-link"><a id="saving-rates" href="https://www.fool.com/saving/best-savings-account-interest-rates/">Best Savings Account Rates</a></li>
+                <li class="sub-menu-link"><a id="saving-cds" href="https://www.fool.com/saving/best-cd-rates/">Best CD Rates</a></li>
+                <li class="sub-menu-link"><a id="saving-debt" href="https://www.fool.com/credit-cards/2017/04/06/credit-card-debt-essentials-how-to-get-out-of-debt.aspx">Getting Out of Debt</a></li>
+                <li class="sub-menu-link"> <a id="saving-college" href="https://www.fool.com/saving/whats-the-best-college-savings-account.aspx">College Savings</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </ul>
+        </li>
+
+        <!--Community-->
+        <li class="main-menu-item dropdown">
+            <div class="main-menu-item-link-wrapper" onclick="return true">
+                <span class="main-menu-item-link">
+                    <span >Community</span>
+                </span>
+            </div>
+            <ul class="sub-menu">
+                <div class="mega-menu-wrapper">
+                    <header class="sub-menu-name">
+                        Community
+                        <button class="btn-level-up">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                    </header>
+                    
+<div class="mega-menu-wrapper-content" id="community-mob-subnav">
+    <div class="columns">
+        <!-- links loaded dynamically via postLoastHeaderLinks.js -->
+    </div>
+</div>
+
+                </div>
+            </ul>
+        </li>
+
+        
+            <li class="main-menu-item" id="logIn">
+                <a id="m-topnav-login" href="https://www.fool.com/secure/login.aspx?source=ilgsittph0000001">Login</a>
+            </li>
+        
+    </ul>
+</nav>
+<div class="mobile-nav-overlay"></div>
+
+
+        <!--  nav search -->
+        <div class="header-search-wrapper">
+            <button class="header-search-wrapper-toggle"></button>
+            <div class="header-search-form-wrapper">
+                
+
+<form name="lookup" action="/fooldotcom/searchredirect/" class="header-search-form">
+	<span class="sr-only">Search</span>
+	<label for="fool-search" class="fool-search-label" style="display:none;">
+	    Search:
+	</label>
+	<input name="query" label="search" id="fool-search" class="ticker-input-input" placeholder="Ticker or Keyword" role="search" aria-hidden="false" aria-haspopup="true" autocomplete="off"/>
+    <input type="submit" class="sr-only" value="Go">
+    <div id="header-search-submit"><i class="fa fa-search"></i></div>
+</form>
+
+
+            </div>
+        </div>
+        <!--  nav search -->
+    </div>
+
+    <div class="color-line">
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+</div>
+</header>
+
+                    
+
+            
+
+
+            <!-- Header & Nav section with default -->
+            
+            
+
+            <!-- Content Container sets max-width and centers for themes with full bleed nav/footer/etc (Yolo, Precious)  ~GR 09/15-->
+            <div class="content-container">
+
+            <!-- Main Body section where individual apps reside -->
+            
+    <section class="main-content-section" id="main-content">
+	
+
+    <div class="endless-body">
+        <div class="main-col">
+            <h3>Privacy &amp; Cookie Statement</h3>
+            <section class="usmf-new article-body">
+                <span class="article-content">
+                    <div class="rich-text"><p>This is the Privacy and Cookies Policy for The Motley Fool, LLC website ("we","us" and "our site").  We are committed to protecting and respecting your privacy. </p><p>This Policy and any other documents referred to in it explain:</p><p><b>• </b>Information we collect about you<b><br/>• </b>Legal bases for processing your information<b><br/>• </b>How we use your information<b><br/>• </b>Our promotional updates and communications<b><br/>• </b>Where we store your information<b><br/>• </b>How long we keep your information<b><br/>• </b>Cookies and other technologies<b><br/>• </b>Who we give your information to<b><br/>• </b>How we protect your information<b><br/>• </b>Changing your information or closing your account<b><br/>• </b>Child safety<b><br/>• </b>European Union residents<b><br/>• </b>Changes to this policy<b><br/>• </b>Your rights<b><br/>• </b>Contact us</p><p>Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it. By using our website you acknowledge you have read and understood this privacy policy.</p><p>In Summary: This Privacy Statement applies to the operations of The Motley Fool, LLC, which serves users in the United States of America, and by using the sites and providing us with personal data you are consenting to our processing data in the United States and under its laws. Data handling practices and rules may differ from country to country. Each Motley Fool entity (e.g., The Motley Fool Limited, which operates fool.co.uk in the United Kingdom) may have different policies, which will apply to (and be stated on) its sites. </p><p>If you are a resident of the European Union and wish to use our site,  you can find information on the data policies of fool.com that pertain to you in this document.</p><p>While we do our best to protect your personal information, The Motley Fool cannot ensure or warrant the security of any information you transmit to us, and you do so at your own risk. What does all of this mean? Just as in the investing world, you must protect yourself. You are responsible for maintaining the secrecy of any password and/or account information. Please be careful and responsible whenever you are online, especially when using a computer that other people can use also.<br/></p><p>Many of our advertisers or partners, such as brokerages, merchants, or data providers, link from our site to areas on their own sites where they sell their own products and services. If you follow links from our site to others, you should be aware that you are doing business with those other sites, which have their own privacy and data collection practices. The Motley Fool has no responsibility or liability for these independent policies (and we may not even know what they are). For more information regarding a site and its privacy policies, check that site.</p><h2>1. The Information we collect about you</h2><p><br/>We will collect and process the following personal data from you:</p><h3>1.1 Information you give us<br/></h3><p>This is information about you that you give us directly when you interact with us. </p><ol><li>Signing Up for Content Delivered via Email: When you sign up for a report or other content delivered by email, we will ask for your email address. We may also ask for your name as well as capture your IP address.</li><li>Subscribing to a Service: When subscribing to any of our newsletter or portfolio services, or purchasing a special report, we need to know the sort of information typically used for credit card transactions, such as your name, address, telephone number, and credit card number and expiration date. We encrypt all of this information using Transport Layer Security (TLS), the replacement for the deprecated Secure Socket Layers (SSL) technology.</li><li>Stock Information: If you enter stocks into a Watchlist or premium Scorecard, or if you rate stocks on our CAPS platform, we will save that information and use it to identify content that we think is relevant to you. We will also use that information in the aggregate to help us better understand what our community and our premium members are interested in, so we can create and target our content better.</li><li>Other Services: We may also ask for additional information when providing other services. If you don’t want to give us the information requested, you certainly don’t have to, but you will not be able to take advantage of such offerings. For example, if we launch a text alert feature, we wouldn’t be able to send you any alerts unless you provide us with your mobile number. Or, you will be unable to track your personal stock portfolio on our site unless you input the stocks you own, and you may not be able to gain access to certain areas of our site unless you register and/or subscribe. On occasion, we may also ask you for other personal information in connection with surveys, contests or other promotional offers running on our site, but again, your participation in these features is purely voluntary.</li><li>Information About Others: If you use our recommendation service to email one of our articles to a friend, you will need to provide us with your friend's email address and your email address as a return address. We will automatically send this person a one-time email, with the recommended article attached, as well as invite your friend to visit and register with our site. We will not use these email addresses for any other purpose.</li></ol><p></p><h3>1.2 Information we collect about you from using our site:<br/></h3><p></p><ol><li>While on our site, we automatically log certain information about how you’re using our site. This information may include the URL that you just came from, your IP address (or a partially anonymized IP address) and the pages you visit while on our site.</li><li>We may place a pixel on pages on our site, or those of our advertisers and partners. This enables us to record in our server logs that a specific user id has visited a particular page. This data allows us to analyze and determine our audience’s behavioral characteristics, which helps us to optimize our site, advertisement placement, and marketing focus. </li></ol><p></p><h3>1.3 Information we receive from other sources:</h3><p>We allow our partners to collect certain information when you visit our site. They may utilize cookies, pixels, beacons, or other technologies to collect and use information about you   during your visit to this and other websites in order to provide advertisements they feel you would like. We have also engaged third-party companies to process information about our users on our behalf, to help us improve our sites and find new members. These companies will combine our data about how you visit our websites with information that they have collected from outside our sites and provide it to us (and only us) so that we can optimize your experience on fool.com across devices and based on your interests.</p><p>To learn more about this behavioral advertising, including information on how to opt-out, please </p><p>(a) visit the <a href="http://www.aboutads.info/choices/">DAA opt-out program</a>, the <a href="http://choices.ghosteryenterprise.com/global-opt-out.html">Evidon opt-out program</a>, and the <a href="https://tools.google.com/dlpage/gaoptout/">Google Analytics opt-out program</a> to learn how to opt out of having your information collected in browsers for ad serving purposes;</p><p>(b) download the Evidon Ad Control application, available for iOS and Android, to learn how to opt out of having your information collected in mobile apps; and</p><p>(c) visit the <a href="http://www.networkadvertising.org/choices/">Network Advertising Initiative’s opt out page</a>.</p><h2>2. The legal bases we rely on:</h2><p></p><h3>2.1 Consent<br/></h3><p></p><p>We can collect and process your data with your consent.</p><ul><li><p>For example, if you have given your consent to receiving marketing material from us at the point we collected your information.</p></li></ul><p></p><h3>2.2 Contractual Obligations<br/></h3><p></p><p>We need your personal data to comply with our contractual obligations.</p><ul><ul><li><p>For example, where you have provided us with your email address to receive our services, we will use this information in order to effectively deliver and communicate our services. </p></li></ul></ul><p></p><h3>2.3 Legal Compliance<br/></h3><p></p><p>If the law requires us to, we may need to collect and process your data.</p><ul><ul><li><p>For example, we can pass on details of people involved in fraud or other criminal activity affecting us to applicable law enforcement.</p></li></ul></ul><h3>2.4 Legitimate interest</h3><p>We may require your data to pursue our legitimate interests in a way which might reasonably be expected as part of running our business and which does not materially impact your rights, freedom or interests.</p><ul><ul><li><p>For example, it is in our legitimate interests to ensure that content from our site is presented in the most effective manner for you and your computer and we provide you with the information, products and services that you request from us. </p></li></ul></ul><h2>3. How we use your information </h2><p>We will use this information in our legitimate interests, where we have considered these are not overridden by your rights:</p><ul><li><p>To administer our site and for internal operations, including troubleshooting, data analysis, testing, research, statistical and survey purposes.</p></li><li><p>To keep our site safe and secure.</p></li><li><p>For measuring or understanding the effectiveness of advertising we serve to you and others, and to deliver relevant advertising to you.</p></li><li><p>To keep you informed about products and services similar to the ones you subscribe to. </p></li><li><p>To improve our site to ensure that content is presented in the most effective manner for you and for your computer.</p></li><li><p>To allow you to participate in interactive features of our service, when you choose to do so.</p></li><li><p>Internal research: Cookies (which are discussed further below) and the other information we automatically track are used to help us better understand how our audience uses our site as well as for internal research on users’ demographics and interests.</p></li></ul><h2>4. Our promotional updates and communications</h2><p>Where permitted by one of the legal bases above, we will use your personal information for marketing analysis and to provide you with promotional update communications by email about our products/services and those of our business partners. </p><p>You can object to further marketing at any time by: (i) checking and updating your contact details within your account page (<a href="https://www.fool.com/account/">https://www.fool.com/account/</a>); (ii) selecting the "unsubscribe" link at the end of all our marketing and promotional update communications to you; or (iii) sending us an email to <a href="mailto:USGDPRDelete@fool.com">USGDPRDelete@fool.com</a>.    </p><p>Please note: If you purchase products or services from us, or if you register for an account with us, we may contact you to confirm your purchase, subscription, or registration, or to provide you with information about its terms or features. You may wish to keep these transactional or relationship emails, to help you use our products and services.</p><h2>5. How long we keep your information</h2><p>We retain personal data for as long as necessary to fulfill any legal obligations we may have as well as for purposes of processing your information (for example, if you continue to subscribe to one of our services, we will need your information to deliver the service to you).  We may also retain aggregate information beyond this time for research purposes and to help us develop and improve our services. You cannot be identified from aggregate information retained or used for these purposes.  </p><h2>6. Cookies and other technologies </h2><p>Cookies contain bits of data that websites such as ours place on your computer’s hard drive for record keeping purposes. Cookies can make the web more useful by collecting and storing information about your preferences on a particular site and help websites operate more efficiently. Cookies and similar technologies enable you to be remembered when using that computer or device to interact with websites and online services and can be used to manage a range of features and content as well as storing searches and presenting personalized content.</p><p>We use our cookies:</p><ol><ol><ol><ol><li><p>With the aim of optimizing our website and improving member experience. Cookies help us estimate our audience size, determine usage patterns and help us better target content and ads based on our users’ interests.</p></li><li><p>We also use cookies so you can, for example, access any premium content that you have subscribed to.</p></li><li><p>You have the option of not accepting the cookies we set. However, if you reject our cookies, you will not be able to take advantage of most of the features on our site, including subscription-based services.</p></li></ol></ol></ol></ol><h2>7. Use of Cookies</h2><p>We use cookies for multiple purposes on our site, including to optimize site experience, to advertise products and to enable our partners to do the same.</p><p>In addition to the cookies set directly by our partners, there are also cookies set by third parties to help deliver and monitor their ads. Please note we neither control nor have access to those cookies, and these advertisers’ uses of cookies are subject to their own privacy policies and not that of The Motley Fool.</p><p>If you follow these links from our site to theirs, you should be aware that these other sites have their own privacy and data processing practices. We have no responsibility or liability for these independent policies. For more information regarding a site and its privacy policies including its use of cookies, check that site.</p><h2>8. Cookie Removal and More Information</h2><p>You can always modify your browser so as not to accept cookies or to notify you when cookies are sent to it. For more information about cookies including removing any or all of your cookies, please visit <a href="http://www.allaboutcookies.org.">http://www.allaboutcookies.org.</a></p><p>Also, if you would like to remove the Google Analytics and DoubleClick cookies, please go to <a href="http://tools.google.com/dlpage/gaoptout">http://tools.google.com/dlpage/gaoptout</a> and <a href="http://www.google.com/ads/preferences/plugin/%20,">http://www.google.com/ads/preferences/plugin/ ,</a> respectively. You should be aware that this will affect your Google cookies on all sites, and not just ours.</p><h2>9. Information Sharing and Disclosure</h2><p>We do not give, rent, lend or sell individual information to any third party. Furthermore, we will not disclose any information about individual users, except as described below.</p><ol><ol><ol><ol><li><p><b>With your consent.</b></p></li><li><p><b>Fool Community</b>:   On our site, you may be publicly identified by your user or screen name. If you choose your full name as your username, you have voluntarily disclosed that information to the Fool community. Similarly, any information you provide in your public profile is for public consumption. The same is true for any personal identifiable information (such as an email address) you include in any discussion board posts or comment. Also, if you choose to email a reply to a discussion board post (as opposed to posting the reply on the boards), your email address will be revealed to whoever opens and reads the email. Other users may also use this function and email you a response to a message you’ve posted on our boards. While you will be able to see the sender’s email address, the sender will not be able to see yours. However, should you respond to the message, you will have disclosed your email address to the message’s recipient(s).<br/><br/>We may sometimes conduct mailings to other people's lists. To make it easier for us to comply with the Federal CAN-SPAM Act of 2003, we may share our email list of people who have requested not to receive promotional communications from us with the list providers (or contractors) solely so that we can avoid sending emails to people who have asked not to receive them (or, conversely, so that our advertisers can avoid sending emails to people who have requested not to hear from them). We provide these lists only to list providers or contractors that we consider to be reputable, and only under strict nondisclosure/nonuse agreements.</p></li><li><p><b>Current or Prospective Advertisers/Partners:</b> We may share your data with advertisers and business partners to help deliver more relevant advertising and content to you.   <br/></p><ol><li>If you sign up for a special offer from an advertiser (for 
+example, in our "What Every Fool Needs" or "Special Offers" areas, or 
+whatever we call them if we change their names), we will provide your 
+individual contact information (for example, name, mailing address, 
+email address, and/or telephone number), so that the advertiser or its 
+agent can fulfill the special offer. Once the advertiser receives the 
+information, it will handle the information under its own privacy 
+policies. Obviously, if you do not want a particular advertiser to have 
+your personal information, then you should not sign up for that 
+advertiser's offer.</li><li>We may disclose information to 
+selected partners, under nondisclosure agreements, only for the purpose 
+of marketing Motley Fool co-branded offerings (such as a Motley Fool 
+newsletter published by another company, a Motley Fool-branded credit 
+card, Motley Fool cereal, or Motley Fool meringues-by-mail baked and 
+delivered with love by <a href="https://www.fool.com/specials/1999/emeringue/">eMeringue</a>).
+ Those partners will be able to use the personal information they 
+receive from us only for marketing the co-branded offerings, not for 
+marketing anything else. So, you might get a notice about Motley Fool 
+Morsels, manufactured by Nature's Miracle cereal company, but you will 
+not receive one for that company's other flakes, crisps, or nuggets. Of 
+course, if you then sign up for a co-branded product from our partner, 
+the information you provide to that company will be subject to the 
+partner's own privacy policies. If you would prefer not to hear about 
+such products and services, simply go to our <a href="https://www.fool.com/community/nevermail.htm">opt-out page</a> and let us know.</li><li>If you provide us with a "snail mail"
+address after May 15, 2005, we may provide that information to advertisers so
+that they can send you mail about their own products and services. If you do
+not want such mail, you can throw it in the trash, use it for kindling, or go
+to the opt-out page. Note: This provision does not apply to information
+received by us before May 15, 2005.<br/><br/>If you do not want to receive such offers and
+mailings, you can let us know on our <a href="https://www.fool.com/community/nevermail.htm">opt-out page</a>,
+or you may send snail mail to  Data Protection Officer, The Motley Fool, 2000
+Duke St., 4th Floor, Alexandria, VA 22314. We'll remove your name from our
+lists as soon as we can. Another way is to simply to click the <a href="https://www.fool.com/community/nevermail.htm">"unsubscribe"
+link</a> found in our email messages.<br/><p><br/>This is important, so it bears repeating: If you
+purchase products or services from us, or if you register for an account with
+us, we may contact you to confirm your purchase, subscription, or registration,
+or to provide you with information about its terms or features. You may wish to
+keep these transactional or relationship emails, to help you use our products
+and services.</p></li><li><p>If you sign up for a service 
+that relies upon third parties for important elements, we will provide 
+your personal information to the third parties so that they can provide 
+you with their services, and those companies will treat the data under 
+their own policies. We will tell you about these service providers at 
+the time you sign up for the service.</p></li></ol></li><li><p><b>Third Party Service Providers:</b> We may employ the services of third party providers to aid us in certain aspects of our operations (such as the distribution of our email products or conducting a survey for us). Depending on the services performed, some of these providers may be provided with user information. These contractors would be subject to confidentiality agreements which limit their use and disclosure of all information they obtain through their relationship with us to Fool-related business only, consistent with this policy.</p></li><li><p><b>Legal Requests:</b> We may disclose your personally identifiable information to protect the rights and property of The Motley Fool as well as to comply with any applicable law or valid legal process. This includes, but is not limited to: </p></li></ol></ol></ol></ol><ol><ol><ol><ol><ol><li><p>Requests by Government Agencies. We will disclose any information we have in our possession to law enforcement or government officials in response to any inquiry or investigation or if in our sole discretion, we believe it is necessary or appropriate in connection with any investigation or activity that is or may be illegal or may expose us or you to legal liability.</p></li><li><p>Disclosures we are legally required or entitled to make under any enactment, rule of law or by the order of a court.</p></li></ol></ol></ol></ol></ol><h2>9. Security</h2><p>We are committed to protecting your personal information. All information that you provide to us is stored on our secure servers. Access to paid-for areas of the site, such as our newsletter services is password-protected for your privacy and security. While we do our best to protect your personal information, we cannot ensure or warrant the security of any information you transmit to us, and you do so at your own risk. What does all this mean? Just as in the investing world, you must protect yourself. You are responsible for maintaining the secrecy of your passwords and/or any account information. If you need to change your password, please follow the steps outlined below.</p><p>Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.</p><p>Our site may, from time to time, contain links to external sites. We are not responsible for the privacy policies or the content of such sites.</p><h2>10. Changing Your Information or Closing Your Account</h2><ol><ol><ol><ol><li><p>If you want to change your email address for delivery of your paid-for newsletter email subscriptions (e.g. Stock Advisor, Pro or ONE), or you would like to change your password, you should go to your accounts page (<a href="https://www.fool.com/account/">https://www.fool.com/account/</a>).  </p></li><li><p>If you would rather not hear from us by email please click the unsubscribe link, which you will find at the bottom of our email messages. If you are paying for one of our newsletter services, please note that clicking on this link will not cancel your paid subscription, but is likely to affect deliverability of your newsletter messages, announcements or other product related communications</p></li><li><p>If you want to close your account – i.e., so that it cannot be logged into –   please contact us at <a href="mailto:USGDPRDelete@fool.com">USGDPRDelete@fool.com</a></p></li></ol></ol></ol></ol><h2>11. Users Aged 13 or Under</h2><p>Protecting the safety of children when they use the internet is important to us.</p><p>The site is intended for use only by persons who are at least 13 years of age. By using this site, you confirm to us that you meet this requirement. If you are aged 13 or under, please get your parent/guardian’s permission beforehand whenever you provide personal information to our website. Users without this consent are not allowed to provide us with personal information.</p><p>If you are under the age of 13 your parent or guardian must consent on your behalf where we ask for consent in relation to the use of your information.</p><h2>12. Changes to this Privacy and Cookie Statement</h2><p>We may amend this Privacy and Cookie Statement from time to time. If we make any substantive changes to this policy, we’ll announce it on our site and notify you by email.</p><h2>13. European Users</h2><p>For the purposes of European Economic Area data protection law, (the "Data Protection Law"), the data controller is: The Motley Fool, LLC, 2000 Duke Street, Alexandria, VA 22314, USA (<a href="mailto:USGDPRInfo@fool.com">USGDPRInfo@fool.com</a>).</p><h3>13.1	Use of Cookies</h3><p>Below you’ll find the types of cookies that we set when you visit  Fool.com and their purpose. To help you better understand why we’re setting them, we’ve used the categories and definitions set by the International Chamber of Commerce (“ICC”):</p><ol><ol><ol><ol><li><p>Strictly Necessary: cookies that enable the services that you have specifically asked or paid for;</p></li><li><p>Performance: cookies that collect information on how visitors use our site including the pages visited and most frequented as well as the sources of our traffic. They are used to help us improve how the site works;</p></li><li><p>Functionality: cookies that help us remember the choices you have made so we can provide you with a more personalised experience; and</p></li><li><p>Advertising: cookies used to deliver more relevant ads, and to make sure you don’t see the same adverts over and over again.</p></li></ol></ol></ol></ol><p> If you have any questions about the  cookies we set, please contact our Data Protection Officer at <a href="mailto:USGDPRDelete@fool.com">dpo@fool.com</a>.    </p><h3>13.2	Data Storage <br/></h3><p>The data that we collect from you is transferred to, and may be stored at, a destination outside the European Economic Area ("EEA") that is not subject to equivalent Data Protection Law. For our purposes, the information we collect is processed and stored in the US.</p><p>We may transfer your personal information outside the EEA:</p><ul><ul><ul><li><p>In order to store it.</p></li><li><p>In order to enable us to provide goods or services to you and fulfill our contract with you.   This includes order fulfillment, processing of payment details, and the provision of support services.</p></li><li><p>Where we are legally required to do so.</p></li><li><p>In order to facilitate the operation of our group of businesses, where it is in our legitimate interests and we have concluded these are not overridden by your rights.</p></li></ul></ul></ul><p>Where your information is transferred outside the EEA, we will take all steps reasonably necessary to ensure that your data is subject to appropriate safeguards, such as relying on a recognised legal adequacy mechanism, and that it is treated securely and in accordance with this privacy policy. </p><br/><h3>13.3 European site users have certain rights under certain circumstances:</h3><ul><ul><ul><li><p>to be provided with a copy of your personal data held by us;</p></li><li><p>to request the rectification or erasure of your personal data held by us;</p></li><li><p>to request that we restrict the processing of your personal data (while we verify or investigate your concerns with this information, for example);</p></li><li><p>to object to the further processing of your personal data, including the right to object to marketing (as mentioned in 'our promotional updates and communications' section);</p></li><li><p>to request that your provided personal data be moved to a third party.</p></li></ul></ul></ul><br/><h3>13.4 Your right to withdraw consent:</h3><p>Where the processing of your personal information by us is based on consent, you have the right to withdraw that consent without detriment at any time by contacting us at <a href="mailto:CS@fool.com">CS@fool.com</a> You can also change your marketing preferences at any time as described in 'our promotional updates and communications' section.</p><p>You can also exercise the rights listed above at any time by contacting us at <a href="mailto:USGDPRInfo@fool.com">USGDPRInfo@fool.com</a></p><p><br/></p><p>If your request or concern is not satisfactorily resolved by us, you may approach your local data protection authority, (see <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html">http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html</a>). </p><h2>Contact Us</h2><p>Questions, comments and requests regarding this privacy and cookie policy are welcomed and should be addressed to:</p><p>Data Protection Officer<br/>The Motley Fool, LLC<br/>2000 Duke Street<br/>Alexandria, VA 22314</p><p><a href="mailto:USGDPRInfo@fool.com">dpo@fool.com</a> </p><p>Last Updated: May 25, 2018</p><br/></div>
+                </span>
+
+            </section>
+        </div>
+    </div>
+    <div class="side-col article-page">
+        <section class="related-content">
+            <section class="read-more-section">
+                <h3>Legal</h3>
+                
+    <ul>
+        <li><a href="https://www.fool.com/legal/contact-us.aspx">Contact Us</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.fool.com/legal/fool-disclosure-policy.aspx">Fool Disclosure Policy</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.fool.com/legal/privacy-statement.aspx">Privacy Statement</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.fool.com/legal/stuff-we-own.aspx">Stuff We Own</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.fool.com/legal/the-motley-fool-disclaimer.aspx">The Motley Fool Disclaimer</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.fool.com/legal/the-motley-fools-rules.aspx">The Motley Fool&#39;s Rules</a></li>
+    </ul>
+
+            </section>
+        </section>
+    </div>
+
+
+    </section>
+
+
+            </div> <!-- ./ content-container -->
+
+            <!-- Footer section -->
+            
+
+                    
+                        <footer class="footer" id="usmf-footer">
+    <!-- links loaded dynamically via postLoastHeaderLinks.js -->
+</footer>
+
+                    
+            
+    
+
+    
+
+
+        </div><!-- ./ page-grid-container -->
+        
+
+    </div> <!-- ./ main-container -->
+    <!-- Target for aria-describedby when link is active -->
+    <div id="currently-active-desc" style="display:none;">Current</div>
+
+
+
+
+    <script type="text/javascript" src="//g.foolcdn.com/static/dubs/CACHE/js/a52b2862d7fe.js"></script>
+
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            var skipLink = $('.skip-main');
+            var skipLinkTarget = $(".main-content");
+
+            if (skipLink.length) {
+                if (!skipLinkTarget.length) {
+                    skipLinkTarget = $("#main-content");
+                }
+                if (!skipLinkTarget.length) {
+                    skipLinkTarget = $("h1");
+                }
+                if (!skipLinkTarget.length) {
+                    skipLinkTarget = $("main");
+                }
+                if (skipLinkTarget.length) {
+                    if (typeof skipLinkTarget.attr("tabindex") === "undefined") {
+                            skipLinkTarget.attr("tabindex", "-1");
+                    }
+                    if (typeof skipLinkTarget.attr("id") === "undefined") {
+                            skipLinkTarget.attr("id", 'main-content');
+                    }
+                    skipLink.on('click', function() {
+                        skipLinkTarget.first().focus();
+                        return false;
+                    });
+                }
+                else { // if no skip-target, remove skip-link.
+                    skipLink.remove();
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+        <script type="text/javascript" src="//g.foolcdn.com/static/dubs/CACHE/js/f919e7f70540.js" async></script>
+<script type="text/javascript" src="//g.foolcdn.com/static/dubs/CACHE/js/2151d6b3e3b2.js"></script>
+<script type="text/javascript" src="//g.foolcdn.com/static/dubs/CACHE/js/ae3d944a4bf1.js" async></script>
+     
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Vendor/jquery.waypoints.min.43b1aa1ea2d7.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Fool/free-navigation-tracking.9b3ae9ce599e.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Fool/fool-navigation-menu.90f446462211.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Vendor/jquery-accessibleMegaMenu.033b2757c9c6.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Vendor/accessibleMegaMenuInit.6949eb7c16c2.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Fool/postLoadHeaderLinks.bf3e4b1ff9fd.js"></script>
+     <script type="text/javascript" src="//g.foolcdn.com/static/dubs/premium_skinner/js/Fool/postLoadFooterLinks.5479f225ca14.js"></script>
+
+
+
+    <!-- Outside of Compress cause something is breaking when compressed -->
+    <script src="//g.foolcdn.com/static/dubs/elvis/js/vendor/bourbon/refills/navigation.de5a6245d054.js" async></script>
+    <script src="//g.foolcdn.com/static/dubs/elvis/js/vendor/bourbon/refills/parallax.fdf3c15dc50a.js" async></script>
+
+    <script>
+        $(document).ready(function() {
+            if (typeof(window.infotronQueue) !== "undefined")
+                window.infotronQueue.EndOfPage('articlePageView');
+        });
+    </script>
+
+
+
+
+
+
+
+  <script>
+    if (typeof window.Infotrack !== "undefined")  {
+        window.Infotrack.initialize("usmf");
+    }
+  </script>
+  </body>
+</html>

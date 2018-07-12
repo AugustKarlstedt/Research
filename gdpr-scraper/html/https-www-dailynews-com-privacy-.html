@@ -1,0 +1,912 @@
+			<!DOCTYPE html>
+			<html lang="en-US">
+			<head>
+				<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><meta name="application-name" id="app-name" content="dailynews"><link rel="pingback" href="https://www.dailynews.com/xmlrpc.php"><meta name="viewport" content="width=device-width, initial-scale=1">			<meta name="msvalidate.01" content="4B535F7EB2971D1FCBA5D1D3E3E292C3" />
+			<title>Privacy &#8211; Daily News</title>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scriptHelpers = {"staticPath":"https:\/\/assets.digitalfirstmedia.com\/prod\/static"};
+/* ]]> */
+</script>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//assets.digitalfirstmedia.com' />
+<link rel='dns-prefetch' href='//s.ntv.io' />
+<link rel='dns-prefetch' href='//imasdk.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Daily News &raquo; Feed" href="https://www.dailynews.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Daily News &raquo; Comments Feed" href="https://www.dailynews.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.dailynews.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0' href='https://www.dailynews.com/wp-includes/css/dashicons.min.css?m=1530815898g' type='text/css' media='all' />
+<link rel='stylesheet' id='knowlton-styles-css'  href='https://assets.digitalfirstmedia.com/prod/static/css/dailynews.72b0f022ceb1b1fd5270.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2' href='https://www.dailynews.com/wp-content/plugins/site-scng/static/css/privacy.min.css?m=1525933935g' type='text/css' media='all' />
+<style>.headroom--not-top .logo a{ background-image: url( http://dailynews-com.go-vip.co/wp-content/uploads/2017/08/los_angeles_daily_news-109x56.svg ); }</style><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var adLayersDFP = {"layerDebugLabel":"Current ad layer","consoleDebugLabel":"Switch to Google console","adUnitPrefix":"div-gpt-ad-"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var adLayersAdServer = {"jsAPIClass":"AdLayersDFPAPI"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.dailynews.com/_static/??-eJzTLy/QTc7PK0nNK9EvyClNz8wr1k9M0c1JrEwtKtbPQuLopqQV6GUV6+gTrQOo2j7X1tDUyNTS2NjS2CQLAKwvJsM='></script>
+<link rel='https://api.w.org/' href='https://www.dailynews.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.dailynews.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.dailynews.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.7" />
+<link rel='shortlink' href='https://www.dailynews.com/?p=885' />
+<link rel="alternate" type="application/json+oembed" href="https://www.dailynews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dailynews.com%2Fprivacy%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.dailynews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dailynews.com%2Fprivacy%2F&#038;format=xml" />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+		<style>
+		.getty.alignleft {
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			margin-left: 5px;
+		}
+		</style>
+		<!-- BEGIN wp-parsely Plugin Version 1.10.2 -->
+<meta name='wp-parsely_version' id='wp-parsely_version' content='1.10.2' />
+   <script type="application/ld+json">
+   {"@context":"http:\/\/schema.org","@type":"WebPage","headline":"Privacy","url":"https:\/\/www.dailynews.com\/privacy\/","dateModified":"2017-06-19T17:10:47Z"}   </script>
+    <!-- END wp-parsely Plugin Version 1.10.2 -->
+<meta property="fb:pages" content="55107646487"/>
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><script>
+			!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");apstag.init({
+				pubID: '3391',
+				adServer: 'googletag'
+			});
+			 apstag.fetchBids({
+				slots: [{
+					slotID: 'div-gpt-ad-interstitial',
+					sizes: [[1, 1]]
+				},
+				{
+					slotID: 'div-gpt-ad-top_leaderboard',
+					sizes: [[728, 90], [970, 90], [970, 250], [970, 30], [300, 50], [320, 50], [320, 100]]
+				},
+				{
+					slotID: 'div-gpt-ad-Cube1_RRail_ATF',
+					sizes: [[300, 250], [300, 600], [160, 600], [300, 1050]]
+				},
+				{
+					slotID: 'div-gpt-ad-Sponsorship_2',
+					sizes: [[1280, 250]]
+				},
+				{
+					slotID: 'div-gpt-ad-Cube2_RRail_mid',
+					sizes: [[300, 250]]
+				},
+				{
+					slotID: 'div-gpt-ad-Sponsorship_3',
+					sizes: [[1280, 250]]
+				},
+				{
+					slotID: 'div-gpt-ad-Cube3_RRail_lower',
+					sizes: [[300, 250]]
+				},
+				{
+					slotID: 'div-gpt-ad-Sponsorship_4',
+					sizes: [[1280, 250]]
+				},
+				{
+					slotID: 'div-gpt-ad-bottom_leaderboard',
+					sizes: [[728, 90], [970, 90], [970, 250], [970, 30], [320, 50], [320, 100], [300, 50]]
+				}],
+				timeout: 2e3
+			}, function(bids) {
+				// Your callback method, in this example it triggers the first DFP request for googletag's disableInitialLoad integration after bids have been set
+				googletag.cmd.push(function(){
+					apstag.setDisplayBids();
+					googletag.pubads().refresh();
+				});
+			});
+		</script><link rel="canonical" href="https://www.dailynews.com/privacy/" />					
+		<script async src="//js-sec.indexww.com/ht/p/185707-192819229389900.js"></script>
+		<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+		<script type='text/javascript'>
+		var dfpAdUnits = {};
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+		</script>			<script type="text/javascript">
+	var ranNum = Math.floor(Math.random()*101);
+	var ranRPN = ranNum.toString();
+	</script><script>
+
+function DetectDevice( userAgent ) {
+    userAgent = userAgent.toLowerCase();
+    if( RegExp( "ipod" ).test( userAgent ) || RegExp( "iphone" ).test( userAgent ) ) {
+        return "phone";
+    } else if( RegExp( "ipad" ).test( userAgent ) ) {
+        return "tablet";
+    } else if( RegExp( "android" ).test( userAgent ) ) {
+        if( RegExp( "mobile" ).test( userAgent ) ) {
+            return "phone";
+        }
+        return "tablet";
+    } else if( ( RegExp( "win" ).test( userAgent ) && ! RegExp( "compatible" ).test( userAgent ) ) || RegExp( "linux" ).test( userAgent ) || RegExp( "mac" ).test( userAgent ) ){
+        return "desktop";
+    }
+    return "unknown";
+}
+
+var dcatValue = DetectDevice( navigator.userAgent );
+
+</script><script type="text/javascript">
+
+function getParameterByName( dfmName, dfmUrl ) {
+	if ( typeof dfmUrl === "undefined") {
+		dfmUrl = window.location.href;
+	}
+	dfmName = dfmName.replace( /[\[\]]/g, "\$&" );
+	var regex = new RegExp( "[?&]" + dfmName + "(=([^&#]*)|&|#|$)" );
+	var dfmResults = regex.exec( dfmUrl );
+	if ( !dfmResults ) return '';
+	if ( !dfmResults[ 2 ] ) return '';
+	var dfmResult = decodeURIComponent( dfmResults[2].replace(/\+/g, " ") );
+	if( dfmResult.length > 15 ) return '';
+	for( var x = 0; x < dfmResult.length; x++ ) {
+		var charCode = dfmResult.charCodeAt( x );
+		if ( ! ( 
+			( 'a'.charCodeAt( 0 ) <= charCode && charCode <= 'z'.charCodeAt( 0 ) ) ||
+			( 'A'.charCodeAt( 0 ) <= charCode && charCode <= 'z'.charCodeAt( 0 ) ) ||
+			( '0'.charCodeAt( 0 ) <= charCode && charCode <= '9'.charCodeAt( 0 ) ) 
+			) ) {
+				return '';
+		}
+	}
+	return dfmResult;
+}
+
+var adTest = getParameterByName( "adtest" );
+
+</script>			<script type="text/javascript">
+			var dfpBuiltMappings = {}, dfpAdUnits = {};
+			googletag.cmd.push(function() {
+				dfpBuiltMappings["interstitial"] = googletag.sizeMapping().addSize([1000,200],[[1,1]]).addSize([750,200],[[1,1]]).build();
+dfpBuiltMappings["top_leaderboard"] = googletag.sizeMapping().addSize([1000,200],[[728,90],[970,90],[970,250],[970,30]]).addSize([750,200],[[728,90]]).addSize([300,200],[[300,50],[320,100],[320,50]]).build();
+dfpBuiltMappings["Cube1_RRail_ATF"] = googletag.sizeMapping().addSize([1000,200],[[300,250],[300,600],[300,1050],[160,600]]).addSize([750,200],[[300,250]]).addSize([300,200],[[300,250]]).build();
+dfpBuiltMappings["Cube2_RRail_mid"] = googletag.sizeMapping().addSize([1000,200],[[300,250]]).addSize([750,200],[[300,250]]).addSize([300,200],[[300,250]]).build();
+dfpBuiltMappings["Cube3_RRail_lower"] = googletag.sizeMapping().addSize([1000,200],[[300,250]]).addSize([750,200],[[300,250]]).addSize([300,200],[[300,250]]).build();
+dfpBuiltMappings["bottom_leaderboard"] = googletag.sizeMapping().addSize([1000,200],[[728,90],[970,90],[970,250]]).addSize([750,200],[[728,90]]).addSize([300,200],[[320,100],[320,50],[300,50]]).build();
+dfpAdUnits["interstitial"] = googletag.defineSlot("\/8013\/dailynews.com",[1,1],"div-gpt-ad-interstitial").defineSizeMapping(dfpBuiltMappings["interstitial"]).setTargeting("POS",["interstitial"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+dfpAdUnits["top_leaderboard"] = googletag.defineSlot("\/8013\/dailynews.com",[728,90],"div-gpt-ad-top_leaderboard").defineSizeMapping(dfpBuiltMappings["top_leaderboard"]).setTargeting("POS",["top_leaderboard"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+dfpAdUnits["bottom_leaderboard"] = googletag.defineSlot("\/8013\/dailynews.com",[728,90],"div-gpt-ad-bottom_leaderboard").defineSizeMapping(dfpBuiltMappings["bottom_leaderboard"]).setTargeting("POS",["bottom_leaderboard"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+dfpAdUnits["Cube1_RRail_ATF"] = googletag.defineSlot("\/8013\/dailynews.com",[300,250],"div-gpt-ad-Cube1_RRail_ATF").defineSizeMapping(dfpBuiltMappings["Cube1_RRail_ATF"]).setTargeting("POS",["Cube1_RRail_ATF"]).setTargeting("page",["section"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+dfpAdUnits["Cube2_RRail_mid"] = googletag.defineSlot("\/8013\/dailynews.com",[300,250],"div-gpt-ad-Cube2_RRail_mid").defineSizeMapping(dfpBuiltMappings["Cube2_RRail_mid"]).setTargeting("POS",["Cube2_RRail_mid"]).setTargeting("page",["section"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+dfpAdUnits["Cube3_RRail_lower"] = googletag.defineSlot("\/8013\/dailynews.com",[300,250],"div-gpt-ad-Cube3_RRail_lower").defineSizeMapping(dfpBuiltMappings["Cube3_RRail_lower"]).setTargeting("POS",["Cube3_RRail_lower"]).setTargeting("page",["section"]).setTargeting("RPN", ranRPN).setTargeting("rurl", [""]).setTargeting("articleid",["885"]).setTargeting("optimizely", typeof optimizely !== "undefined" && optimizely.activeExperiments[0] ? optimizely.activeExperiments[0] + "_" + optimizely.variation_map[optimizely.activeExperiments[0]]: "").setTargeting("adtest", adTest).addService(googletag.pubads());
+googletag.pubads().enableAsyncRendering();
+googletag.pubads().enableSingleRequest();
+googletag.pubads().collapseEmptyDivs();
+googletag.pubads().disableInitialLoad();
+				if ( typeof AdLayersAPI === 'undefined' || ! AdLayersAPI.isDebug() ) {
+					googletag.enableServices();
+				}
+			});
+						var dfpSizeMapping = {"interstitial":[[[1000,200],[[1,1]]],[[750,200],[[1,1]]]],"top_leaderboard":[[[1000,200],[[728,90],[970,90],[970,250],[970,30]]],[[750,200],[[728,90]]],[[300,200],[[300,50],[320,100],[320,50]]]],"Cube1_RRail_ATF":[[[1000,200],[[300,250],[300,600],[300,1050],[160,600]]],[[750,200],[[300,250]]],[[300,200],[[300,250]]]],"Cube2_RRail_mid":[[[1000,200],[[300,250]]],[[750,200],[[300,250]]],[[300,200],[[300,250]]]],"Cube3_RRail_lower":[[[1000,200],[[300,250]]],[[750,200],[[300,250]]],[[300,200],[[300,250]]]],"bottom_leaderboard":[[[1000,200],[[728,90],[970,90],[970,250]]],[[750,200],[[728,90]]],[[300,200],[[320,100],[320,50],[300,50]]]]};
+			var dfpAdLayer = {"post_id":897,"title":"Pages"};
+			var dfpAdDetails = {"interstitial":{"path":"\/8013\/dailynews.com","sizes":[1,1],"targeting":{"POS":["interstitial"]}},"top_leaderboard":{"path":"\/8013\/dailynews.com","sizes":[728,90],"targeting":{"POS":["top_leaderboard"]}},"bottom_leaderboard":{"path":"\/8013\/dailynews.com","sizes":[728,90],"targeting":{"POS":["bottom_leaderboard"]}},"Cube1_RRail_ATF":{"path":"\/8013\/dailynews.com","sizes":[300,250],"targeting":{"POS":["Cube1_RRail_ATF"],"page":["section"]}},"Cube2_RRail_mid":{"path":"\/8013\/dailynews.com","sizes":[300,250],"targeting":{"POS":["Cube2_RRail_mid"],"page":["section"]}},"Cube3_RRail_lower":{"path":"\/8013\/dailynews.com","sizes":[300,250],"targeting":{"POS":["Cube3_RRail_lower"],"page":["section"]}}};
+			</script>
+			<!-- Google Tag Manager Data Layer -->
+<script type='text/javascript'>
+   analyticsEvent    = function() {};
+   analyticsSocial   = function() {};
+   analyticsVPV      = function() {};
+   analyticsClearVPV = function() {};
+   analyticsForm     = function() {};
+   window.dataLayer  = window.dataLayer || [];
+   dataLayer.push({
+      'ga_ua' : 'UA-61435456-15',
+      'quantcast' : 'p-4ctCQwtnNBNs2',
+      'quantcast label' : 'LANewsGroup',
+      'comscore' : '6035443',
+      'Publisher Domain' : 'dailynews.com',
+      'Publisher Product' : 'dailynews.com',
+      'kv' : 'page',
+      'Platform' : 'WP',
+      'Release Version' : '4.9.7',
+      'Digital Publisher' : '',
+      'Section' : 'Privacy',
+      'Taxonomy1' : '',
+      'Taxonomy2' : '',
+      'Taxonomy3' : '',
+      'Taxonomy4' : '',
+      'Taxonomy5' : '',
+      'Publisher State' : 'SCNG',
+      'Page Type' : 'page',
+      'User ID' : '',
+      'Behind Paywall' : '',
+      'Mobile Presentation' : 'no',
+      'Content ID' : '885',
+      'Publish Hour of Day' : '2017-06-19T10:10:47+00:00',
+      'Create Hour of Day' : '2017-06-19T10:10:47+00:00',
+      'Update Hour of Day' : '2017-06-19T10:10:47+00:00',
+      'Content Source' : '',
+      'Canonical URL' : 'https://www.dailynews.com/privacy/',
+      'Slug' : 'privacy',
+      'Byline' : 'James Newman',
+      'Content Title' : 'Privacy',
+      'URL' : 'https://www.dailynews.com/privacy/',
+      'Page Title' : 'Privacy',
+      'Article Characters' : '0',
+      'Article Words' : '0',
+      'Dateline' : ''
+   });
+</script>
+<!-- End Google Tag Manager Data Layer -->
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i) {
+   w[l]=w[l]||[];
+   w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+   var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+   j.async=true;
+   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})
+(window,document,'script','dataLayer','GTM-TLFP4R');
+</script><!-- End Google Tag Manager -->
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Privacy" />
+<meta property="og:url" content="https://www.dailynews.com/privacy/" />
+<meta property="og:description" content="Visit the post for more." />
+<meta property="article:published_time" content="2017-06-19T17:10:47+00:00" />
+<meta property="article:modified_time" content="2017-06-19T17:10:47+00:00" />
+<meta property="og:site_name" content="Daily News" />
+<meta property="og:image" content="https://www.dailynews.com/wp-content/uploads/2017/09/img_3776.jpg" />
+<meta property="og:image:width" content="376" />
+<meta property="og:image:height" content="376" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@ladailynews" />
+<meta name="twitter:text:title" content="Privacy" />
+<meta name="twitter:image" content="https://www.dailynews.com/wp-content/uploads/2017/09/img_3776.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Visit the post for more." />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://www.dailynews.com/wp-content/uploads/2017/08/site-icon-ladn.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://www.dailynews.com/wp-content/uploads/2017/08/site-icon-ladn.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.dailynews.com/wp-content/uploads/2017/08/site-icon-ladn.png?w=180" />
+<meta name="msapplication-TileImage" content="https://www.dailynews.com/wp-content/uploads/2017/08/site-icon-ladn.png?w=270" />
+			</head>
+	
+			<body class="page-template page-template-privacy page page-id-885 wp-custom-logo">
+	
+			<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-TLFP4R' height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+			<nav class="pushnav">
+				<ul id="pushnav" class="menu"><li id="menu-item-907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-907 menu-large"><a href="https://www.dailynews.com/news/">News + Investigations</a>
+<ul class="sub-menu">
+	<li id="menu-item-908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-908 menu-large"><a href="https://www.dailynews.com/news/">News</a></li>
+	<li id="menu-item-909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-909 menu-large"><a href="https://www.dailynews.com/news/crime/">Crime + Public Safety</a></li>
+	<li id="menu-item-2805567" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805567 menu-large"><a href="https://www.dailynews.com/tag/investigation">Investigative Reporting</a></li>
+	<li id="menu-item-910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-910 menu-large"><a href="https://www.dailynews.com/news/politics/">Politics</a></li>
+	<li id="menu-item-2805568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805568 menu-large"><a href="https://www.dailynews.com/tag/health">Health</a></li>
+	<li id="menu-item-2805569" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805569 menu-large"><a href="https://www.dailynews.com/tag/environment">Environment</a></li>
+</ul>
+</li>
+<li id="menu-item-915" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-915 menu-large"><a href="https://www.dailynews.com/local-news/">Local News</a>
+<ul class="sub-menu">
+	<li id="menu-item-2548501" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2548501 menu-large"><a href="https://www.dailynews.com/local-news/">Local News</a></li>
+	<li id="menu-item-522153" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522153 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/san-fernando-valley/">San Fernando Valley</a></li>
+	<li id="menu-item-522152" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522152 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/los-angeles/">Los Angeles</a></li>
+	<li id="menu-item-522151" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522151 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/">Los Angeles County</a></li>
+</ul>
+</li>
+<li id="menu-item-916" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-916 menu-large"><a href="https://www.dailynews.com/sports/">Sports</a>
+<ul class="sub-menu">
+	<li id="menu-item-917" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-917 menu-large"><a href="https://www.dailynews.com/sports/">Sports</a></li>
+	<li id="menu-item-918" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-918 menu-large"><a href="https://www.dailynews.com/sports/high-school-sports/">High School Sports</a></li>
+	<li id="menu-item-522144" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522144 menu-large"><a href="https://www.dailynews.com/sports/nba/lakers/">Lakers</a></li>
+	<li id="menu-item-522143" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522143 menu-large"><a href="https://www.dailynews.com/sports/nba/clippers/">Clippers</a></li>
+	<li id="menu-item-522146" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522146 menu-large"><a href="https://www.dailynews.com/sports/mlb/los-angeles-dodgers/">Dodgers</a></li>
+	<li id="menu-item-522145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522145 menu-large"><a href="https://www.dailynews.com/sports/mlb/los-angeles-angels/">Angels</a></li>
+	<li id="menu-item-522150" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522150 menu-large"><a href="https://www.dailynews.com/sports/college-sports/usc/">USC</a></li>
+	<li id="menu-item-522149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522149 menu-large"><a href="https://www.dailynews.com/sports/college-sports/ucla/">UCLA</a></li>
+	<li id="menu-item-925" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-925 menu-large"><a href="https://www.dailynews.com/sports/college-sports/">College Sports</a></li>
+	<li id="menu-item-522148" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522148 menu-large"><a href="https://www.dailynews.com/sports/nfl/los-angeles-rams/">Rams</a></li>
+	<li id="menu-item-522147" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522147 menu-large"><a href="https://www.dailynews.com/sports/nfl/los-angeles-chargers/">Chargers</a></li>
+	<li id="menu-item-522142" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522142 menu-large"><a href="https://www.dailynews.com/sports/nhl/los-angeles-kings/">Kings</a></li>
+	<li id="menu-item-522141" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-522141 menu-large"><a href="https://www.dailynews.com/sports/nhl/anaheim-ducks/">Ducks</a></li>
+	<li id="menu-item-924" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-924 menu-large"><a href="https://www.dailynews.com/sports/mmaboxing/">MMA/Boxing</a></li>
+	<li id="menu-item-926" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-926 menu-large"><a href="https://www.dailynews.com/sports/soccer/">Soccer</a></li>
+</ul>
+</li>
+<li id="menu-item-929" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-929 menu-large"><a href="https://www.dailynews.com/things-to-do/">Things to do</a>
+<ul class="sub-menu">
+	<li id="menu-item-928" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-928 menu-large"><a href="https://www.dailynews.com/things-to-do/">Things to do</a></li>
+	<li id="menu-item-930" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-930 menu-large"><a href="https://www.dailynews.com/things-to-do/restaurant-reviews-food/">Restaurant Reviews + Food</a></li>
+	<li id="menu-item-931" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-931 menu-large"><a href="https://www.dailynews.com/things-to-do/movies-tv/">Movies + TV</a></li>
+	<li id="menu-item-941" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-941 menu-large"><a href="https://www.dailynews.com/things-to-do/amusement-parks/">Amusement Parks</a></li>
+	<li id="menu-item-932" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-932 menu-large"><a href="https://www.dailynews.com/things-to-do/music-concerts/">Music + Concerts</a></li>
+	<li id="menu-item-933" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-933 menu-large"><a href="https://www.dailynews.com/things-to-do/theater/">Theater</a></li>
+	<li id="menu-item-935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-935 menu-large"><a href="https://www.dailynews.com/things-to-do/home-garden/">Home + Garden</a></li>
+	<li id="menu-item-936" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-936 menu-large"><a href="https://www.dailynews.com/things-to-do/travel/">Travel</a></li>
+</ul>
+</li>
+<li id="menu-item-903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-903 menu-large"><a href="https://www.dailynews.com/business/">Business</a>
+<ul class="sub-menu">
+	<li id="menu-item-2805570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2805570 menu-large"><a href="https://www.dailynews.com/business/">Business</a></li>
+	<li id="menu-item-2805571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805571 menu-large"><a href="https://www.dailynews.com/tag/housing">Housing</a></li>
+	<li id="menu-item-2805572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805572 menu-large"><a href="https://www.dailynews.com/tag/jobs">Jobs</a></li>
+</ul>
+</li>
+<li id="menu-item-522160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-522160 menu-large"><a href="http://www.legacy.com/obituaries/ladailynews/">Obituaries</a>
+<ul class="sub-menu">
+	<li id="menu-item-2834693" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2834693 menu-large"><a href="https://www.legacy.com/obituaries/ladailynews/">Obituaries</a></li>
+	<li id="menu-item-2834694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2834694 menu-large"><a href="https://lang.theadhawk.com/lang-adportal/obits/index.html">Place an Obituary</a></li>
+</ul>
+</li>
+<li id="menu-item-946" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-946 menu-large"><a href="https://www.dailynews.com/opinion/">Opinion</a></li>
+</ul>			</nav>
+				
+			<div id="page" class="hfeed site">
+	
+			<div class="header-placeholder"></div><header class="site-header default headroom--top">
+<form class="search-form slide-search" method="GET"
+      action="https://www.dailynews.com/">
+
+	
+	<input type="text" placeholder="Search" name="s">
+	<input name="orderby" type="hidden" value="date"/>
+	<input name="order" type="hidden" value="desc"/>
+	<input type="submit" value="submit">
+
+	
+</form>
+
+			<div class="nav-wrapper">
+	
+					
+				<div class="nav-primary">
+
+					
+					<div class="navigation-inner">
+
+						<span class="icon-hamburger"></span><div class="custom-logo logo"><a href="https://www.dailynews.com"><img src="https://www.dailynews.com/wp-content/uploads/2017/08/ladn-no-margin.svg" alt="Daily News"></a></div>			<div class="status-bar">
+				<div class="status-bar-wrapper">
+					<ul id="status-bar-menu" class="status-bar-menu"><li id="menu-item-2700640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2700640"><a href="https://www.dailynews.com/newsletter/">Sign Up For Newsletters</a></li>
+<li id="menu-item-522158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-522158"><a href="https://myaccount.dailynews.com/access.aspx?premium=Y&#038;product=eEditionLADN">E-Edition</a></li>
+<li id="menu-item-522159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-522159"><a href="https://myaccount.dailynews.com/">SUBSCRIBE + SUBSCRIBER SERVICES</a></li>
+</ul>				</div>
+			</div>
+			
+<form class="search-form header-search" method="GET"
+      action="https://www.dailynews.com/">
+
+	
+	<input type="text" placeholder="Search" name="s">
+	<input name="orderby" type="hidden" value="date"/>
+	<input name="order" type="hidden" value="desc"/>
+	<input type="submit" value="submit">
+
+	
+</form>
+
+<span class="icon-search"></span><nav class="menu-main-navigation-container"><ul id="primary-menu" class="menu"><li id="menu-item-907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-907 menu-large"><a href="https://www.dailynews.com/news/">News + Investigations</a>
+<ul class="sub-menu">
+	<li id="menu-item-908" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-908 menu-large"><a href="https://www.dailynews.com/news/">News</a></li>
+	<li id="menu-item-909" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-909 menu-large"><a href="https://www.dailynews.com/news/crime/">Crime + Public Safety</a></li>
+	<li id="menu-item-2805567" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805567 menu-large"><a href="https://www.dailynews.com/tag/investigation">Investigative Reporting</a></li>
+	<li id="menu-item-910" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-910 menu-large"><a href="https://www.dailynews.com/news/politics/">Politics</a></li>
+	<li id="menu-item-2805568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805568 menu-large"><a href="https://www.dailynews.com/tag/health">Health</a></li>
+	<li id="menu-item-2805569" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805569 menu-large"><a href="https://www.dailynews.com/tag/environment">Environment</a></li>
+</ul>
+</li>
+<li id="menu-item-915" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-915 menu-large"><a href="https://www.dailynews.com/local-news/">Local News</a>
+<ul class="sub-menu">
+	<li id="menu-item-2548501" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2548501 menu-large"><a href="https://www.dailynews.com/local-news/">Local News</a></li>
+	<li id="menu-item-522153" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522153 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/san-fernando-valley/">San Fernando Valley</a></li>
+	<li id="menu-item-522152" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522152 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/los-angeles/">Los Angeles</a></li>
+	<li id="menu-item-522151" class="menu-item menu-item-type-taxonomy menu-item-object-location menu-item-522151 menu-large"><a href="https://www.dailynews.com/location/california/los-angeles-county/">Los Angeles County</a></li>
+</ul>
+</li>
+<li id="menu-item-916" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-916 menu-large"><a href="https://www.dailynews.com/sports/">Sports</a>
+<ul class="sub-menu">
+	<li id="menu-item-917" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-917 menu-large"><a href="https://www.dailynews.com/sports/">Sports</a></li>
+	<li id="menu-item-918" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-918 menu-large"><a href="https://www.dailynews.com/sports/high-school-sports/">High School Sports</a></li>
+	<li id="menu-item-522144" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522144 menu-large"><a href="https://www.dailynews.com/sports/nba/lakers/">Lakers</a></li>
+	<li id="menu-item-522143" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522143 menu-large"><a href="https://www.dailynews.com/sports/nba/clippers/">Clippers</a></li>
+	<li id="menu-item-522146" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522146 menu-large"><a href="https://www.dailynews.com/sports/mlb/los-angeles-dodgers/">Dodgers</a></li>
+	<li id="menu-item-522145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522145 menu-large"><a href="https://www.dailynews.com/sports/mlb/los-angeles-angels/">Angels</a></li>
+	<li id="menu-item-522150" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522150 menu-large"><a href="https://www.dailynews.com/sports/college-sports/usc/">USC</a></li>
+	<li id="menu-item-522149" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522149 menu-large"><a href="https://www.dailynews.com/sports/college-sports/ucla/">UCLA</a></li>
+	<li id="menu-item-925" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-925 menu-large"><a href="https://www.dailynews.com/sports/college-sports/">College Sports</a></li>
+	<li id="menu-item-522148" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522148 menu-large"><a href="https://www.dailynews.com/sports/nfl/los-angeles-rams/">Rams</a></li>
+	<li id="menu-item-522147" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522147 menu-large"><a href="https://www.dailynews.com/sports/nfl/los-angeles-chargers/">Chargers</a></li>
+	<li id="menu-item-522142" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522142 menu-large"><a href="https://www.dailynews.com/sports/nhl/los-angeles-kings/">Kings</a></li>
+	<li id="menu-item-522141" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-522141 menu-large"><a href="https://www.dailynews.com/sports/nhl/anaheim-ducks/">Ducks</a></li>
+	<li id="menu-item-924" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-924 menu-large"><a href="https://www.dailynews.com/sports/mmaboxing/">MMA/Boxing</a></li>
+	<li id="menu-item-926" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-926 menu-large"><a href="https://www.dailynews.com/sports/soccer/">Soccer</a></li>
+</ul>
+</li>
+<li id="menu-item-929" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-929 menu-large"><a href="https://www.dailynews.com/things-to-do/">Things to do</a>
+<ul class="sub-menu">
+	<li id="menu-item-928" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-928 menu-large"><a href="https://www.dailynews.com/things-to-do/">Things to do</a></li>
+	<li id="menu-item-930" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-930 menu-large"><a href="https://www.dailynews.com/things-to-do/restaurant-reviews-food/">Restaurant Reviews + Food</a></li>
+	<li id="menu-item-931" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-931 menu-large"><a href="https://www.dailynews.com/things-to-do/movies-tv/">Movies + TV</a></li>
+	<li id="menu-item-941" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-941 menu-large"><a href="https://www.dailynews.com/things-to-do/amusement-parks/">Amusement Parks</a></li>
+	<li id="menu-item-932" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-932 menu-large"><a href="https://www.dailynews.com/things-to-do/music-concerts/">Music + Concerts</a></li>
+	<li id="menu-item-933" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-933 menu-large"><a href="https://www.dailynews.com/things-to-do/theater/">Theater</a></li>
+	<li id="menu-item-935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-935 menu-large"><a href="https://www.dailynews.com/things-to-do/home-garden/">Home + Garden</a></li>
+	<li id="menu-item-936" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-936 menu-large"><a href="https://www.dailynews.com/things-to-do/travel/">Travel</a></li>
+</ul>
+</li>
+<li id="menu-item-903" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-903 menu-large"><a href="https://www.dailynews.com/business/">Business</a>
+<ul class="sub-menu">
+	<li id="menu-item-2805570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2805570 menu-large"><a href="https://www.dailynews.com/business/">Business</a></li>
+	<li id="menu-item-2805571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805571 menu-large"><a href="https://www.dailynews.com/tag/housing">Housing</a></li>
+	<li id="menu-item-2805572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2805572 menu-large"><a href="https://www.dailynews.com/tag/jobs">Jobs</a></li>
+</ul>
+</li>
+<li id="menu-item-522160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-522160 menu-large"><a href="http://www.legacy.com/obituaries/ladailynews/">Obituaries</a>
+<ul class="sub-menu">
+	<li id="menu-item-2834693" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2834693 menu-large"><a href="https://www.legacy.com/obituaries/ladailynews/">Obituaries</a></li>
+	<li id="menu-item-2834694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2834694 menu-large"><a href="https://lang.theadhawk.com/lang-adportal/obits/index.html">Place an Obituary</a></li>
+</ul>
+</li>
+<li id="menu-item-946" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-946 menu-large"><a href="https://www.dailynews.com/opinion/">Opinion</a></li>
+</ul></nav>
+					</div>
+
+					
+				</div>
+
+				
+<div class="widget widget-trending-stories"><div class="trending-bar trending">
+	<div class="trending-bar-wrapper">
+		<p class="label">
+			Trending:		</p>
+		<nav>
+			<ul>
+				
+
+	<li class="entry-title">
+
+			<a class="article-title" href="https://www.dailynews.com/2018/07/10/federal-investigators-launch-probe-after-mail-carrier-found-dead-in-woodland-hills/" title="Federal investigators launch probe into Woodland Hills mail carrier’s death on 117-degree day">
+	
+				<span class="dfm-title">
+			Feds investigate mail carrier&#8217;s death		</span>
+
+			</a>
+	
+	</li>
+
+
+	<li class="entry-title">
+
+			<a class="article-title" href="https://www.dailynews.com/2018/07/10/former-ucla-basketball-player-billy-knight-found-dead-on-phoenix-roadway/" title="Former UCLA basketball player Billy Knight found dead on Phoenix roadway">
+	
+				<span class="dfm-title">
+			Former UCLA basketball player Billy Knight found dead		</span>
+
+			</a>
+	
+	</li>
+
+
+	<li class="entry-title">
+
+			<a class="article-title" href="https://www.dailynews.com/2018/07/11/authorities-identify-couple-who-died-in-apparent-murder-suicide-in-lake-balboa/" title="Authorities identify couple who died in apparent murder-suicide in Lake Balboa">
+	
+				<span class="dfm-title">
+			2 dead in apparent murder-suicide ID&#8217;d		</span>
+
+			</a>
+	
+	</li>
+
+
+	<li class="entry-title">
+
+			<a class="article-title" href="https://www.dailynews.com/2018/07/11/american-red-cross-needs-southern-california-blood-donors-and-its-urgent/" title="American Red Cross needs Southern California blood donors — and it’s urgent">
+	
+				<span class="dfm-title">
+			SoCal blood shortage		</span>
+
+			</a>
+	
+	</li>
+
+
+	<li class="entry-title">
+
+			<a class="article-title" href="https://www.dailynews.com/2018/07/01/latest-lebron-james-lakers-news/" title="Latest LeBron James Lakers News">
+	
+				<span class="dfm-title">
+			Latest LeBron James Lakers News		</span>
+
+			</a>
+	
+	</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+</div>
+			</div>
+			</header>	
+			<div id="content" class="site-content">
+	
+						<div class="header-banners">
+				<div id="div-gpt-ad-interstitial" class="dfp-ad dfp-interstitial" data-ad-unit="interstitial">
+					<script type="text/javascript">
+						if ( "undefined" !== typeof googletag ) {
+							googletag.cmd.push( function() { googletag.display("div-gpt-ad-interstitial"); } );
+						}
+					</script>
+				</div>				<div id="div-gpt-ad-top_leaderboard" class="dfp-ad dfp-top_leaderboard" data-ad-unit="top_leaderboard">
+					<script type="text/javascript">
+						if ( "undefined" !== typeof googletag ) {
+							googletag.cmd.push( function() { googletag.display("div-gpt-ad-top_leaderboard"); } );
+						}
+					</script>
+				</div>			</div>
+				
+			<div id="primary" class="content-area"><main id="main" class="site-main" role="main">			<article id="page-885" class="post-885 page type-page status-publish hentry">
+			<div class="article-body">
+			<div class="body-copy">
+					<h1>Privacy Policy</h1>
+		<h5>PRIVACY POLICY</h5>
+		<p>This policy describes the privacy practices of Digital First Media and Digital First Media affiliates, collectively referred to herein as “Digital First Media.” This Privacy Policy is applicable only to the Digital First Media Web sites (“Web site(s)”) and does not apply to the print versions of any of the Digital First Media. This policy does not apply to any third party web sites or to companies or persons not controlled by, affiliated with or managed by Digital First Media and applies only to information collected by Digital First Media on the Digital First Media Web sites and not to information disclosed, obtained or used by Digital First Media through other means. Digital First Media may provide links to unaffiliated web sites for which this privacy policy does not apply. If you are unsure whether a web site is controlled, affiliated or managed by Digital First Media, we recommend that you review the privacy policy at each linked web site to determine how that site treats your personal information.
+		<br>Digital First Media may change this privacy policy from time to time. The revised policy will be posted on the Digital First Media Web site. Please check this page periodically for changes.</p>
+		<h5>INFORMATION COLLECTED</h5>
+		<p><span class="scng_underline">Personally Identifying Information (PIN)</span><br>The Personally Identifying Information (PIN) gathered by Digital First Media on Digital First Media Web sites generally includes, e-mail address, password, zip code, age, gender and whether you are a print subscriber, but may also include your name (and/or company name), street address, and date of birth, phone numbers, and credit card numbers or other billing information where necessary to contact you or to process your Web site purchases. Digital First Media may also collect information such as household income, job title, personal interests and hobbies. The PIN collected depends on the page you are visiting and the services that you participate in.</p>
+		<p><span class="scng_underline">Web Site User Registration</span>: User registration is required to access the majority of content, services and features on Digital First Media Web sites. Upon registration, we require you provide your email address or your first name as a username and a password that will allow you to change your PIN as needed. User registration with Digital First Media Web sites is completed and membership activated upon clicking a link e-mailed to the address provided in registration. At that time you have the opportunity to opt-in to e-mail newsletters and alerts and have e-mail offers sent to you on behalf of Digital First Media advertisers, however, you can update your preferences at a later time.</p>
+		<p><span class="scng_underline">Web Site Sites & Products</span>: Your PIN as well as a telephone number, credit card number or other billing information is generally collected in order to process the purchase of services or products on the Digital First Media Web sites, such as purchasing a newspaper subscription or placing an ad. Your PIN will also be collected upon registration for home delivery requests, vacation delivery stop requests and other similar requests as well as upon the use or download of software available on Digital First Media Web sites.</p>
+		<p><span class="scng_underline">Sweepstakes, Contests, Promotions, Special Offers</span>: Digital First Media may request additional PIN from you upon your optional entry in any sweepstakes, contests, promotions or special offers found on Digital First Digital First Media sites.</p>
+		<p><span class="scng_underline">Feedback, Commentary, Surveys, Message Boards, Chat Rooms</span>: Those Web site users that choose to provide feedback or commentary, fill out surveys, engage in Digital First Media chat rooms or use Digital First Media message boards may be required to provide additional PIN such as demographic information, household/personal characteristics and purchase behavior.</p>
+		<p>If such information is gathered for a Digital First Media survey, no PIN is released and is reported or used only in aggregate form.</p>
+		<p>Some chat room and message board forums may require registration and the sharing of PIN. Any information disclosed in chat rooms, forums, message boards, and/or news groups becomes public information. You should exercise caution when deciding to disclose personal information in public forums.</p>
+		<p><span class="scng_underline">Forwarding</span>: Forwarding an article found on a Digital First Media Web site generally requires that you disclose the name and e-mail address of the person to whom you are forwarding the article. Digital First Media will retain this information only to provide the forwarding services.</p>
+		<p><span class="scng_underline">Special Circumstances</span>: Digital First Media may disclose and use the information collected where required to do so by law, or where Digital First Media, in good faith, believes the use or disclosure of the information collected is necessary to (1) comply with the law or legal processes; (2) protect and defend Digital First Media rights and property; (3) protect against misuse or unauthorized use of any Digital First Media Web site; or to (4) protect the personal safety or property of our users or the public. Digital First Media may also use the information collected when, in its sole discretion, it believes necessary or appropriate in connection with a sale or transfer of some or all of Digital First Media' assets in our Web site.</p>
+		<p><span class="scng_underline">Computer Identifying Information (CIN)</span><br>The information personal to your computer and your computer use that is automatically collected through the use of electronic tools is referred to as Computer Identifying Information (CIN). The CIN gathered by Digital First Media generally includes cookies, specific Web site page requests, the domain name (e.g., www.digitalfirstmedia.com) and Internet Provider (e.g., Comcast, American Online, NetZero) from which you access the Internet, the Internet Protocol address of your computer, the browser software (e.g. Internet Explorer or Netscape) and operating system (e.g., Windows XP, 2000, OS/2 or MacOS) you are using, your geographic location, the time and date you accessed the site, and the Internet address you visited prior to visiting the site.</p>
+		<p><span class="scng_underline">Cookies and Web Beacons</span>: Cookies are used to store and track information about you. A cookie is a small amount of data that is sent to your browser from Web sites and stored on your computer's hard drive. Cookies are used to deliver targeted advertising based on your behavior and demographics and to track your entries in promotions and contests. Cookies may be linked to PIN. In addition, Digital First Media uses web beacons provided by third-party advertising companies to help manage our online advertising. Web beacons enable us to recognize a browser's cookie when a browser visits a Digital First Media Web site, and to learn which banner ads bring users to Digital First Media Web sites. Digital First Media websites have two third-party web advertising companies, Yahoo! and DoubleClick, which may place or recognize a unique cookie on your browser. Yahoo! also may use information regarding its own users to select which ads to display. <a href="http://info.yahoo.com/privacy/us/yahoo/opt_out/targeting/details.html">Click here</a> to learn more about Yahoo!'s ad practices, including how to opt out of using anonymous information to select which ads to show you. For more information about DoubleClick, cookies, and how to “opt-out”, please <a href="http://www.doubleclick.net/us/corporate/privacy">click here.</a></p>
+		<p><span class="scng_underline">Internet Protocol (IP) Address</span>: An IP address is your computer's location on the Internet. Digital First Media Web sites log IP addresses for systems administration and trouble shooting purposes, to gather demographic and other information about you and to link information about a user's computer session to PIN.</p>
+		<p><span class="scng_underline">Aggregate information</span>: Aggregate information is user information not linked to PIN.</p>
+		<h5>USE OF INFORMATION COLLECTED</h5>
+		<p>In general, Digital First Media uses your PIN and CIN that is collected to administer the Digital First Media Web sites and to provide services you request. When you provide PIN information and access Digital First Media Web sites, you are sharing PIN and CIN with Digital First Media and Digital First Media Group affiliates and Digital First Media reserves the right to use and disclose the PIN and CIN it collects. If you do not want to share your PIN, do not provide it. If you do not want to share CIN, do not access Digital First Media Web sites. In addition, Digital First Media may share PIN, CIN and/or aggregate information with third parties such as advertisers and business partners. PIN and CIN may also be used to perform statistical, demographic and marketing analysis of subscribers and their subscribing and purchasing patterns, to target advertisements and to help diagnose problems with our services and our Web sites.</p>
+		<p>For example, Digital First Media uses or may use the PIN and CIN collected to do the following:</p>
+		<p><span class="scng_underline">Web Site Use & Registration</span>: Digital First Media uses PIN and CIN that is collected to fulfill subscriptions, change addresses, suspend delivery, confirm and process transactions and to contact the user regarding his or her account, new or existing products and services and special offers.</p>
+		<p><span class="scng_underline">Personalization</span>: Digital First Media uses PIN and CIN that is collected to personalize the content and advertising that users see based on personal characteristics and preferences, enhance products and services and develop new products and services, and share user information with select advertisers or other third parties whose products or services may be of interest to you.</p>
+		<p><span class="scng_underline">Advertising & Third Parties</span>: Digital First Media may share PIN and CIN that is collected with third parties hired to perform services on our behalf, including, but not limited to, fulfilling subscription requests, sending e-mails and assisting in the provision of the Digital First Media Web sites and services. The ads appearing on Digital First Media Web sites are delivered to you by Yahoo! and DoubleClick, our third party web advertising company's. Information about your visits to this site, such as the number of times you have viewed an ad and other information is used to serve ads to you. A Digital First Media Group affiliates participates in the APT from Yahoo! platform and Yahoo! is an ad network partner to display ads on our sites. Yahoo! is an ad network partner that displays ads on Digital First Media websites. To improve your ad experience on Digital First Media websites and elsewhere on the Internet, we may send non-personal information to Yahoo! based on your browser's activities, such as type of pages viewed and categories of interests, so that the advertising you see is relevant to you. Yahoo! also may use information regarding its own users to select which ads to display. <a href="http://info.yahoo.com/privacy/us/yahoo/opt_out/targeting/details.html">Click here</a> to learn more about Yahoo!'s ad practices, including how to opt out of using anonymous information to select which ads to show you.</p>
+		<p>Yahoo! is an ad network partner that displays ads on Digital First Media Web sites. To improve your ad experience on Digital First Media Web sites and elsewhere on the Internet, we may send non-personal information to Yahoo! based on your browser's activities, such as type of pages viewed and categories of interests, so that the advertising you see is relevant to you. Yahoo! also may use information regarding its own users to select which ads to display. <a href="http://info.yahoo.com/privacy/us/yahoo/opt_out/targeting/details.html">Click here</a> to learn more about Yahoo!'s ad practices, including how to opt out of using anonymous information to select which ads to show you.</p>
+		<p><span class="scng_underline">Program & Product Offerings</span>: Digital First Media may use the PIN and CIN that is collected in order to offer you the opportunity to receive information and offers about products or services from our business partners or third parties.</p>
+		<p>In some cases, Digital First Media, are affiliates of the CareerBuilder online careers service. Through the cooperative relationship with CareerBuilder, we are able to provide you with access to the CareerBuilder products and services through a co-branded CareerBuilder site. Because of this relationship, CareerBuilder requests that we post the following language regarding our co-branded CareerBuilder site in our privacy policy: "You may have arrived at this Web site by following a link from a CareerBuilder newspaper affiliate or other affiliate. If so, please be aware that CareerBuilder may share your information with that affiliate and the affiliate may use the information consistent with its privacy policy instead of this one."</p>
+		<p>Digital First Media. or Digital First Media affiliates may buy or sell various assets. In the event that Digital First Media or Digital First Media affiliates sells some or all of its assets, or another company acquires one or more of its Web sites, information on users may be among the transferred assets.</p>
+		<h5>OPTING-OUT</h5>
+		<p>If you do not wish to share your PIN, you always have the option to not provide the information or use the Digital First Media Web sites that require it.</p>
+		<p><span class="scng_underline">Opting-Out</span><br>If you are a current Digital First Media registered Web site user or would like to become one, but do not want your PIN shared with third parties or do not want to receive promotion and/or marketing information about other products, services and offerings from Digital First Media and/or any third parties, please review the following:</p>
+		<p><span class="scng_underline">Third Party Opt-Out</span>: If, at any time, you do not want us to share your information with third parties who wish to send you information about their products and services, you may opt-out of such messages by going to the "Manage an Account" page and simply unclicking an opt-in box or you may email us at privacy@digitalfirstmedia.com or write to us at: Privacy Coordinator, Digital First Media Interactive, 101 W. Colfax Ave., Suite 950, Denver, CO 80202.</p>
+		<p>If you choose to opt-out via email, please put “THIRD PARTY OPT-OUT” in the subject line, along with the name of the applicable site.</p>
+		<p><span class="scng_underline">Digital First Media Opt-Out</span>: If, at any time, you do not want to receive information about special offers and new products and features from Digital First Media, you may opt-out of such messages by going to the "Manage an Account" page and simply unclicking an opt-in box or you may e-mail us at privacy@digitalfirstmedia.com or write to us at: Privacy Coordinator, MediaNews Group Interactive, 101 W. Colfax Ave., Suite 950, Denver, CO 80202. Please reference the name of the applicable site.<br>If you choose to opt-out via email, please put “DIGITAL FIRST MEDIA OPT-OUT” in the subject line.</p>
+		<p><span class="scng_underline">Opt-Out Exception</span>: Even if the registered user chooses to opt-out of receiving e-mails from both Digital First Media and third parties, Digital First Media reserves the right to contact a registered user regarding account status, changes to this policy, the terms of use, license agreements and other matters relevant to the use of the Digital First Media Web sites, services or software provided through the Web sites and/or the information collected.</p>
+		<p><span class="scng_underline">Review & Update Your PIN</span><br>A registered user of Digital First Media sites may review and change his or her PIN and/or e-mail preferences by clicking on the Manage Account link after signing in. A registered user may also review and request an update of the PIN and/or e-mail preferences which he or she provided to Digital First Media at any time by e-mailing us at privacy@digitalfirstmedia.com or write to us at: Privacy Coordinator, Digital First Media, 101 W. Colfax Ave., Suite 950, Denver, CO 80202. Please include the name of the applicable site.</p>
+		<h5>SECURITY</h5>
+		<p>Digital First Media uses procedures to safeguard and help prevent unauthorized access to the information collected on the Digital First Media Web sites. Although such protective measures have been put in place, Digital First Media cannot ensure that the information collected will never be disclosed in a manner inconsistent with this Privacy Policy.</p>
+		<h5>CALIFORNIA PRIVACY RIGHTS</h5>
+		<p>Under California law, California residents may request once a year, free of charge, certain information regarding Digital First Media' disclosure of personal information to third parties for direct marketing purposes. To make such a request, please write to us at: Privacy Coordinator, Digital First Media, 101 W. Colfax Ave., Suite 950, Denver, CO 80202.
+		<br>Please include the name and the address to which you would like us to respond, along with the name of the applicable site.
+		<br>DO NOT TRACK: MNG currently does not support Do Not Track browser settings and does not currently participate in any Do Not Track frameworks that would allow us to respond to signals or other mechanism from you regarding the collection of information, including PIN or CIN. As Industry standards evolve and develop, we will continue to evaluate this position. As previously stated in the INFORMATION COLLECTED section above, other parties, particularly third party advertising networks, also collect information.</p>
+		<h5>PRIVACY COORDINATOR</h5>
+		<p>If you have any questions, comments or concerns regarding our Privacy Policy and/or practices, please contact the Privacy Coordinator using the contact information provided below. Please reference the name of the applicable site.</p>
+		Privacy Coordinator
+		<br>Digital First Media
+		<br>101 W. Colfax Ave., Suite 950
+		<br>Denver, CO 80202
+		<br>privacy@digitalfirstmedia.com
+		<br>(303) 563-6401
+		<h5>CHILDREN'S PRIVACY POLICY</h5>
+		<p>This policy describes the privacy practices of Digital First Media, as well as Digital First Media affiliates (“Digital First Media”) relating to information collected from children. This privacy policy does not apply to third party web sites, or to companies and persons that are not controlled by, affiliated with or managed by Digital First Media. For most Digital First Media Web sites, Digital First Media does not knowingly collect information from children under 13 years of age. In the event that Digital First Media collects information from children under 13 years of age, this Children's Privacy Policy shall apply.</p>
+		<h5>INFORMATION COLLECTED FROM CHILDREN</h5>
+		<p>Digital First Media does not ask children to disclose more personal information than is necessary for them to participate in a particular activity. We urge children to check with their parents before entering information on any web site and we urge parents to discuss with their children restrictions regarding the online release of personal information. Digital First Media limits its collection of information from children to what is known as non-personally identifiable information (e.g. first name, screen names, age, gender, city, state, zip code and country of residence). This information is collected so children can participate in activities (e.g. completing polls or online surveys, posting jokes, book reviews, movie reviews, toy reviews, video reviews, concert reviews, game reviews, artwork or questions/comments online, or playing online games) without giving unnecessary personal information. From time to time, however, we may request personally identifiable information (e.g. child's email address and/or parent's or guardian's email address), as explained below, in order to conduct online contests or sweepstakes, email newsletters and offers, provide subscriptions, participate in chat rooms and message boards, or offer other online activities. Digital First Media does not and cannot condition a child's participation in any of our online activities on the disclosure of more information than is reasonably necessary to participate in the activity. Information is collected actively, such as through registration forms, and passively, such as through cookies.</p>
+		<h5>USE OF PERSONAL INFORMATION FROM CHILDREN</h5>
+		<p>Digital First Media occasionally offers contest and sweepstakes, which may be entered online. When a child under thirteen 13 enters a contest or sweepstakes, or participates in another activity that requires the use of personal information, we will ask for a parent's email address so that we can notify the parent of the child's participation, obtain the parent's consent and give the parent the option to have the child's information deleted. All of the child's personal information collected by Digital First Media is securely maintained and used only for the specified purpose such as conducting the contest or sweepstakes and awarding prizes. Digital First Media does not keep any of the child's personal information after the particular event is completed. Sometimes, Digital First Media uses agents or contractors to provide services that support the internal operations of the site, such as helping us conduct a sweepstakes or sending prizes to winners. In these cases, Digital First Media requires the agent or contractor to maintain the confidentiality, security and integrity of the information and limit use to the specific services they are performing on our behalf.
+		<br>Digital First Media may disclose information maintained as required by law, for example, in response to a court order or a subpoena. Digital First Media may also disclose such information in response to a specific law enforcement agency's request. Personal information is not disclosed to third parties except those who provide support for the internal operations of the site. Parents can consent to the collection and use of their child's personal information without consenting to the disclosure of the information to third parties.</p>
+		<h5>PARENTAL ACCESS</h5>
+		<p>Digital First Media and Digital First Media affiliates are the operators collecting information at this web site. Please send an email or letter to our Privacy Coordinator at the email or mailing address provided below if you would like to do any of the following:
+		<br>Access personally identifiable information that Digital First Media has collected from your child,
+		<br>Correct factual errors in such information,
+		<br>Request to have this information deleted, or
+		<br>Request that we no longer collect or maintain such information about your child.
+		<br>Please include your email address and telephone number where we can reach you. Digital First Media takes steps to verify the identity of anyone requesting information about a child to ensure that the person is in fact the child's parent or legal guardian.
+		<br>Digital First Media may change this privacy policy from time to time. The revised policy will be posted on the Digital First Media Web site. Please check this page periodically for changes. If you have any questions, comments or concerns regarding our privacy policy and/or practices, please contact the Privacy Coordinator using the contact information provided below. Please reference the applicable site.</p>
+		<p>Privacy Coordinator
+		<br>Digital First Media
+		<br>101 W. Colfax Ave., Suite 950
+		<br>Denver, CO 80202
+		<br>privacy@digitalfirstmedia.com
+		<br>(303) 563-6401</p>
+		<h5>TERMS OF USE</h5>
+		<p>The Digital First Media Web sites (the “Sites”) contain material that is protected by copyright, trademark and other intellectual property laws. Unless otherwise specified, the Sites and all content on the Sites are intended for your personal, noncommercial use only. You may not modify, copy, reproduce, republish, upload, post, transmit or distribute in any way any material from the Sites except as provided in this Terms of Use. You may download material from the Sites and may use the Sites for your personal, non-commercial use only, provided you keep intact all copyright and other proprietary notices. You may not republish any content from the Sites, distribute any content to others, modify, sell or otherwise use the content or decompile, reverse engineer or disassemble any software or other products or processes accessible at the Sites. Your license to use the Sites is contingent upon your compliance with these Terms of Use.
+		<br>You agree to use the Sites in accordance with these Terms of Use. Accessing the Sites, in any manner, for the purpose of obtaining information, technical or otherwise, constitutes use of the Sites such that these Terms of Use bind the party accessing the Sites. Digital First Media. or any Digital First Media affiliates (collectively “Digital First Media”) may need to change these Terms of Use or impose new conditions on use of the Sites, from time to time, in which case we will post the revised Terms of Use on the Sites. By continuing to use the Sites after we post any such changes, you accept the Terms of Use, as modified.
+		<br>You may establish a hypertext link to the Sites so long as the link does not state or imply any sponsorship of your site by Digital First Media. or any Digital First Media affiliates. However, you may not, without the prior written permission of Digital First Media. or Digital First Media affiliates, frame any of the content of the Sites, or incorporate into another website any material from the Sites.</p>
+		<h5>RSS TERMS AND CONDITIONS</h5>
+		<p>By downloading an RSS Feed ("The Service") from any Digital First Media Group site, including without limitation this site, you hereby agree to use the Service in accordance with, and be bound by, these Terms of Use. Unless you agree to be bound by these Terms of Use in their entirety, do not download the Service.
+		<br>1. LIMITED LICENSE. Subject to the terms of these Terms of Use, Digital First Media Group hereby grants you, a limited, revocable, nontransferable, nonsublicensable, royalty-free, nonexclusive license to display on your web site ("Site") the headlines, active links, or other source identifiers, and other information or materials, including any promotional taglines that you specifically select to receive from Digital First Media Group sites (collectively, the "Content") through the Service provided that you do not alter, edit, or delete any of the Service. Digital First Media Group may restrict, suspend or terminate your access to any aspect or all of the Service at any time within its sole discretion and without liability. Digital First Media Group reserves the right to modify the Service at any time within Digital First Media Group's sole discretion. You acknowledge that the Service availability is subject to change at Digital First Media’s sole discretion.
+		<br>2. PROPER USE.
+		<br>a. The Service is protected by copyright, trademark and other intellectual property laws, and title, ownership, and any and all intellectual property rights in and to the Service shall remain at all times with Digital First Media. Unless otherwise specified, the Service is provided solely for the purpose of allowing you to view headlines from Digital First Media Sites for your personal, noncommercial use. If you want to obtain greater rights to use the Service or to license content from Digital First Media Sites, please contact the Vice President/Content Development of Digital First Media for more information.
+		<br>b. Except as expressly set forth in Section 1, and/or unless otherwise expressly agreed to in writing by Digital First Media, you may not, directly or indirectly: (a) modify, copy, reproduce, transfer, sell, republish, upload, post, transmit or distribute the Service in any way, (b) display the name, logo, trademark or other identifier of another person (except for Digital First Media Sites or you) on your Site in such a manner as to give the viewer the impression that such other person is a publisher or distributor of the Service on the Site; or (c) remove or conceal any copyright or other proprietary notice or any credit-line or date-line on other mark or source identifier included on the Service, including without limitation, the size, color, location or style of Digital First Media Sites' marks.
+		<br>3. ATTRIBUTION. If you display one or more of these feeds on a web site or web log, you must display the Digital First Media Site's logo that is included in the feed, or give other attribution to the applicable Digital First Media Sites. Digital First Media reserves the right to require any site to cease the display of our feeds at any time and for any reason.
+		<br>4. RIGHT TO MODIFY. Digital First Media may from time to time and in its sole discretion, revise or modify these Terms of Use, or impose new conditions on use of the Service, in which case we will post the revised terms of use on this site. By continuing to use the Service after we post any such changes, you accept the revised terms of use, as modified.
+		<br>5. MISCELLANEOUS. These Terms of Use set forth the entire agreement between the parties with respect to the aforementioned license and fully supersedes any and all prior or contemporaneous agreements or understandings, written or oral, between the parties pertaining to the subject matter hereof. These Terms of Use shall be governed by and construed in accordance with the laws of the State of Colorado, and in any dispute arising under these Terms of Use, the venue shall be the state or federal courts located in Denver, Colorado.</p>
+		<h5>LICENSE TO DIGITAL FIRST MEDIA</h5>
+		<p>By posting messages, uploading files, or otherwise providing any material for display on the Sites, you are representing that you are the owner of the material, or are making your submission with the consent of the owner of the material, all information you provide is true, accurate, current and complete and does not violate these Terms of Use. In addition, when you post a message, upload a file, or otherwise provide us with material for display on the Sites, you are granting Digital First Media a perpetual, irrevocable, royalty-free, non-exclusive, worldwide license, with the right to use, copy, sublicense, modify, adapt, transmit, distribute, publicly perform or display such material. The foregoing grants shall include the right to exploit any proprietary rights in such material, including but not limited to rights under copyright, trademark, service mark or patent laws in any jurisdiction. All rights in this paragraph are granted without compensation of any sort to you.</p>
+		<h5>DISCLAIMERS AND LIMITATION OF LIABILITY</h5>
+		<p>The Sites include links and pointers to Internet sites, content and services provided by third parties. Digital First Media' linking to any third party sites does not imply an endorsement or sponsorship of such sites or the information, products or services offered on or through the sites. In addition, Digital First Media does not operate or control in any respect any information, products or services that third parties may provide on or through the Sites or on web sites linked to by Digital First Media.
+		<br>USE OF THE SITES IS AT YOUR OWN RISK. THE MATERIALS, INFORMATION, PRODUCTS AND SERVICES OFFERED ON OR THROUGH THE SITES AND ANY THIRD-PARTY SITES ARE PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, DIGITAL FIRST MEDIA DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. DIGITAL FIRST MEDIA DOES NOT WARRANT THAT THE SITES OR ANY OF ITS FUNCTIONS WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT ANY PART OF THE SITES, INCLUDING BULLETIN BOARDS, OR THE SERVERS THAT MAKE SERVICES AVAILABLE, ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOU ASSUME THE ENTIRE COST OF ALL NECESSARY MAINTENANCE, REPAIR OR CORRECTION. DIGITAL FIRST MEDIA DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE SITES OR MATERIALS ON THE SITES OR ON THIRD-PARTY SITES IN TERMS OF THEIR CORRECTNESS, ACCURACY, TIMELINESS, RELIABILITY OR OTHERWISE. DIGITAL FIRST MEDIA ASSUMES NO LIABILITY FOR THE CONTENT OF THE SITES, DOES NOT REPRESENT OR WARRANT THAT USE OF THE CONTENT WILL NOT INFRINGE RIGHTS OF THIRD PARTIES AND DIGITAL FIRST MEDIA HAS NO RESPONSIBILITY OR LIABILITY OF ACTIONS OF THIRD PARTIES OR FOR CONTENT PROVIDED BY OTHERS. IN NO EVENT SHALL DIGITAL FIRST MEDIA, ITS AFFILIATES EMPLOYEES, AGENTS OR CONTENT PROVIDERS BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, SPECIAL, INCIDENTAL OR PUNITIVE DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY AMOUNT OF DIRECT DAMAGES IN EXCESS OF $100. (Since some states do not allow the exclusion or limitation of certain categories of damages, the above limitation many not apply to you. In such states, the liability of Digital First Media is limited to the fullest extent permitted by such state law.)
+		<br>The Sites may contain facts, views, opinions, statements and recommendations of third party individuals and organizations. Digital First Media does not represent or endorse the accuracy or reliability of any advice, opinion, statement or other information on the Sites and use of or reliance on such advice, opinion, statement or other information is at your own risk.
+		<br>The Sites are provided for informational purposes only, and are not intended for trading or investing purposes, or for commercial use. Stock and mutual fund quotes, and related financial news stories may be delayed at least 20 minutes, as may be required by the stock exchanges and/or the financial information services. The Sites should not be used in any high-risk activities where damage or injury to persons, property, environment, finances or business may result if an error occurs. You expressly assume all risk for such use.</p>
+		<h5>ONLINE COMMERCE</h5>
+		<p>Digital First Media may allow you to purchase many different types of products and services online that are provided by third parties. Digital First Media is not responsible for the quality, accuracy, timeliness, reliability or any other aspect of these products and services. If you make a purchase from a merchant on the Sites or sites linked to by Digital First Media, the information obtained during your visit to that merchant's online store or site, and the information that you give as part of the transaction, such as your credit card number and contact information, is collected by the merchant. A merchant may have separate privacy and data collection practices. Digital First Media has no responsibility or liability for these independent practices. For more information regarding a merchant, its online store, and its privacy policies, return to that merchant's home page and click on its information links or contact the merchant directly. You release Digital First Media and its partners, affiliates, suppliers, licensors, officers, directors, shareholders, employees, representatives, contractors, agents and content providers from any damages that you incur, and agree not to assert any claims against them arising from or relating to your purchase or use of any products or services made available by third parties through Digital First Media.
+		<br>When you purchase products or services on or through the Sites, you may be subject to additional terms and conditions that specifically apply to your purchase or use of such products or services. If you have any questions about these additional terms and conditions, you should contact the merchant of such products or services directly.
+		<br>You agree to be financially responsible for all purchases made by you or someone acting on your behalf through the Sites. You agree to use the Sites and to purchase services or products through the Sites for legitimate, non-commercial purposes only. You also agree not to make any purchases for speculative, false or fraudulent purposes or for the purpose of anticipating demand for a particular product or service. You agree to only purchase goods or services for yourself or for another person for whom you are legally permitted to do so. When making a purchase for a third party that requires you to submit the third party's personal information to Digital First Media or a merchant, you represent that you have obtained the express consent of such third party to provide such third party's personal information.</p>
+		<h5>USE OF COMPANY DIRECTORIES</h5>
+		<p>The information contained in any company directories that may be provided on the Sites is provided for business lookup purposes and is not to be used for marketing or telemarketing applications. This information may not be copied or redistributed.</p>
+		<h5>INTERACTIVE FEATURES</h5>
+		<p>The Sites may include a variety of features, such as bulletin boards, chat rooms, and email services, that allow feedback to Digital First Media and real-time interaction between users and other features, such as personalized homes pages and e-mail services, that allow users to communicate with others. You are responsible for material that you post on bulletin boards, chat rooms and other public posting areas on the Sites. Digital First Media does not control or routinely review the messages, information or files that others may provide through the Sites. It is a condition of your use of the Sites that you do not:
+		<br>Restrict or inhibit any other user from using and enjoying the Sites.</p>
+		<p>Post or transmit any unlawful, threatening, abusive, libelous, fraudulent, false, defamatory, discriminatory, obscene, vulgar, hateful, pornographic, profane or indecent information of any kind, including without limitation any transmissions constituting or encouraging conduct that would constitute a criminal offense, give rise to civil liability or otherwise violate any local, state, national or international law.</p>
+		<p>Post or transmit any information, software or other material that violates or infringes upon the rights of others, including material that is an invasion of privacy or publicity rights or that is protected by copyright, trademark or other proprietary right, or derivative works with respect thereto, without first obtaining permission from the owner or right holder.</p>
+		<p>Post or transmit any information, software or other material that contains a virus or other harmful component.</p>
+		<p>Post, transmit or in any way exploit any information, software or other material for commercial purposes, or that contains advertising.</p>
+		<p>Advertise or solicit to anyone to buy or sell products or services, or to make donations of any kind, without the express written approval of Digital First Media.</p>
+		<p>Gather for the purpose of spamming, phishing or password harvesting email addresses that have been posted by other users of the Sites.</p>
+		<p>Use or attempt to use another person's account, password or services.</p>
+		<p>Disrupt, interfere with or otherwise violate the security of the Sites or any services, accounts, passwords, servers or networks related to the Sites.</p>
+		<p>Send repeated messages to another user or repeat postings of the same message under the same or multiple subjects.</p>
+		<h5>A VIOLATION OF THE FOREGOING MAY BE REFERRED TO LAW ENFORCEMENT</h5>
+		<p>You understand that Digital First Media has no obligation to monitor any bulletin boards, chat rooms, or other areas of the Sites through which users can supply information or material. Digital First Media reserves the right at all times to disclose any information as necessary to satisfy any law, regulation or governmental request, or to refuse to post or to remove any information or materials, in whole or in part, that in Digital First Media' sole discretion are objectionable or in violation of these Terms of Use.</p>
+		<h5>INDEMNIFICATION</h5>
+		<p>YOU AGREE TO INDEMNIFY, DEFEND AND HOLD HARMLESS, DIGITAL FIRST MEDIA AND ITS PARTNERS, AFFILIATES, SUPPLIERS, LICENSORS, OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, REPRESENTATIVES, CONTRACTORS, AGENTS AND CONTENT PROVIDERS FROM ANY AND ALL CLAIMS, INCLUDING, BUT NOT LIMITED TO, CLAIMS FOR DEFAMATION, TRADE DISPARAGEMENT, PRIVACY AND INTELLECTUAL PROPERTY INFRINGEMENT, AND DAMAGES, INCLUDING, BUT NOT LIMITED TO, ATTORNEYS' FEES, ARISING FROM OR RELATING TO 1) CONTENT OR INFORMATION YOU PROVIDE; 2) DIGITAL FIRST MEDIA' USE OF INFORMATION YOU PROVIDE; 3) INFORMATION OR MATERIAL POSTED OR TRANSMITTED THROUGH YOUR PASSWORD ACCOUNT, EVEN IF NOT POSTED OR TRANSMITTED BY YOU; AND 4) ANY VIOLATION OF THIS TERMS OF USE BY YOU.</p>
+		<h5>REGISTRATION</h5>
+		<p>To use certain features of the Sites, you must register with Digital First Media. You agree (a) to provide true, accurate, current and complete information about yourself, and (b) to maintain and promptly update the information you provide to keep it true, accurate, current and complete. If Digital First Media believes such information is untrue, inaccurate, not current, or incomplete, Digital First Media has the right to suspend or terminate your account and refuse any and all current or future use of the Sites by you. Our use of any personally identifying information you provide to us as part of the registration process is governed by the terms of our Privacy Policy.</p>
+		<h5>PASSWORDS</h5>
+		<p>To use certain features of the Sites, you will need a username and password, which you will receive through the Site's registration process. You are responsible for maintaining the confidentiality of the password and account and for restricting access to your account and password, and are responsible for all activities (whether by you or by others) that occur under your password or account. If Digital First Media believes that you are violating this Terms of Use or giving away your username and password, Digital First Media has the right to suspend or terminate your account and refuse any and all current or future use of the Sites by you. You agree to notify us immediately of any unauthorized use of your password or account or any other breach of security, and to ensure that you exit from your account at the end of each session. Digital First Media will not be liable for any loss or damage arising from your failure to protect your password or account information.</p>
+		<h5>CLASSIFIED ADVERTISING</h5>
+		<p>When you submit a classified ad for publication on Digital First Media, you agree that the advertisement as it appears on Digital First Media becomes the property of Digital First Media and you assign all ownership interest in the advertisement as it appears on the Sites, under copyright law or otherwise, to Digital First Media. Submission of an advertisement does not constitute a commitment to publish the advertisement, and publication of an advertisement does not constitute an agreement for continued publication. Digital First Media reserves the right to edit, reclassify, revise, reject or cancel any advertisement at any time, in its sole discretion. Rates and specifications are subject to change.</p>
+		<h5>REAL ESTATE ADVERTISEMENTS; EQUAL HOUSING OPPORTUNITY</h5>
+		<p>All real estate advertised at the Sites is subject to the Federal Fair Housing Act, which makes it illegal to advertise "any preference, limitation, or discrimination because of race, color, religion, sex, handicap, familial status, or national origin, or intention to make any such preference, limitation, or discrimination." State law may also forbid discrimination based on these factors and others. Digital First Media will not knowingly accept any advertising for real estate that is in violation of the law. All persons are hereby informed that all dwellings advertised are available on an equal opportunity basis. To complain of discrimination call the U.S. Department of Housing and Urban Development at 800-669-9777.</p>
+		<h5>TERMINATION</h5>
+		<p>Digital First Media may terminate or restrict your use of the Sites or any part of the Sites at any time for any reason without notice. In the event of termination, you are no longer authorized to access the part of the Sites affected by such termination or restriction.</p>
+		<h5>MISCELLANEOUS</h5>
+		<p>This Terms of Use constitutes the entire agreement between Digital First Media and you with respect to the subject matter contained in this Terms of Use and supersedes all previous and contemporaneous agreements, proposals and communications, written or oral. You also may be subject to additional terms and conditions that may apply when you use the products or services of a third party that are provided through the Sites. These Terms of Use shall be governed by and construed in accordance with the laws of the State of Colorado without giving effect to any of its conflicts of law provisions. You agree that any cause of action relating to your use of the Sites must be filed in the state or federal courts located in Denver, Colorado. Digital First Media may transfer its rights and obligations under the Terms of Use at any time without notice. If any provision of these Terms of Use shall be held to be unlawful, void or for any reason unenforceable, then that provision shall be deemed severable from these Terms of Use and shall not affect the validity and enforceability of any remaining provisions. Any failure of Digital First Media to enforce or exercise any provision of these Terms of Use shall not constitute a waiver of that right or provision. In the event of termination of these Terms of Use for any reason, the provisions entitled License To Digital First Media, Disclaimers And Limitation Of Liability, Indemnification, Interactive Features, and other provisions for which survival is equitable or appropriate, shall survive.
+		<br>This Web site uses services provided by News Registry. News Registry collects content usage information and may use cookies in conjunction with this activity. Your continued readership of the Site means you accept the privacy policy of News Registry. Please refer to the Digital First Media privacy policy at http://www.apnewsregistry.com/privacycenter/servicepolicy.aspx for further information.</p>
+				</div>
+			</div>
+			</article><!-- #post-## -->
+			<div id="div-gpt-ad-bottom_leaderboard" class="dfp-ad dfp-bottom_leaderboard" data-ad-unit="bottom_leaderboard">
+					<script type="text/javascript">
+						if ( "undefined" !== typeof googletag ) {
+							googletag.cmd.push( function() { googletag.display("div-gpt-ad-bottom_leaderboard"); } );
+						}
+					</script>
+				</div></div></main>
+			
+			</div><!-- #content -->
+
+						<footer class="site-footer">
+
+							<header class="footer-header">
+
+				
+				<div class="footer-header-wrapper">
+
+					<ul id="footer-links-menu" class="footer-links"><li id="menu-item-522155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522155"><a href="https://www.dailynews.com/traffic/">Live Traffic Map</a></li>
+<li id="menu-item-522154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522154"><a href="https://www.dailynews.com/weather/">Weather</a></li>
+<li id="menu-item-522156" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-522156"><a href="https://www.dailynews.com/tag/corrections/">Corrections</a></li>
+</ul>	<ul class="sharing">
+						<li>
+					<a href="https://facebook.com/ladailynews"
+					   target="self"
+					   class="icon-facebook">
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+								<li>
+					<a href="https://twitter.com/ladailynews"
+					   target="self"
+					   class="icon-twitter">
+						<span class="label">Twitter</span>
+					</a>
+				</li>
+								<li>
+					<a href="https://www.dailynews.com/feed/"
+					   target="self"
+					   class="icon-feed">
+						<span class="label">RSS</span>
+					</a>
+				</li>
+					</ul>
+	
+				</div>
+
+				
+			</header>
+			<div class="footer-menus-wrapper"><ul id="footer-menu" class="footer-menus"><li id="menu-item-978" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-978"><a>About Us</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-979" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-979"><a href="https://www.dailynews.com/about-us/">About Us</a></li>
+	<li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="https://www.dailynews.com/contact-us/">Contact Us</a></li>
+	<li id="menu-item-982" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-982"><a href="http://www.socalnewsgroup.com/about-scng-1/">Southern California News Group</a></li>
+	<li id="menu-item-983" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-983"><a href="http://www.digitalfirstmedia.com/">Digital First Media</a></li>
+	<li id="menu-item-981" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-981"><a href="https://careers-digitalfirstmedia.icims.com/">Work With Us</a></li>
+	<li id="menu-item-984" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-984"><a href="https://socalnewsgroup.mybrightsites.com/products?s%5Bf%5D%5Bc%5D%5B%5D=%2FLos+Angeles+Daily+News">Company Store</a></li>
+	<li id="menu-item-985" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985"><a href="http://www.socalnie.com/">Newspapers in Education</a></li>
+</ul>
+</li>
+<li id="menu-item-955" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-955"><a>Advertising Sections</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-956" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-956"><a href="/autos">Autos</a></li>
+	<li id="menu-item-957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-957"><a href="http://marketplace.socaladsonline.com/lang">Classified</a></li>
+	<li id="menu-item-958" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-958"><a href="https://careers.socalnewsgroup.com/">Jobs</a></li>
+	<li id="menu-item-2552039" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2552039"><a href="http://www.dailynews.com/homes">Real Estate Ads</a></li>
+	<li id="menu-item-962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-962"><a href="https://www.dailynews.com/weekly-ads/">Weekly Ads</a></li>
+	<li id="menu-item-2578149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2578149"><a href="http://losangelesdailynews.ca.newsmemory.com/marketplace.php">Local Ads</a></li>
+	<li id="menu-item-964" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-964"><a href="http://www.la-dev.com/ReadersChoice/LADN/2018/index.php?action=displayLogin">Readers Choice</a></li>
+	<li id="menu-item-963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-963"><a href="http://specialsections.dailynews.com">Special Sections</a></li>
+</ul>
+</li>
+<li id="menu-item-965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-965"><a>How To Advertise</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-966" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-966"><a href="http://adportal.socaladsonline.com/lang-adportal/classified/index.html">Place a Classified Ad</a></li>
+	<li id="menu-item-967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-967"><a href="http://advertising.scng.com/la-daily-news-media-kit">Media Kit</a></li>
+	<li id="menu-item-2552415" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2552415"><a href="http://advertising.scng.com/southern-ca-advertising-scng-ad-inquiry-la-daily-news">Advertising Inquiry</a></li>
+	<li id="menu-item-968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"><a href="https://www.dailynews.com/contact-us/">Advertising Contact Info</a></li>
+</ul>
+</li>
+<li id="menu-item-969" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-969"><a>How to Find Us on Other Platforms</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-970" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970"><a href="http://www.scngapps.com/">Mobile Apps</a></li>
+	<li id="menu-item-523978" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-523978"><a href="/newsletter">Newsletter Signup</a></li>
+	<li id="menu-item-973" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-973"><a href="https://myaccount.dailynews.com/access.aspx?premium=Y&#038;product=eEditionLADN">e-Edition</a></li>
+	<li id="menu-item-2700713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2700713"><a href="https://www.dailynews.com/newsletter/">Breaking News Alerts</a></li>
+	<li id="menu-item-975" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-975"><a href="http://www.dailynews.com/sitemap.xml">Site Map</a></li>
+	<li id="menu-item-2548497" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2548497"><a href="/2017/09/01/how-to-get-an-rss-feed-of-any-la-daily-news-page-on-its-website/">RSS</a></li>
+</ul>
+</li>
+<li id="menu-item-986" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-986"><a>Customer Service</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-987" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-987"><a href="https://myaccount.dailynews.com/">Subscriber Services</a></li>
+	<li id="menu-item-988" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-988"><a href="https://myaccount.dailynews.com/dssSubscribe.aspx">Subscribe</a></li>
+	<li id="menu-item-989" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-989"><a href="https://myaccount.dailynews.com/MembershipReward.aspx">Reader Rewards</a></li>
+	<li id="menu-item-990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-990"><a href="/share-your-news/">Share Your News</a></li>
+</ul>
+</li>
+<li id="menu-item-991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-991"><a>Partners</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+	<li id="menu-item-992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-992"><a href="http://www.thecannifornian.com/">The Cannifornian</a></li>
+	<li id="menu-item-993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-993"><a href="http://socalpreplegends.com/">SoCal Prep Legends</a></li>
+	<li id="menu-item-2765950" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2765950"><a href="http://www.la-dev.com/Monster/Main/dailynews/index.html">Monster</a></li>
+</ul>
+</li>
+</ul></div>			<div class="colophon">
+
+				<ul id="footer-bottom-menu" class="menu"><li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="https://www.dailynews.com/copyright/">Copyright</a></li>
+<li id="menu-item-2793456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2793456"><a href="http://www.digitalfirstmedia.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-2793457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2793457"><a href="http://www.digitalfirstmedia.com/cookie-policy/">Cookie Policy</a></li>
+<li id="menu-item-954" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-954"><a href="http://local.digitalfirstmedia.com/common/dfm/arbitration.pdf">Arbitration</a></li>
+<li id="menu-item-2551446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2551446"><a href="http://vip.wordpress.com/">Powered by WordPress.com VIP</a></li>
+<li id="menu-item-2760813" class="scng-logo menu-item menu-item-type-custom menu-item-object-custom menu-item-2760813"><a href="http://www.socalnewsgroup.com">Southern California News Group</a></li>
+<li id="menu-item-2760814" class="dfm-logo menu-item menu-item-type-custom menu-item-object-custom menu-item-2760814"><a href="http://www.digitalfirstmedia.com">Digital First Media</a></li>
+</ul>			</div>
+			
+			</footer><!-- .site-footer -->
+			
+			</div><!-- #page -->
+
+			<script>
+			(function(w) {
+  				w.PARSELY = {
+    				autotrack: false,
+    				onReady: function() {
+      					PARSELY.updateDefaults({
+        					data: {
+          						plan: "subscriber"
+        					}
+      					});
+      					PARSELY.beacon.trackPageView();
+    				}
+  				};
+			})(window);
+            </script>
+		<!-- /// LOAD CHARTBEAT /// -->
+		<script type="text/javascript">
+			var _sf_async_config={};
+			_sf_async_config.uid = 53628;
+			_sf_async_config.useCanonical = true;
+						_sf_async_config.domain = 'dailynews.com';
+			
+			(function(){
+				function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src',
+						(("https:" == document.location.protocol) ? "https://" : "http://") +
+						"static.chartbeat.com/js/chartbeat.js");
+					document.body.appendChild(e);
+				}
+				var oldonload = window.onload;
+				window.onload = (typeof window.onload != 'function') ?
+					loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+			})();
+		</script>
+		
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+  <div id="parsely-cfg" data-parsely-site="dailynews.com"></div>
+</div>
+<script data-cfasync="false">
+(function(s, p, d) {
+  var h=d.location.protocol, i=p+"-"+s,
+      e=d.getElementById(i), r=d.getElementById(p+"-root"),
+      u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+      :"static."+p+".com";
+  if (e) return;
+  e = d.createElement(s); e.id = i; e.async = true;
+  e.setAttribute('data-cfasync', 'false'); e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+if ( 'undefined' !== typeof _snaq ) {
+_snaq.push(['setAuthor', 'James Newman']);
+_snaq.push(['setArticlePublishTime','2017-06-19T10:10:47+00:00']);
+_snaq.push(['setSection', 'Privacy']);
+}
+/* ]]> */
+</script>
+<div id="mg2Widget-newsletter-container"></div><script type='text/javascript' src='https://www.dailynews.com/_static/??/wp-content/plugins/photonfill/js/picturefill.min.js,/wp-content/plugins/photonfill/js/lazysizes.min.js?m=1531239973j'></script>
+<script type='text/javascript' src='https://www.dailynews.com/wp-content/themes/wp-mason/static/js/ads.js?ver=1.0'></script>
+<script type='text/javascript' src='https://assets.digitalfirstmedia.com/prod/static/js/common.72b0f022ceb1b1fd5270.min.js?ver=1.0'></script>
+<!--[if lt IE 10]>
+<script type='text/javascript' src='https://assets.digitalfirstmedia.com/prod/static/js/polyfills.72b0f022ceb1b1fd5270.min.js?ver=1.0'></script>
+<![endif]-->
+<script type='text/javascript' src='https://assets.digitalfirstmedia.com/prod/static/js/dailynews.72b0f022ceb1b1fd5270.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.dailynews.com/wp-content/themes/wp-mason/static/js/global.min.js?m=1525933935g'></script>
+<script async type='text/javascript' src='https://s.ntv.io/serve/load.js'></script>
+<script type='text/javascript' src='https://imasdk.googleapis.com/js/sdkloader/ima3.js'></script>
+<script type='text/javascript' src='https://www.dailynews.com/wp-includes/js/wp-embed.min.js?m=1530815901g'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201828.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.3.2',blog:'135013085',post:'885',tz:'-7',srv:'www.dailynews.com'} ]);
+	_stq.push([ 'clickTrackerInit', '135013085', '885' ]);
+</script>
+
+			<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7998548d3f","applicationID":"50282176","transactionName":"Ml0BbUEAXENYUBBfWAsXIlpHCF1eFkMFUVI=","queueTime":0,"applicationTime":113,"atts":"HhoWGwkaTxwbUkYMTBhF","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+			</html>
+			
